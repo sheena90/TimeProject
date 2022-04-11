@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+#wrap {
+	width:1600px;
+	margin:auto;
+}
+
+.header {
+	background-color: #202023;
+	position:sticky;
+	top:0;
+}
+
+.promotion {
+	width:1600px;
+	margin:auto;
+	position:relative;
+}
+
+.promotionImg {
+	width:100%;
+	vertical-align:middle;
+}
+
+.promotionText {
+	background-color: #000000;
+    background-color: rgba( 0, 0, 0, 0.5 );
+	position:absolute;
+	top:50%;
+	left:80%;
+	width:400px;
+	height:400px;
+	transform: translate(-50%, -50%);
+	font-family:'ypseo';
+	text-align:center;
+}
+
+footer {
+	background-color: #202023;
+}
+
+.signUp {
+	width:1000px;
+	height:700px;
+	margin:auto;
+	border:1px solid #dddddd;
+}
+
+.signUpHeader {
+	height:100px;
+	background-color: #35353c;
+}
+
+.signUpInput {
+	width:350px;
+	margin:auto;
+}
+
+.line {
+	display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.35);
+    font-size: 12px;
+    margin: 8px 0px;
+}
+
+.line::before,
+.line::after {
+	content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 14px;
+}
+
+.login {
+	width:300px;
+	height:50px;
+	margin:auto;
+}
+
+.myPage {
+	width:1200px;
+	height:800px;
+	margin:auto;
+}
+
+table {
+	display:flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	overflow-x: auto;
+	overflow-y: hidden;
+
+	width: 100%;
+    border-top: 1px solid #444444;
+    border-collapse: collapse;
+}
+
+tbody {display:flex;}
+
+th {
+	display:block;
+	border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444;
+    padding: 10px;
+    
+    height:300px;
+    border-left: none;
+	
+}
+
+td {
+    display:block;
+	
+	border-bottom: 1px solid #444444;
+    border-left: 1px solid #444444;
+    padding: 10px;
+    
+    height:300px;
+  }
+
