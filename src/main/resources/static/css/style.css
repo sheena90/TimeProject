@@ -83,43 +83,18 @@ footer {
 }
 
 .myPage {
-	width:1200px;
-	height:800px;
+	width:1000px;
+	height:700px;
 	margin:auto;
 }
 
-table {
-	display:flex;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	overflow-x: auto;
-	overflow-y: hidden;
-
-	width: 100%;
-    border-top: 1px solid #444444;
-    border-collapse: collapse;
+.profileTextBox {
+	width:120px;
+	background: #e0e0e0;
+	line-height: 120px;
 }
 
-tbody {display:flex;}
-
-th {
-	display:block;
-	border-bottom: 1px solid #444444;
-    border-left: 1px solid #444444;
-    padding: 10px;
-    
-    height:300px;
-    border-left: none;
-	
+.profileBox {
+	width:200px;
 }
-
-td {
-    display:block;
-	
-	border-bottom: 1px solid #444444;
-    border-left: 1px solid #444444;
-    padding: 10px;
-    
-    height:300px;
-  }
 
