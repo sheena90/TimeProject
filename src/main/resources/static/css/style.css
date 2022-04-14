@@ -194,5 +194,81 @@ footer {
     vertical-align: middle;
 }
 
+.communityMainContent {
+	height: 700px;
+	margin:auto;
+}
 
+.color1 {
+	color: #f8dbc0;
+}
 
+.communityMainContentMy {
+	height: 700px;
+	background: url(/static/image/communityMainContentMy3.jpg);
+	background-repeat: no-repeat;
+	background-size : cover;
+}
+
+.mainContentProfileBox {
+	width: 150px;
+    height: 150px; 
+    border-radius: 70%;
+    overflow: hidden;
+    margin-top:100px;
+    margin-left:175px;
+}
+
+.profile {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.communityMainContents {
+	border: 1px solid #dddddd;
+	border-radius: 20px;
+	width: 800px;
+	height:40px;
+	margin:auto;
+}
+
+.communityReviewProfile {
+	width: 30px;
+    height: 30px; 
+    border-radius: 70%;
+    overflow: hidden;
+}
+
+hr {
+	border:1px solid #dddddd;
+}
+
+.communityReview {
+	width:1000px;
+	margin:auto;
+}
+
+.reviewLike {
+	border: 1px solid #dddddd;
+	width: 95px;
+	height:28px;
+	border-radius: 5px;
+}
+
+.communityListSection {
+	height: 700px;
+	background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fe%2F59c1fd58a9d75.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652469867&t=ab783389c45e6c9d35c7d193b93a437a) fixed;
+}
+
+.communityList {
+	background-color:#dddddd;
+	position:absolute;
+	top:42.8%;
+	width:1600px;
+  
+}
+
+.communityListTable {
+	margin:auto;
+}

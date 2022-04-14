@@ -14,10 +14,30 @@ public class PostController {
 	}
 	
 	
+	@GetMapping("/community/main_view")
+	public String communityMainView() {
+		return "post/community_main";
+	}
+	
 	@GetMapping("/community/create_view")
-	public String createView() {
+	public String communityCreateView() {
 		return "post/community_create";
 	}
 	
-
+	@GetMapping("/community/review_view")
+	public String communityReview() {
+		return "post/community_review";
+	}
+	
+	@GetMapping("/community/list_view")
+	public String communityListView() {
+		return "post/community_list";
+	}
+	
+	
+	@GetMapping("/live/play_view")
+	public String livePlayView() {
+		return "post/live_play";
+	}
+	
 }
