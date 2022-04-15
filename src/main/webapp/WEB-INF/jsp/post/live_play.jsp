@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>글쓰기</title>
+<title>livePlay</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -16,43 +16,33 @@
   	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
   	
   	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
-  	
 </head>
 <body>
-	<div id="wrap">
-		
+	<div  id="wrap">
+	
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
-		<div class="signUp mt-5 mb-5">
-			<div class="signUpHeader d-flex align-items-center justify-content-center">
-				<img class="col-2" width="120" alt="logo" src="/static/image/logo.PNG" >
-				<h3 class="text-center text-white"> | </h3>
-				<h3 class="col-2 text-white">Community</h3>
-			</div>
+		<section class="livePlaySection">
+			<div class="myPage pt-5">
+				
+				<!-- 라이브 콘텐츠 -->
+				<div class="h-75 bg-warning m-5">
+					
+				</div>
 			
-			<div>
-				<div class="d-flex align-items-center justify-content-start ml-3 mt-3">
-					<span class="material-icons-outlined" style="color:red; font-size:30px;">campaign</span>
-					<span>Stop! 폭언이나 욕설 금지</span>
+				<div class="m-5 d-flex justify-content-end">
+					<div class="back mr-5"></div>
+					<div class="heart mr-5"></div>
+					<!--  <h3 class="mr-5 text-danger"><i class="bi bi-heart-fill"></i></h3>-->
 				</div>
-				<hr class="ml-3 mr-3">
-				<div class="ml-3 mr-3">
-					<h6>제목</h6>
-					<input type="text" class="form-control mt-3" placeholder="제목을 입력해주세요">
-					<textarea rows="10" cols="1000" class="form-control mt-3">내용을 입력해주세요</textarea>
-				</div>
-				<div class="ml-3 mr-3">
-					<input type="file" class="mt-3" id="fileInput">
-					<div class="d-flex justify-content-between mt-3">
-						<a href="/post/community/list_view" class="btn btn-secondary">목록으로</a>
-						<button type="button" class="btn btn-danger" id="saveBtn">저장</button>
-					</div>
-				</div>
+				
+				
+				
 			</div>
-		</div>
-		
+		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 		
 	</div>
+
 </body>
 </html>

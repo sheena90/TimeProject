@@ -5,9 +5,18 @@
 	margin:auto;
 }
 
+#bannerImage {
+	height:200px;
+	object-fit:cover;
+}
+
 .header {
 	background-color: #202023;
-	position: sticky;
+	
+}
+
+.headerLive {
+	width:500px;
 }
 
 .promotion {
@@ -199,6 +208,10 @@ footer {
 	margin:auto;
 }
 
+.communityMainContentBox {
+	height: 600px;
+}
+
 .color1 {
 	color: #f8dbc0;
 }
@@ -272,3 +285,96 @@ hr {
 .communityListTable {
 	margin:auto;
 }
+
+.livePlaySection {
+	height: 700px;
+	background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsmall.justeasy.cn%2Fuploads%2Fappcase%2F20170824%2F1503541801456997.jpg&refer=http%3A%2F%2Fsmall.justeasy.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652509292&t=7245d5d41fb8e10bcdb4ac62d4348574) fixed;
+}
+
+
+/*livePlay 하트*/
+.back {
+    position: fixed;
+    background: white;
+    animation-name: backdiv;
+    animation-duration: 1s; 
+    animation-iteration-count: infinite;
+  }
+
+.heart {
+    position: absolute;
+    background-color: #e70f3c;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-45deg);
+    animation-name: beat;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+  }
+  .heart:after {
+    background-color: #e70f3c;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    left: 25px;
+  }
+  .heart:before {
+    background-color: #e70f3c;
+    content: "";
+    border-radius: 50%;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 0px;
+  }
+
+  @keyframes backdiv {
+    50% {
+      background: #ffe6f2;
+    }
+  }
+
+  @keyframes beat {
+    0% {
+      transform: scale(1) rotate(-45deg);
+    }
+    50% {
+      transform: scale(0.6) rotate(-45deg);
+    }
+  }
+  
+  
+  /* 드롭다운 메뉴 */
+  input[id="menuicon"]{display:none;}
+  input[id="menuicon"]+label {display:block; margin:auto; width:50px; height:40px; position:relative; cursor:pointer;}
+  input[id="menuicon"]+label span {display:block; position:absolute; width:100%; height:5px; border-radius:30px; background:#f8dbc0; transition:all .35s;}
+  input[id="menuicon"]+label span:nth-child(1) {top:0;}
+  input[id="menuicon"]+label span:nth-child(2) {top:50%; transform:translateY(-50%);}
+  input[id="menuicon"]+label span:nth-child(3) {bottom:0;}
+  input[id="menuicon"]:checked+label {z-index:2;}
+  input[id="menuicon"]:checked+label span {background:#fff;}
+  input[id="menuicon"]:checked+label span:nth-child(1) {top:50%; transform:translateY(-50%) rotate(45deg);}
+  input[id="menuicon"]:checked+label span:nth-child(2) {opacity:0;}
+  input[id="menuicon"]:checked+label span:nth-child(3) {bottom:50%; transform:translateY(50%) rotate(-45deg);}
+  
+  div[class="sidebar"] {width:300px; height:700px; background:#222; position:fixed; top:79px; left:-300px; z-index:1; transition:all .35s;}
+  input[id="menuicon"]:checked+label+div{left:0;}
+  
+  
+  .contentInfo {
+	width: 800px;
+	margin:auto;
+}
+  
+
+  
+  
+  
+  
+  
+  
+  
