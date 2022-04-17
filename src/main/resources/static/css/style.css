@@ -61,6 +61,13 @@ footer {
 	background-color: #35353c;
 }
 
+.signInInput {
+	width:350px;
+	margin:auto;
+	padding-top:100px;
+}
+
+
 .signUpInput {
 	width:350px;
 	margin:auto;

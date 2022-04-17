@@ -14,6 +14,12 @@ public class UserController {
 	}
 	
 	
+	@GetMapping("/signin_view")
+	public String signInView() {
+		return "user/signIn";
+	}
+	
+	
 	// My페이지
 	// 회원정보
 	@GetMapping("/myProfile_view")

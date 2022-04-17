@@ -3,6 +3,8 @@ package com.sheena.time.user.dao;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.sheena.time.user.model.UserModel;
+
 @Repository
 public interface UserDAO {
 
@@ -18,7 +20,10 @@ public interface UserDAO {
 	public int selectCountLoginId(@Param("loginId") String loginId);
 	
 	
-	
+	// 로그인
+	public UserModel selectUser(
+			@Param("loginId") String loginId,
+			@Param("password") String password);
 	
 	
 	
