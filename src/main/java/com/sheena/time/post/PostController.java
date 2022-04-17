@@ -14,6 +14,20 @@ public class PostController {
 	}
 	
 	
+	// content_영상, 지식정보
+	@GetMapping("/content/video_view")
+	public String contentVideoView() {
+		return "post/content_video";
+	}
+	
+	
+	@GetMapping("/content/info_view")
+	public String contentInfoView() {
+		return "post/content_info";
+	}
+	
+	
+	// 커뮤니티
 	@GetMapping("/community/main_view")
 	public String communityMainView() {
 		return "post/community_main";

@@ -35,9 +35,6 @@
 					<div class="heart mr-5"></div>
 					<!--  <h3 class="mr-5 text-danger"><i class="bi bi-heart-fill"></i></h3>-->
 				</div>
-				
-				
-				
 			</div>
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
