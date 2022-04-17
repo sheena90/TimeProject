@@ -1,5 +1,8 @@
 package com.sheena.time.user;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +20,28 @@ public class UserController {
 	@GetMapping("/signin_view")
 	public String signInView() {
 		return "user/signIn";
+	}
+	
+	
+	@GetMapping("/sign_out")
+	public String signOut(HttpServletRequest request) {
+		
+		// 로그아웃
+		// session에 저장한 사용자 정보 지우기(userId, userLoginId, userNickname, userGender, userEmail, userProfile)
+		
+		HttpSession session = request.getSession();
+		
+		session.removeAttribute("userId");
+		session.removeAttribute("userLoginId");
+		session.removeAttribute("userNickname");
+		session.removeAttribute("userGender");
+		session.removeAttribute("userEmail");
+		session.removeAttribute("userProfile");
+		
+		// responseBody가 아닌 어노테이션이기때문에 가능
+		// 다시 메인페이지 페이지로 이동
+		return "redirect:/post/main_view";
+		
 	}
 	
 	
