@@ -40,7 +40,7 @@
 								<span class="color1 ml-4"><b>My 게시글</b></span>
 							</div>
 							<div>
-								<a href="#" class="color1"><i class="bi bi-chevron-right"></i></a>
+								<a class="color1"href="/post/community/list_view" class="color1"><i class="bi bi-chevron-right"></i></a>
 							</div>
 						</div>
 						<div class="mt-5 d-flex justify-content-between ml-5 mr-5">
@@ -49,7 +49,7 @@
 								<span class="color1 ml-4"><b>New 글작성</b></span>
 							</div>
 							<div>
-								<a href="#" class="color1"><i class="bi bi-chevron-right"></i></a>
+								<a class="color1"href="/post/community/create_view" class="color1"><i class="bi bi-chevron-right"></i></a>
 							</div>
 						</div>
 						
