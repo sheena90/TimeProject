@@ -24,12 +24,12 @@
 		
 		<div class="myPage mt-5 mb-5">
 			<div class="d-flex justify-content-between col-8">
-				<span>회원정보</span>
-				<span>즐겨찾기</span>
-				<span class="text-danger">계획표</span>
-				<span>Q&A</span>
-				<span>알림설정</span>
-				<span>회원탈퇴</span>
+				<a class="text-dark" href="/user/myProfile_view"><span>회원정보</span></a>
+				<a class="text-dark" href="/user/myFavorites_view"><span>즐겨찾기</span></a>
+				<a class="text-dark" href="/user/myPlan_view"><span class="text-danger">계획표</span></a>
+				<a class="text-dark" href="/user/myQuestion_view"><span>Q&A</span></a>
+				<a class="text-dark" href="/user/myNotice_view"><span>알림설정</span></a>
+				<a class="text-dark" href="/user/myWithdraw_view"><span>회원탈퇴</span></a>
 			</div>
 			<hr>
 			<div class="mr-3 ml-3 mt-5">
