@@ -55,6 +55,7 @@ footer {
 	border:1px solid #dddddd;
 }
 
+
 .signUpHeader {
 	height:100px;
 	background-color: #35353c;
@@ -218,7 +219,7 @@ footer {
 
 .communityMainContentMy {
 	height: 700px;
-	background: url(/static/image/communityMainContentMy3.jpg);
+	background: url(/static/image/communityMainContentMy1.jpg);
 	background-repeat: no-repeat;
 	background-size : cover;
 }
@@ -365,16 +366,95 @@ hr {
   input[id="menuicon"]:checked+label+div{left:0;}
   
   
-  .contentInfo {
+ .contentInfo {
 	width: 800px;
 	margin:auto;
 }
-  
 
-  
-  
-  
-  
-  
+
+
+.customizeBox {
+	width:600px;
+	height:500px;
+	margin:auto;
+	
+}
+ 
+ 
+.customizeText {
+	width:100px;
+	height:100px;
+    border: 1px solid #dddddd;
+}
+ 
+/*맞춤형modal 진행률 표시*/
+
+.progress {
+	width:600px;
+	height: 100px;
+	margin:auto;
+	padding-top: 50px;
+}
+ 
+.progressUl{
+	text-align:center;
+}
+
+.progressUl .progressLi {
+	display:inline-block;
+	width:120px;
+	position:relative;
+}
+ 
+
+.fa {
+	font-size:20px;
+}
+ 
+ 
+.progressUl .progressLi .fa{
+	background:#ccc;
+	width:30px;
+	height:30px;
+	color:#fff;
+	border-radius:50%;
+	padding:5px;
+}
+ 
+.progressUl .progressLi .fa::after{
+	content:'';
+	background:#ccc;
+	height:5px;
+	width:150px;
+	display:block;
+	position:absolute;
+	left:0;
+	top:14px;
+}
+
+.progressUl .progressLi:nth-child(2) .fa{
+	background: #148e14;
+}
+.progressUl .progressLi:nth-child(2) .fa::after {
+	background: #148e14;
+} 
+
+.progressUl .progressLi:nth-child(1) .fa {
+	background: #60aa97;
+}
+.progressUl .progressLi:nth-child(1) .fa::after {
+	background: #60aa97;
+}
+
+.progressUl .progressLi:first-child .fa::after {
+	width:80px;
+	left:70px;
+}
+
+.progressUl .progressLi:last-child .fa::after {
+	width:50px;
+}
+
+
   
   
