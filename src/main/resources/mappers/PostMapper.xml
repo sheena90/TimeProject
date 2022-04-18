@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.sheena.time.post.dao.PostDAO">
+
+	<!-- 커뮤니티_글쓰기 -->
+	<insert id="insertPost" parameterType="map">
+		INSERT INTO `post`
+		(
+			`userId`
+			, `subject`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUE
+		(
+			#{userId}
+			, #{subject}
+			, #{content}
+			, now()
+			, now()
+		)
+	
+	</insert>
+	
+	
+	<!-- 커뮤니티_리스트 -->
+	<select id="selectPostList" parameterType="int" resultType="com.sheena.time.post.model.PostModel">
+		SELECT
+			`id`
+			, `userId`
+			, `userNickname`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`post`
+		WHERE
+			`userId` = #{userId}
+		ORDER BY `createdAt` DESC
+	
+	</select>
+
+</mapper>

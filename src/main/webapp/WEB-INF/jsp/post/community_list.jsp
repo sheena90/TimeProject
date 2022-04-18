@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,24 +41,15 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>1</td>
-							<td><a href="#" data-toggle="modal" data-target="#createModal">첫번째</a></td>
-							<td>2022-04-13 03:00</td>
-							<td>0</td>
-						</tr>
-						<tr>
-							<td>2</td>
-							<td><a href="#">두번째</a></td>
-							<td>2022-04-13 03:10</td>
-							<td>0</td>
-						</tr>
-						<tr>
-							<td>3</td>
-							<td><a href="#">세번째</a></td>
-							<td>2022-04-13 03:10</td>
-							<td>0</td>
-						</tr>
+						
+						<c:forEach var="post" items="${postList }" varStatus="status">
+							<tr>
+								<td>${status.count }</td>
+								<td><a href="#" data-toggle="modal" data-target="#createModal">${post.subject }</a></td>
+								<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+								<td>0</td>
+							</tr>
+						</c:forEach>
 					</tbody>
 					
 				</table>
