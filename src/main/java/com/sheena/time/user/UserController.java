@@ -71,9 +71,9 @@ public class UserController {
 	}
 	
 	// 알림설정
-	@GetMapping("/myNotice_view")
-	public String myNoticeView() {
-		return "user/my_notice";
+	@GetMapping("/myNotifications_view")
+	public String myNotificationsView() {
+		return "user/my_notifications";
 	}
 	
 	// 회원탈퇴

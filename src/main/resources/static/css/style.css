@@ -5,6 +5,8 @@
 	margin:auto;
 }
 
+a:hover { text-decoration:none !important; }
+
 #bannerImage {
 	height:200px;
 	object-fit:cover;
@@ -111,8 +113,21 @@ footer {
 	line-height: 120px;
 }
 
-.profileBox {
+.myProfileBox {
 	width:200px;
+}
+
+.myProfile {
+	width: 150px;
+    height: 150px; 
+    border-radius: 70%;
+    overflow: hidden;
+}
+
+.profileNicknameBox {
+	width:120px;
+	background: #e0e0e0;
+	line-height: 120px;
 }
 
 .favoritesContent {
@@ -461,7 +476,6 @@ hr {
 .progressUl .progressLi:last-child .fa::after {
 	width:50px;
 }
-
 
   
   

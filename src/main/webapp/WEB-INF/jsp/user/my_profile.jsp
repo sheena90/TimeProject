@@ -23,37 +23,57 @@
 	
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
-		<div class="myPage mt-5 mb-5 bg-info">
+		<div class="myPage mt-5 mb-5">
 			<div class="d-flex justify-content-between col-8">
-				<span class="text-danger">회원정보</span>
-				<span>즐겨찾기</span>
-				<span>계획표</span>
-				<span>Q&A</span>
-				<span>알림설정</span>
-				<span>회원탈퇴</span>
+				<a class="text-dark" href="/user/myProfile_view"><span class="text-danger">회원정보</span></a>
+				<a class="text-dark" href="/user/myFavorites_view"><span>즐겨찾기</span></a>
+				<a class="text-dark" href="/user/myPlan_view"><span>계획표</span></a>
+				<a class="text-dark" href="/user/myQuestion_view"><span>Q&A</span></a>
+				<a class="text-dark" href="/user/myNotifications_view"><span>알림설정</span></a>
+				<a class="text-dark" href="/user/myWithdraw_view"><span>회원탈퇴</span></a>
 			</div>
-			<hr>
+			<hr> 
 			<div class="mr-3 ml-3 mt-5">
 				<b>프로필 수정</b>
 				<p><small class="text-secondary">Time 대표 프로필과 닉네임을 수정 하실 수 있습니다.</small></p>
 			</div>
-			<div>
-				<div class="d-flex ml-3 ">
-					<div class="profileTextBox text-center">프로필 사진</div>
-					<div class="profileBox ml-5 text-center mb-4">
-						<p style="color:gray; font-size:150px;"><i class="bi bi-person-circle"></i></p>
-						<div class="d-flex justify-content-between">
-							<button type="button" class="btn btn-secondary">사진변경</button>
-							<button type="button" class="btn btn-secondary">삭제</button>
+			<div class="mt-4">
+				<div class="w-75 ml-5">
+					<!-- 프로필 사진 수정 -->
+					<div class="d-flex ml-3">
+						<div class="profileTextBox text-center">프로필 사진</div>
+						<div class="myProfileBox ml-5 mb-4 mt-3">
+							<div class="myProfile ml-4">
+								<img class="profile" src="https://i.pinimg.com/originals/e3/cb/8e/e3cb8eeb33d7d8f7a5ac65a08bc255ed.jpg">
+							</div>
+							
+							<div class="d-flex justify-content-between mt-4">
+								<button type="button" class="btn">사진변경</button>
+								<button type="button" class="btn">삭제</button>
+							</div>
+						</div>
+					</div>
+					
+					<hr>
+					
+					<!-- 닉네임 수정 -->
+					<div class="d-flex ml-3 mt-4">
+						<div class="profileNicknameBox text-center">닉네임</div>
+						<div class="profileBox ml-5 text-center mb-4">
+							<div class="d-flex mt-5">
+								<input type="text" class="form-control">
+							</div>
 						</div>
 					</div>
 				</div>
-				
-				
 			</div>
-			
+			<div class="page mt-5">
+				<button type="button" class="btn btn-primary mr-3">적용</button>
+				<button type="button" class="btn btn-secondary">취소</button>
+			</div>
 		</div>
 		
+		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 		
 	</div>
 	
