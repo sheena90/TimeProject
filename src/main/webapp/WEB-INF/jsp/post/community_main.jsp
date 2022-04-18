@@ -36,8 +36,10 @@
 					<div>
 						<div class="mt-5 d-flex justify-content-between ml-5 mr-5">
 							<div class="col-5">
-								<span class="color1"><i class="bi bi-bookmark-fill"></i></span>
-								<span class="color1 ml-4"><b>My 게시글</b></span>
+								<a class="color1"href="/post/community/list_view" class="color1">
+									<span class="color1"><i class="bi bi-bookmark-fill"></i></span>
+									<span class="color1 ml-4"><b>My 게시글</b></span>
+								</a>
 							</div>
 							<div>
 								<a class="color1"href="/post/community/list_view" class="color1"><i class="bi bi-chevron-right"></i></a>
@@ -45,8 +47,10 @@
 						</div>
 						<div class="mt-5 d-flex justify-content-between ml-5 mr-5">
 							<div class="col-5">
-								<span class="color1"><i class="bi bi-pencil-fill"></i></span>
-								<span class="color1 ml-4"><b>New 글작성</b></span>
+								<a class="color1"href="/post/community/create_view" class="color1">
+									<span class="color1"><i class="bi bi-pencil-fill"></i></span>
+									<span class="color1 ml-4"><b>New 글작성</b></span>
+								</a>
 							</div>
 							<div>
 								<a class="color1"href="/post/community/create_view" class="color1"><i class="bi bi-chevron-right"></i></a>
