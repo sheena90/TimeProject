@@ -6,17 +6,20 @@
 <head>
 <meta charset="UTF-8">
 <title>Time</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">   
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+  	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
+  	
   	
   	<link rel="stylesheet" href="/static/css/style.css" type="text/css">
-
+  
 </head>
 <body>
 	<div id="wrap">
@@ -27,7 +30,7 @@
 			<!-- 프로모션 -->
 			<div class="promotion">
 				<div class="promotionImg">
-					<img width="1600" height="500" alt="logo" src="/static/image/홍보.jpeg">
+					<!-- css 사진 삽입 -->
 				</div>
 				<div class="promotionText">
 					<h3 class="text-white font-weight-bold mt-5">Time 맞춤화 서비스</h3>
@@ -35,7 +38,9 @@
 						전문적인 피트니스 라이브러리 : 1000+개<br><br>
 						전문 강사님과 함께 하는 라이브 강의
 					</p>
-					<button type="button" class="btn btn-danger mt-5">시작하기</button>
+					<a href="#" data-toggle="modal" data-target="#customizeModal">
+						<button type="button" class="btn btn-danger mt-5">시작하기</button>
+					</a>
 				</div>
 			</div>
 			
@@ -49,15 +54,17 @@
 					<div class="col-5">
 						<div class="d-flex align-items-center justify-content-between">
 							<div><b>|</b>부위별 운동</div>
-							<div>더보기 +</div>
+							<div>
+								<a class="text-dark" href="/post/content/video_view">더보기 +</a>
+							</div>
 						</div>
 						<div class="d-flex flex-wrap mt-3 mb-3">
 							<div class="courseVideo mr-3">
 								<img class="img" width="200" height="140" alt="가슴" src="/static/image/가슴.png">
-								<h4 class="text">가슴</h4>
+								
 							</div>
 							<div class="courseVideo mr-3">
-								<img width="200" height="140" alt="어깨" src="/static/image/어깨.png">
+								<img width="200" height="140" alt="어깨" src="/static/image/어깨.jpg">
 							</div>
 							<div class="courseVideo">
 								<img width="200" height="140" alt="복근" src="/static/image/복근.jpg">
@@ -66,7 +73,7 @@
 								<img width="200" height="140" alt="하체" src="/static/image/하체.png">
 							</div>
 							<div class="courseVideo mr-3 mt-5">
-								<img width="200" height="140" alt="힙" src="/static/image/힙.png">
+								<img width="200" height="140" alt="힙" src="/static/image/힙.jpeg">
 							</div>
 							<div class="courseVideo mt-5">
 								<img width="200" height="140" alt="등" src="/static/image/등.jpg">
@@ -78,7 +85,9 @@
 					<div class="col-4">
 						<div class="d-flex align-items-center justify-content-between">
 							<div><b>|</b>지식정보</div>
-							<div>더보기 +</div>
+							<div>
+								<a class="text-dark" href="/post/content/info_view">더보기 +</a>
+							</div>
 						</div>
 						<div class="mt-3 mb-3">
 							<div class="d-flex">
@@ -115,8 +124,10 @@
 					<!-- 커뮤니티 -->
 					<div class="col-3">
 						<div class="d-flex align-items-center justify-content-between">
-							<div><b>|</b>지식정보</div>
-							<div>더보기 +</div>
+							<div><b>|</b>커뮤니티</div>
+							<div>
+								<a class="text-dark" href="/post/community/main_view">더보기 +</a>
+							</div>
 						</div>
 						<div class="mt-3 mb-3">
 							<div class="d-flex">
@@ -170,7 +181,7 @@
 			
 			<!-- 광고 -->
 			<div>
-				<img id="bannerImage" width="100%" height="300" alt="광고배너" src="/static/image/광고_adidas.png">
+				<img id="bannerImage" width="100%" alt="광고배너" src="https://cdn.wallpapersafari.com/96/35/Iju3yC.jpg">
 			</div>
 		</section>
 		
@@ -178,11 +189,132 @@
 	
 	</div>
 	
+	
+	<!-- Modal 1-->
+	<div class=" modal  fade" id="customizeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
+	    	
+	      	<div class="modal-body">
+        			
+        		<!-- 삽입 내용 -->
+        		<div class="customizeBox mt-5 mb-5 bg-white">
+					
+					<!-- 진행률 표시 -->
+					<div class="h-25">
+						<div class="progress">
+							<ul class="progressUl">
+								<li class="progressLi">
+									<i class="fa fa-check" aria-hidden="true"></i>
+									<p>Step1</p>
+								</li>
+								<li class="progressLi">
+									<i class="fa fa-refresh" aria-hidden="true"></i>
+									<p>Step2</p>
+								</li>
+								<li class="progressLi">
+									<i class="fa fa-times"></i>
+									<p>Step3</p>
+								</li>
+								<li class="progressLi">
+									<i class="fa fa-times"></i>
+									<p>Step4</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="h-50 d-flex justify-content-around align-items-center">
+						<button class="btn btn-secondary customizeText text-center">
+							<small class="mt-4">홈트레이닝<br>(비기구)</small>
+						</button>
+						<button class="btn btn-secondary customizeText text-center">
+							<small class="mt-4">홈트레이닝<br>(기구)</small>
+						</button>
+						<button class="btn btn-secondary customizeText text-center">
+							<small class="mt-4">헬스장<br>(기구)</small>
+						</button>
+					</div>
+					<div class="h-25 d-flex justify-content-center align-items-start">
+						<a href="#" data-toggle="modal" data-target="#customizeNextModal">
+							<button type="button" class="btn btn-danger">다음</button>
+						</a>
+					</div>
+					
+				</div>
+	      			
+	      	</div>
+	      	
+	  	</div>
+	</div>
+	
+	
+	
+	
+	<!-- Modal 2 -->
+	<div class=" modal  fade" id="customizeNextModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
+	    	
+	      	<div class="modal-body">
+        			
+        		<!-- 삽입 내용 -->
+        		<div class="customizeBox mt-5 mb-5 bg-white">
+					
+					<!-- 진행률 표시 -->
+					<div class="h-25">
+						<div class="progress">
+							<ul class="progressUl">
+								<li class="progressLi">
+									<i class="fa fa-check" aria-hidden="true"></i>
+									<p>Step1</p>
+								</li>
+								<li class="progressLi">
+									<i class="fa fa-refresh" aria-hidden="true"></i>
+									<p>Step2</p>
+								</li>
+								<li class="progressLi">
+									<i class="fa fa-times"></i>
+									<p>Step3</p>
+								</li>
+								<li class="progressLi">
+									<i class="fa fa-times"></i>
+									<p>Step4</p>
+								</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="h-50 d-flex justify-content-around align-items-center">
+						<button class="btn btn-secondary customizeText text-center">
+							<small class="mt-4">홈트레이닝<br>(비기구)</small>
+						</button>
+						<button class="btn btn-secondary customizeText text-center">
+							<small class="mt-4">홈트레이닝<br>(기구)</small>
+						</button>
+						<button class="btn btn-secondary customizeText text-center">
+							<small class="mt-4">헬스장<br>(기구)</small>
+						</button>
+					</div>
+					<div class="h-25 d-flex justify-content-center align-items-start">
+						<button type="button" class="btn btn-danger">다음</button>
+					</div>
+					
+				</div>
+	      			
+	      	</div>
+	      	
+	  	</div>
+	</div>
+	
+
+	
+	
 	<script>
 		$(document).ready(function() {
 			
+			
+			
 			// 3초마다 이미지 바꾸기
-			var bannerList = ["/static/image/광고_adidas.png","/static/image/광고_nike.png", "/static/image/광고_puma.jpg"];
+			var bannerList = ["https://cdn.wallpapersafari.com/96/35/Iju3yC.jpg","/static/image/광고_nike.jpg", "/static/image/광고_데상트.jpg"];
 			var currentImageIndex = 0;
 			setInterval(function() {
 				$("#bannerImage").attr("src", bannerList[currentImageIndex]);

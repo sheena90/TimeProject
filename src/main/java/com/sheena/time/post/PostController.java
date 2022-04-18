@@ -78,4 +78,11 @@ public class PostController {
 		return "post/live_play";
 	}
 	
+	
+	// 공지사항
+	@GetMapping("/notice_view")
+	public String noticeView() {
+		return "post/notice";
+	}
+	
 }

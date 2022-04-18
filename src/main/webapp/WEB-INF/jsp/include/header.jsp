@@ -31,13 +31,11 @@
 					
 					<!-- 로그인 아이콘에 대한 dropdown 적용 : 마이페이지, 로그아웃 -->
 					<div class="dropdown d-flex align-items-center mr-4">
-						
-						<a class="text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-bs-expanded="false" class="mr-2 text-dark"> 
-							<h1 class="material-icons-outlined">login</h1>
-						</a>
-						
 						<c:choose>
 							<c:when test="${not empty userId }">
+								<a class="text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-bs-expanded="false" class="mr-2 text-dark"> 
+									<h1 class="material-icons-outlined">logout</h1>
+								</a>
 								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
 									<li><a class="dropdown-item" href="/user/myProfile_view">My페이지</a></li>
 									<li><hr class="dropdown-divider"></li>
@@ -47,6 +45,9 @@
 								</ul>
 							</c:when>
 							<c:otherwise>
+								<a class="text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-bs-expanded="false" class="mr-2 text-dark"> 
+									<h1 class="material-icons-outlined">login</h1>
+								</a>
 								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
 									<li><a class="dropdown-item" href="/user/signin_view">로그인</a></li>
 									<li><hr class="dropdown-divider"></li>
