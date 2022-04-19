@@ -19,4 +19,8 @@ public interface PostDAO {
 	
 	// 커뮤니티_리스트
 	public List<PostModel> selectPostList(@Param("userId") int userId);
+	
+	
+	// 커뮤니티_게시글 상세페이지 modal창 띄우기
+	public PostModel selectId(@Param("id") int id);
 }

@@ -25,4 +25,10 @@ public class PostBO {
 	public List<PostModel> getPostList(int userId) {
 		return postDAO.selectPostList(userId);
 	}
+	
+	
+	// 커뮤니티_게시글 상세페이지 modal창 띄우기
+	public PostModel getId(int id) {
+		return postDAO.selectId(id);
+	}
 }

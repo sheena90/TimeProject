@@ -46,5 +46,23 @@
 		ORDER BY `createdAt` DESC
 	
 	</select>
+	
+	
+	<!-- 커뮤니티_게시글 상세페이지 modal창 띄우기 -->
+	<select id="selectId" parameterType="int" resultType="com.sheena.time.post.model.PostModel">
+		SELECT
+			`id`
+			, `userId`
+			, `userNickname`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`post`
+		WHERE
+			`userId` = #{userId}
+	</select>
 
 </mapper>

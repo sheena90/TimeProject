@@ -78,43 +78,48 @@
 	
 	
 	<!-- Modal -->
-	<div class=" modal  fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class=" modal  fade" id="createModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
-	    	
-	      	<div class="modal-body">
-        			
-        		<!-- 삽입 내용 -->
-        		<div class="signUp mt-5 mb-5 bg-secondary">
-					<div class="signUpHeader d-flex align-items-center justify-content-center">
-						<img class="col-2" width="120" alt="logo" src="/static/image/logo.PNG" >
-						<h3 class="text-center text-white"> | </h3>
-						<h3 class="col-2 text-white">Edit</h3>
-					</div>
-						
-					<div>
-						<div class="d-flex align-items-center justify-content-start ml-3 mt-3">
-							<span class="material-icons-outlined" style="color:red; font-size:30px;">campaign</span>
-							<span>Stop! 폭언이나 욕설 금지</span>
+	    	<div class="modal-content modalContent">
+		      	<div class="modal-body">
+	        		
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          				<span class="text-white" aria-hidden="true">&times;</span>
+        			</button>
+	        		
+	        		<!-- 삽입 내용 -->
+	        		<div class="signUp mt-5 mb-5 bg-secondary">
+						<div class="signUpHeader d-flex align-items-center justify-content-center">
+							<img class="col-2" width="120" alt="logo" src="/static/image/logo.PNG" >
+							<h3 class="text-center text-white"> | </h3>
+							<h3 class="col-2 text-white">Edit</h3>
 						</div>
-						<hr class="ml-3 mr-3">
-						<div class="ml-3 mr-3">
-							<h6>제목</h6>
-							<input type="text" class="form-control mt-3" placeholder="제목을 입력해주세요">
-							<textarea rows="10" cols="1000" class="form-control mt-3">내용을 입력해주세요</textarea>
-						</div>
-						<div class="ml-3 mr-3">
-							<input type="file" class="mt-3" id="fileInput">
-							<div class="d-flex justify-content-between mt-3">
-								<a href="/post/community/list_view" class="btn btn-dark">목록으로</a>
-								<div>
-									<button type="button" class="btn btn-danger" id="saveBtn">삭제</button>
-									<button type="button" class="btn btn-dark" id="saveBtn">수정</button>
+							
+						<div>
+							<div class="d-flex align-items-center justify-content-start ml-3 mt-3">
+								<span class="material-icons-outlined" style="color:red; font-size:30px;">campaign</span>
+								<span>Stop! 폭언이나 욕설 금지</span>
+							</div>
+							<hr class="ml-3 mr-3">
+							<div class="ml-3 mr-3">
+								<h6>제목</h6>
+								<input type="text" class="form-control mt-3" placeholder="제목을 입력해주세요">
+								<textarea rows="10" cols="1000" class="form-control mt-3" placeholder="내용을 입력해주세요"></textarea>
+							</div>
+							<div class="ml-3 mr-3">
+								<input type="file" class="mt-3" id="fileInput">
+								<div class="d-flex justify-content-between mt-3">
+									<a href="/post/community/list_view" class="btn btn-dark">목록으로</a>
+									<div>
+										<button type="button" class="btn btn-danger" id="saveBtn">삭제</button>
+										<button type="button" class="btn btn-dark" id="saveBtn">수정</button>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-	      			
+		      			
+		      	</div>
 	      	</div>
 	      	
 	  	</div>

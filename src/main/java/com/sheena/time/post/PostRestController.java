@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sheena.time.post.bo.PostBO;
+import com.sheena.time.post.model.PostModel;
 
 @RestController
 @RequestMapping("/post")
@@ -46,6 +47,13 @@ public class PostRestController {
 		
 		return result;
 		
+	}
+	
+	
+	// 커뮤니티_게시글 상세페이지 modal창 띄우기
+	@PostMapping("/community/edit")
+	public PostModel communityEdit(@RequestParam("id") int id) {
+		return postBO.getId(id);
 	}
 	
 }
