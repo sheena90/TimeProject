@@ -12,6 +12,11 @@ a:hover { text-decoration:none !important; }
 	object-fit:cover;
 }
 
+.modalContent {
+	border:0;
+	background-color: rgba( 255, 255, 255, 0 );
+}
+
 .header {
 	background-color: #202023;
 	
@@ -408,6 +413,18 @@ hr {
 	height:100px;
     border: 1px solid #dddddd;
 }
+
+.customizeBox3 {
+	width:320px;
+	height:200px;
+	margin:auto;
+}
+
+.customizeText3 {
+	width:70px;
+	height:70px;
+    border: 1px solid #dddddd;
+}
  
 /*맞춤형modal 진행률 표시*/
 
@@ -416,6 +433,7 @@ hr {
 	height: 100px;
 	margin:auto;
 	padding-top: 50px;
+	background:#ffffff;
 }
  
 .progressUl{
@@ -454,17 +472,31 @@ hr {
 	top:14px;
 }
 
-.progressUl .progressLi:nth-child(2) .fa{
+.progressUl .progressLi:nth-child(1) .fa{
 	background: #148e14;
 }
-.progressUl .progressLi:nth-child(2) .fa::after {
+.progressUl .progressLi:nth-child(1) .fa::after {
+	background: #148e14;
+}
+
+.progressUl .progressLi:nth-child(3) .fa{
+	background: #148e14;
+}
+.progressUl .progressLi:nth-child(3) .fa::after {
 	background: #148e14;
 } 
 
-.progressUl .progressLi:nth-child(1) .fa {
+.progressUl .progressLi:nth-child(2) .fa {
 	background: #60aa97;
 }
-.progressUl .progressLi:nth-child(1) .fa::after {
+.progressUl .progressLi:nth-child(2) .fa::after {
+	background: #60aa97;
+}
+
+.progressUl .progressLi:nth-child(2) .fa {
+	background: #60aa97;
+}
+.progressUl .progressLi:nth-child(2) .fa::after {
 	background: #60aa97;
 }
 

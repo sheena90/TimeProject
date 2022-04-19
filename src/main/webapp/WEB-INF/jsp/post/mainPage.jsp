@@ -6,6 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Time</title>
+	<!-- slick cdn -->
+  	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+  	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -13,7 +16,13 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
+    <!-- slick cdn -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  	
+  	
   	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
   	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
   	
@@ -191,59 +200,63 @@
 	
 	
 	<!-- Modal 1-->
-	<div class=" modal  fade" id="customizeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class=" modal  fade" id="customizeModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
-	    	
-	      	<div class="modal-body">
-        			
-        		<!-- 삽입 내용 -->
-        		<div class="customizeBox mt-5 mb-5 bg-white">
-					
-					<!-- 진행률 표시 -->
-					<div class="h-25">
-						<div class="progress">
-							<ul class="progressUl">
-								<li class="progressLi">
-									<i class="fa fa-check" aria-hidden="true"></i>
-									<p>Step1</p>
-								</li>
-								<li class="progressLi">
-									<i class="fa fa-refresh" aria-hidden="true"></i>
-									<p>Step2</p>
-								</li>
-								<li class="progressLi">
-									<i class="fa fa-times"></i>
-									<p>Step3</p>
-								</li>
-								<li class="progressLi">
-									<i class="fa fa-times"></i>
-									<p>Step4</p>
-								</li>
-							</ul>
+	    	<div class="modal-content modalContent">
+		      	<div class="modal-body">
+		      	
+		      		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          				<span class="text-warning" aria-hidden="true">&times;</span>
+        			</button>
+	        			
+	        		<!-- 삽입 내용 -->
+	        		<div class="customizeBox mt-5 mb-5 bg-white">
+						
+						<!-- 진행률 표시 -->
+						<div class="h-25">
+							<div class="progress">
+								<ul class="progressUl">
+									<li class="progressLi">
+										<i class="fa fa-refresh" aria-hidden="true"></i>
+										<p>Step1</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-times"></i>
+										<p>Step2</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-times"></i>
+										<p>Step3</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-times"></i>
+										<p>Step4</p>
+									</li>
+								</ul>
+							</div>
 						</div>
+						
+						<div class="h-50 d-flex justify-content-around align-items-center">
+							<button class="btn btn-secondary customizeText text-center">
+								<small class="mt-4">홈트레이닝<br>(비기구)</small>
+							</button>
+							<button class="btn btn-secondary customizeText text-center">
+								<small class="mt-4">홈트레이닝<br>(기구)</small>
+							</button>
+							<button class="btn btn-secondary customizeText text-center">
+								<small class="mt-4">헬스장<br>(기구)</small>
+							</button>
+						</div>
+						<div class="h-25 d-flex justify-content-center align-items-start">
+							<a href="#" data-toggle="modal" data-target="#customizeNextModal">
+								<button type="button" class="btn btn-danger" id="modalOff">다음</button>
+							</a>
+						</div>
+						
 					</div>
-					
-					<div class="h-50 d-flex justify-content-around align-items-center">
-						<button class="btn btn-secondary customizeText text-center">
-							<small class="mt-4">홈트레이닝<br>(비기구)</small>
-						</button>
-						<button class="btn btn-secondary customizeText text-center">
-							<small class="mt-4">홈트레이닝<br>(기구)</small>
-						</button>
-						<button class="btn btn-secondary customizeText text-center">
-							<small class="mt-4">헬스장<br>(기구)</small>
-						</button>
-					</div>
-					<div class="h-25 d-flex justify-content-center align-items-start">
-						<a href="#" data-toggle="modal" data-target="#customizeNextModal">
-							<button type="button" class="btn btn-danger">다음</button>
-						</a>
-					</div>
-					
-				</div>
-	      			
+		      			
+		      	</div>
 	      	</div>
-	      	
 	  	</div>
 	</div>
 	
@@ -253,64 +266,225 @@
 	<!-- Modal 2 -->
 	<div class=" modal  fade" id="customizeNextModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
-	    	
-	      	<div class="modal-body">
-        			
-        		<!-- 삽입 내용 -->
-        		<div class="customizeBox mt-5 mb-5 bg-white">
-					
-					<!-- 진행률 표시 -->
-					<div class="h-25">
-						<div class="progress">
-							<ul class="progressUl">
-								<li class="progressLi">
-									<i class="fa fa-check" aria-hidden="true"></i>
-									<p>Step1</p>
-								</li>
-								<li class="progressLi">
-									<i class="fa fa-refresh" aria-hidden="true"></i>
-									<p>Step2</p>
-								</li>
-								<li class="progressLi">
-									<i class="fa fa-times"></i>
-									<p>Step3</p>
-								</li>
-								<li class="progressLi">
-									<i class="fa fa-times"></i>
-									<p>Step4</p>
-								</li>
-							</ul>
+	    	<div class="modal-content modalContent">
+		      	<div class="modal-body">
+	        			
+	        		<!-- 삽입 내용 -->
+	        		<div class="customizeBox mt-5 mb-5 bg-white">
+	        		
+	        			
+						
+						<!-- 진행률 표시 -->
+						<div class="h-25">
+							<div class="progress">
+								<ul class="progressUl">
+									<li class="progressLi">
+										<i class="fa fa-check" aria-hidden="true"></i>
+										<p>Step1</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-refresh" aria-hidden="true"></i>
+										<p>Step2</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-times"></i>
+										<p>Step3</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-times"></i>
+										<p>Step4</p>
+									</li>
+								</ul>
+							</div>
 						</div>
+						
+						<div class="text-center mb-3">
+							<b>그림을 참조하여 유사한 체형을 선택하십시오.</b>
+						</div>
+						
+						<!-- modal2 슬라이드 --> 
+						<div>
+							<div class="center bg-secondary">
+								<div>
+									<img width="100" alt="체지방률" src="/static/image/체지방1.png">
+								</div>
+								<div>
+									<img width="100" alt="체지방률" src="/static/image/체지방2.png">
+								</div>
+								<div>
+									<img width="100" alt="체지방률" src="/static/image/체지방3.png">
+								</div>
+								<div class="center">
+									<img width="100" alt="체지방률" src="/static/image/체지방4.png">
+								</div>
+								<div>
+									<img width="100" alt="체지방률" src="/static/image/체지방5.png">
+								</div>
+								<div>
+									<img width="100" alt="체지방률" src="/static/image/체지방6.png">
+								</div>
+							</div>
+						</div>
+						
+						<div class="h-25 d-flex justify-content-center align-items-center">
+							<a href="#" data-toggle="modal" data-target="#customizeNextModal3">
+								<button type="button" class="btn btn-danger" id="modalOff">다음</button>
+							</a>
+						</div>
+						
 					</div>
-					
-					<div class="h-50 d-flex justify-content-around align-items-center">
-						<button class="btn btn-secondary customizeText text-center">
-							<small class="mt-4">홈트레이닝<br>(비기구)</small>
-						</button>
-						<button class="btn btn-secondary customizeText text-center">
-							<small class="mt-4">홈트레이닝<br>(기구)</small>
-						</button>
-						<button class="btn btn-secondary customizeText text-center">
-							<small class="mt-4">헬스장<br>(기구)</small>
-						</button>
-					</div>
-					<div class="h-25 d-flex justify-content-center align-items-start">
-						<button type="button" class="btn btn-danger">다음</button>
-					</div>
-					
-				</div>
-	      			
+		      			
+		      	</div>
 	      	</div>
-	      	
 	  	</div>
 	</div>
 	
+	
+	
+	<!-- Modal 3 -->
+	<div class=" modal  fade" id="customizeNextModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
+	    	<div class="modal-content modalContent">
+		      	<div class="modal-body">
+	        			
+	        		<!-- 삽입 내용 -->
+	        		<div class="customizeBox mt-5 mb-5 bg-white">
+	        		
+	        			
+						
+						<!-- 진행률 표시 -->
+						<div class="h-25">
+							<div class="progress">
+								<ul class="progressUl">
+									<li class="progressLi">
+										<i class="fa fa-check" aria-hidden="true"></i>
+										<p>Step1</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-check" aria-hidden="true"></i>
+										<p>Step2</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-refresh" aria-hidden="true"></i>
+										<p>Step3</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-times"></i>
+										<p>Step4</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="text-center mb-3">
+							<b>운동 목표를 선택하십시오.</b>
+						</div>
+						
+						<!-- modal3 슬라이드 --> 
+						<div class="customizeBox3 d-flex  flex-wrap">
+							<button class="btn btn-secondary customizeText3 text-center mr-5 ml-2">
+								<small class="mt-4">가슴</small>
+							</button>
+							<button class="btn btn-secondary customizeText3 text-center mr-5">
+								<small class="mt-4">어깨</small>
+							</button>
+							<button class="btn btn-secondary customizeText3 text-center">
+								<small class="mt-4">복근</small>
+							</button>
+							<button class="btn btn-secondary customizeText3 text-center mr-5 ml-2">
+								<small class="mt-4">하체</small>
+							</button>
+							<button class="btn btn-secondary customizeText3 text-center mr-5">
+								<small class="mt-4">힙</small>
+							</button>
+							<button class="btn btn-secondary customizeText3 text-center">
+								<small class="mt-4">등</small>
+							</button>
+						</div>
+						<div class="h-25 d-flex justify-content-center align-items-center">
+							<a href="#" data-toggle="modal" data-target="#customizeNextModal4">
+								<button type="button" class="btn btn-danger" id="modalOff">다음</button>
+							</a>
+						</div>
+						
+					</div>
+		      			
+		      	</div>
+	      	</div>
+	  	</div>
+	</div>
+	
+	
+	<!-- Modal 4-->
+	<div class=" modal  fade" id="customizeNextModal4" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
+	    	<div class="modal-content modalContent">
+		      	<div class="modal-body">
+		      	
+		      		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          				<span class="text-warning" aria-hidden="true">&times;</span>
+        			</button>
+	        			
+	        		<!-- 삽입 내용 -->
+	        		<div class="customizeBox mt-5 mb-5 bg-white">
+						
+						<!-- 진행률 표시 -->
+						<div class="h-25">
+							<div class="progress">
+								<ul class="progressUl">
+									<li class="progressLi">
+										<i class="fa fa-check" aria-hidden="true"></i>
+										<p>Step1</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-check" aria-hidden="true"></i>
+										<p>Step2</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-check" aria-hidden="true"></i>
+										<p>Step3</p>
+									</li>
+									<li class="progressLi">
+										<i class="fa fa-refresh" aria-hidden="true"></i>
+										<p>Step4</p>
+									</li>
+								</ul>
+							</div>
+						</div>
+						
+						<div class="h-50 d-flex bg-danger">
+							
+							<!-- 동영상 -->
+							<div class="col-6 bg-info">
+							
+							</div>
+							
+							<!-- 계획표 생성 -->
+							<div class="col-6 bg-warning ">
+								<div class="mt-5 mb-4"><b>계획표 생성</b></div>
+								<textarea style="width:100%;">결과 내용 추가 예정</textarea>
+							</div>
+							
+						</div>
+						<div class="h-25 d-flex justify-content-center align-items-center">
+							<a href="/user/myPlan_view" data-toggle="modal" data-target="#customizeNextModal">
+								<button type="button" class="btn btn-danger" id="modalOff">계획표 추가</button>
+							</a>
+						</div>
+						
+					</div>
+		      			
+		      	</div>
+	      	</div>
+	  	</div>
+	</div>
 
 	
 	
 	<script>
 		$(document).ready(function() {
 			
+			$("modalOff").modal("hide");
 			
 			
 			// 3초마다 이미지 바꾸기
@@ -324,6 +498,35 @@
 					currentImageIndex = 0;
 				}
 			}, 2000);
+			
+			
+			// modal2 슬라이드
+			$('.center').slick({
+				  centerMode: true,
+				  centerPadding: '60px',
+				  slidesToShow: 3,
+				  responsive: [
+				    {
+				      breakpoint: 768,
+				      settings: {
+				        arrows: false,
+				        centerMode: true,
+				        centerPadding: '40px',
+				        slidesToShow: 3
+				      }
+				    },
+				    {
+				      breakpoint: 480,
+				      settings: {
+				        arrows: false,
+				        centerMode: true,
+				        centerPadding: '40px',
+				        slidesToShow: 1
+				      }
+				    }
+				  ]
+			});
+			
 			
 		});
 	</script>
