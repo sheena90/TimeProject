@@ -47,7 +47,7 @@
 						전문적인 피트니스 라이브러리 : 1000+개<br><br>
 						전문 강사님과 함께 하는 라이브 강의
 					</p>
-					<a href="#" data-toggle="modal" data-target="#customizeModal">
+					<a href="#" data-toggle="modal" data-target="#customizeModal1">
 						<button type="button" class="btn btn-danger mt-5">시작하기</button>
 					</a>
 				</div>
@@ -200,7 +200,7 @@
 	
 	
 	<!-- Modal 1-->
-	<div class=" modal  fade" id="customizeModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade" id="customizeModal1"  data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
 	    	<div class="modal-content modalContent">
 		      	<div class="modal-body">
@@ -215,8 +215,8 @@
 						<!-- 진행률 표시 -->
 						<div class="h-25">
 							<div class="progress">
-								<ul class="progressUl">
-									<li class="progressLi">
+								<ul class="progressUl progressUl2 progressUl3 progressUl4">
+									<li class="progressLi progressLi2 progressLi3 progressLi4">
 										<i class="fa fa-refresh" aria-hidden="true"></i>
 										<p>Step1</p>
 									</li>
@@ -248,8 +248,8 @@
 							</button>
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-start">
-							<a href="#" data-toggle="modal" data-target="#customizeNextModal">
-								<button type="button" class="btn btn-danger" id="modalOff">다음</button>
+							<a href="#" data-toggle="modal" data-target="#customizeModal2">
+								<button type="button" class="btn btn-danger modalOff">다음</button>
 							</a>
 						</div>
 						
@@ -264,10 +264,14 @@
 	
 	
 	<!-- Modal 2 -->
-	<div class=" modal  fade" id="customizeNextModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade" id="customizeModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
 	    	<div class="modal-content modalContent">
 		      	<div class="modal-body">
+	        			
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          				<span class="text-warning" aria-hidden="true">&times;</span>
+        			</button>	
 	        			
 	        		<!-- 삽입 내용 -->
 	        		<div class="customizeBox mt-5 mb-5 bg-white">
@@ -277,8 +281,8 @@
 						<!-- 진행률 표시 -->
 						<div class="h-25">
 							<div class="progress">
-								<ul class="progressUl">
-									<li class="progressLi">
+								<ul class="progressUl progressUl2 progressUl3 progressUl4">
+									<li class="progressLi progressLi2 progressLi3 progressLi4">
 										<i class="fa fa-check" aria-hidden="true"></i>
 										<p>Step1</p>
 									</li>
@@ -327,8 +331,8 @@
 						</div>
 						
 						<div class="h-25 d-flex justify-content-center align-items-center">
-							<a href="#" data-toggle="modal" data-target="#customizeNextModal3">
-								<button type="button" class="btn btn-danger" id="modalOff">다음</button>
+							<a href="#" data-toggle="modal" data-target="#customizeModal3">
+								<button type="button" class="btn btn-danger modalOff">다음</button>
 							</a>
 						</div>
 						
@@ -342,10 +346,15 @@
 	
 	
 	<!-- Modal 3 -->
-	<div class=" modal  fade" id="customizeNextModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade" id="customizeModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
 	    	<div class="modal-content modalContent">
 		      	<div class="modal-body">
+	        			
+	        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          				<span class="text-warning" aria-hidden="true">&times;</span>
+        			</button>	
+	        			
 	        			
 	        		<!-- 삽입 내용 -->
 	        		<div class="customizeBox mt-5 mb-5 bg-white">
@@ -355,8 +364,8 @@
 						<!-- 진행률 표시 -->
 						<div class="h-25">
 							<div class="progress">
-								<ul class="progressUl">
-									<li class="progressLi">
+								<ul class="progressUl progressUl2 progressUl3 progressUl4">
+									<li class="progressLi progressLi2 progressLi3 progressLi4">
 										<i class="fa fa-check" aria-hidden="true"></i>
 										<p>Step1</p>
 									</li>
@@ -402,8 +411,8 @@
 							</button>
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-center">
-							<a href="#" data-toggle="modal" data-target="#customizeNextModal4">
-								<button type="button" class="btn btn-danger" id="modalOff">다음</button>
+							<a href="#" data-toggle="modal" data-target="#customizeModal4">
+								<button type="button" class="btn btn-danger modalOff">다음</button>
 							</a>
 						</div>
 						
@@ -416,7 +425,7 @@
 	
 	
 	<!-- Modal 4-->
-	<div class=" modal  fade" id="customizeNextModal4" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class=" modal  fade" id="customizeModal4" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
 	    	<div class="modal-content modalContent">
 		      	<div class="modal-body">
@@ -431,8 +440,8 @@
 						<!-- 진행률 표시 -->
 						<div class="h-25">
 							<div class="progress">
-								<ul class="progressUl">
-									<li class="progressLi">
+								<ul class="progressUl progressUl2 progressUl3 progressUl4">
+									<li class="progressLi progressLi2 progressLi3 progressLi4">
 										<i class="fa fa-check" aria-hidden="true"></i>
 										<p>Step1</p>
 									</li>
@@ -468,7 +477,7 @@
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-center">
 							<a href="/user/myPlan_view" data-toggle="modal" data-target="#customizeNextModal">
-								<button type="button" class="btn btn-danger" id="modalOff">계획표 추가</button>
+								<button type="button" class="btn btn-danger">계획표 추가</button>
 							</a>
 						</div>
 						
@@ -484,7 +493,15 @@
 	<script>
 		$(document).ready(function() {
 			
-			$("modalOff").modal("hide");
+			// 맞춤화 서비스 새로운 modal창이 띄워질 때, 기존 modal창 닫기 
+			$(".modalOff").on("click", function() {
+				
+				$("#customizeModal1").modal("hide");
+				$("#customizeModal2").modal("hide");
+				$("#customizeModal3").modal("hide");
+				
+			});
+			
 			
 			
 			// 3초마다 이미지 바꾸기

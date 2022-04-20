@@ -427,87 +427,49 @@ hr {
 }
  
 /*맞춤형modal 진행률 표시*/
+/*modal1*/
+.progress {width:600px; height: 100px; margin:auto; padding-top: 50px; background:#ffffff;}
+.progressUl{text-align:center;}
+.progressUl .progressLi {display:inline-block; width:120px; position:relative;}
+.fa {font-size:20px;} 
+.progressUl .progressLi .fa{background:#ccc; width:30px; height:30px; color:#fff; border-radius:50%; padding:5px;}
+.progressUl .progressLi .fa::after{content:''; background:#ccc; height:5px; width:150px; display:block; position:absolute; left:0; top:14px;}
 
-.progress {
-	width:600px;
-	height: 100px;
-	margin:auto;
-	padding-top: 50px;
-	background:#ffffff;
-}
- 
-.progressUl{
-	text-align:center;
-}
+.progressUl .progressLi:nth-child(1) .fa{background: #148e14;}
+.progressUl .progressLi:nth-child(1) .fa::after {background: #148e14;}
 
-.progressUl .progressLi {
-	display:inline-block;
-	width:120px;
-	position:relative;
-}
- 
+/*modal2*/
+.progressUl2 .progressLi2:nth-child(1) .fa{background: #60aa97;}
+.progressUl2 .progressLi2:nth-child(1) .fa::after {background: #60aa97;}
 
-.fa {
-	font-size:20px;
-}
- 
- 
-.progressUl .progressLi .fa{
-	background:#ccc;
-	width:30px;
-	height:30px;
-	color:#fff;
-	border-radius:50%;
-	padding:5px;
-}
- 
-.progressUl .progressLi .fa::after{
-	content:'';
-	background:#ccc;
-	height:5px;
-	width:150px;
-	display:block;
-	position:absolute;
-	left:0;
-	top:14px;
-}
+.progressUl2 .progressLi2:nth-child(2) .fa{background: #148e14;}
+.progressUl2 .progressLi2:nth-child(2) .fa::after {background: #148e14;}
 
-.progressUl .progressLi:nth-child(1) .fa{
-	background: #148e14;
-}
-.progressUl .progressLi:nth-child(1) .fa::after {
-	background: #148e14;
-}
+/*modal3*/
+.progressUl3 .progressLi3:nth-child(1) .fa {background: #60aa97;}
+.progressUl3 .progressLi3:nth-child(1) .fa::after {background: #60aa97;}
 
-.progressUl .progressLi:nth-child(3) .fa{
-	background: #148e14;
-}
-.progressUl .progressLi:nth-child(3) .fa::after {
-	background: #148e14;
-} 
+.progressUl3 .progressLi3:nth-child(2) .fa {background: #60aa97;}
+.progressUl3 .progressLi3:nth-child(2) .fa::after {background: #60aa97;}
 
-.progressUl .progressLi:nth-child(2) .fa {
-	background: #60aa97;
-}
-.progressUl .progressLi:nth-child(2) .fa::after {
-	background: #60aa97;
-}
+.progressUl3 .progressLi3:nth-child(3) .fa {background: #148e14;}
+.progressUl3 .progressLi3:nth-child(3) .fa::after {background: #148e14;}
 
-.progressUl .progressLi:nth-child(2) .fa {
-	background: #60aa97;
-}
-.progressUl .progressLi:nth-child(2) .fa::after {
-	background: #60aa97;
-}
+/*modal3*/
+.progressUl4 .progressLi4:nth-child(1) .fa {background: #60aa97;}
+.progressUl4 .progressLi4:nth-child(1) .fa::after {background: #60aa97;}
 
-.progressUl .progressLi:first-child .fa::after {
-	width:80px;
-	left:70px;
-}
+.progressUl4 .progressLi4:nth-child(2) .fa {background: #60aa97;}
+.progressUl4 .progressLi4:nth-child(2) .fa::after {background: #60aa97;}
 
-.progressUl .progressLi:last-child .fa::after {
-	width:50px;
-}
+.progressUl4 .progressLi4:nth-child(3) .fa {background: #60aa97;}
+.progressUl4 .progressLi4:nth-child(3) .fa::after {background: #60aa97;}
+
+.progressUl4 .progressLi4:nth-child(4) .fa {background: #148e14;}
+.progressUl4 .progressLi4:nth-child(4) .fa::after {background: #148e14;}
+
+.progressUl .progressLi:first-child .fa::after {width:80px; left:70px;}
+.progressUl .progressLi:last-child .fa::after {width:50px;}
 
 
 .contentVideo {
