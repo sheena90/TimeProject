@@ -13,6 +13,7 @@ public interface PostDAO {
 	// 커뮤니티_글쓰기
 	public int insertPost(
 			@Param("userId") int userId,
+			@Param("userNickname") int userNickname,
 			@Param("subject") String subject, 
 			@Param("content") String content);
 	

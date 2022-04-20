@@ -17,7 +17,7 @@ public class PostBO {
 	// 커뮤니티_글쓰기
 	public int addPost(int userId, String subject, String content) {
 		
-		return postDAO.insertPost(userId, subject, content);
+		return postDAO.insertPost(userId, userId, subject, content);
 	}
 	
 	
