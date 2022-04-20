@@ -60,8 +60,8 @@
 								<input type="checkbox" name="type" value="woman" id="ex_chk2"> 
 								<label for="ex_chk2">WOMAN</label> 
 							</div>
-							<div class="mt-4 ml-4 d-none color1">
-								<select class="contentVideoSelect color1" id="woman">
+							<div class="mt-4 ml-4 d-none color1" id="woman">
+								<select class="contentVideoSelect color1">
 									<option selected>선택</option>
 									<option>가슴</option>
 									<option>어깨</option>
@@ -113,13 +113,26 @@
 			
 			// select 버튼 선택에 따른 인풋 변경
             $("input[name=type]").on("change", function() {
-                if($(this).val() == "man") {
-                    $("#man").removeClass("d-none");
-                    $("#woman").addClass("d-none");
-                } else {
-                    $("#woman").removeClass("d-none");
-                    $("#man").addClass("d-none");
-                }
+            	
+            	var checked = $(this).is(":checked");
+            	
+            	if(checked) {
+            		
+            		if($(this).val() == "man") {
+                        $("#man").removeClass("d-none");
+                        $("#woman").addClass("d-none");
+                        $("#ex_chk2").prop("checked", false);
+                    } else {
+                        $("#woman").removeClass("d-none");
+                        $("#man").addClass("d-none");
+                        $("#ex_chk1").prop("checked", false);
+                    }
+            		
+            	} else {
+            		$("#man").addClass("d-none");
+            		$("#woman").addClass("d-none");
+            	}
+                
             });
 
 		});
