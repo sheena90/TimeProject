@@ -29,7 +29,7 @@
 						<img class="profile" src="https://i.pinimg.com/originals/e3/cb/8e/e3cb8eeb33d7d8f7a5ac65a08bc255ed.jpg">
 					</div>
 					<div class="text-center">
-						<h5 class="mt-4 text-white mb-4"><b>Hi, pro님</b></h5>
+						<h5 class="mt-4 text-white mb-4"><b>Hi, ${userNickname }님</b></h5>
 						<span class="text-warning"><i class="bi bi-brightness-high-fill"></i></span>
 						<span class="text-warning">200일</span>
 					</div>
