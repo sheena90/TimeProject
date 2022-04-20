@@ -28,7 +28,7 @@ public class PostBO {
 	
 	
 	// 커뮤니티_게시글 상세페이지 modal창 띄우기
-	public PostModel getId(int id) {
+	public PostModel postId(int id) {
 		return postDAO.selectId(id);
 	}
 }

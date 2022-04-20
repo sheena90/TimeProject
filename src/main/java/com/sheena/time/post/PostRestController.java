@@ -51,9 +51,9 @@ public class PostRestController {
 	
 	
 	// 커뮤니티_게시글 상세페이지 modal창 띄우기
-	@PostMapping("/community/edit")
-	public PostModel communityEdit(@RequestParam("id") int id) {
-		return postBO.getId(id);
+	@PostMapping("/community/detail")
+	public PostModel communityDetail(@RequestParam("id") int id) {
+		return postBO.postId(id);
 	}
 	
 }

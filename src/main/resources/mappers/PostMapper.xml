@@ -62,7 +62,7 @@
 		FROM
 			`post`
 		WHERE
-			`userId` = #{userId}
+			`id` = #{id}
 	</select>
 
 </mapper>

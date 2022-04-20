@@ -45,7 +45,7 @@
 						<c:forEach var="post" items="${postList }" varStatus="status">
 							<tr>
 								<td>${status.count }</td>
-								<td><a href="#" data-toggle="modal" data-target="#createModal">${post.subject }</a></td>
+								<td><a href="#" data-toggle="modal" data-target="#createModal" id="detailBtn" >${post.subject }</a></td>
 								<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 								<td>0</td>
 							</tr>
@@ -103,8 +103,8 @@
 							<hr class="ml-3 mr-3">
 							<div class="ml-3 mr-3">
 								<h6>제목</h6>
-								<input type="text" class="form-control mt-3" placeholder="제목을 입력해주세요">
-								<textarea rows="10" cols="1000" class="form-control mt-3" placeholder="내용을 입력해주세요"></textarea>
+								<input type="text" class="form-control mt-3" placeholder="제목을 입력해주세요" id="titlelnput">
+								<textarea rows="10" cols="1000" class="form-control mt-3" placeholder="내용을 입력해주세요" id="contentInput"></textarea>
 							</div>
 							<div class="ml-3 mr-3">
 								<input type="file" class="mt-3" id="fileInput">
@@ -124,6 +124,34 @@
 	      	
 	  	</div>
 	</div>
+	
+	
+	<script>
+		$(document).ready(function() {
+			
+			$("#detailBtn").on("click", function() {
+				
+				
+				
+				$.ajax({
+					
+					type:"post",
+					url:"/post/community/detail",
+					data:{"id":id},
+					success:function(data) {
+						
+						$("#titlelnput").val(data.subject);
+					},
+					error:function() {
+						alert("디테일 에");
+					}
+				});
+			});
+			
+			
+		});
+	
+	</script>
 
 </body>
 </html>
