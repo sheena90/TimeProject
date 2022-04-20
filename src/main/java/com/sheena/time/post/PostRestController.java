@@ -34,8 +34,9 @@ public class PostRestController {
 		HttpSession session = request.getSession();
 		// Object로 리턴, downCasting 진행 시 객체타입 확인 필수
 		int userId = (Integer)session.getAttribute("userId");
+		String userNickname = (String)session.getAttribute("userNickname");
 		
-		int count = postBO.addPost(userId, subject, content);
+		int count = postBO.addPost(userId, userNickname, subject, content);
 		
 		Map<String, String>result = new HashMap<>();
 		
