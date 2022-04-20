@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sheena.time.post.bo.PostBO;
 import com.sheena.time.post.model.PostModel;
@@ -28,6 +29,8 @@ public class PostRestController {
 	public Map<String, String> create(
 			@RequestParam("subject") String subject,
 			@RequestParam("content") String content,
+			// 파일, 비필수 항목
+			@RequestParam(value = "file", required = false) MultipartFile file,
 			HttpServletRequest request) {
 		
 		// userId 호출
@@ -36,7 +39,7 @@ public class PostRestController {
 		int userId = (Integer)session.getAttribute("userId");
 		String userNickname = (String)session.getAttribute("userNickname");
 		
-		int count = postBO.addPost(userId, userNickname, subject, content);
+		int count = postBO.addPost(userId, userNickname, subject, content, file);
 		
 		Map<String, String>result = new HashMap<>();
 		

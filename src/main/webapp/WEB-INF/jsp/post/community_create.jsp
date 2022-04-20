@@ -76,14 +76,27 @@
 					return;
 				}
 				
+				
+				// 파일 호출 추가 옵션
+				var formData = new FormData();
+				// {"subject":title, "content":content} 문자열 형태를 비어있는 FormData 객체 생성해서 parameter 삽입
+				// append 메소드 통해서 값을 추가
+				formData.append("subject", title);
+				formData.append("content", content);
+				formData.append("file", $("#fileInput")[0].files[0]);
+				
+				
 				$.ajax({
 					type:"post",
 					url:"/post/community/create",
-					data:{"subject":title, "content":content},
+					data:formData,  // formData 변수 형태로 전달
+					enctype:"multipart/form-data",    // 파일업로드 필수 옵션
+					processData:false,				  // 파일업로드 필수 옵션 + data:{}의 문자열 기본 속성을 제거 역할
+					contentType:false,				  // 파일업로드 필수 옵션 + data:{}의 문자열 기본 속성을 제거 역할
 					success:function(data) {
 						
 						if(data.result == "success") {
-							location.href="/post/community/list_view";
+							location.href="/post/community/main_view";
 						} else {
 							alert("게시글 입력 실패");
 						}
