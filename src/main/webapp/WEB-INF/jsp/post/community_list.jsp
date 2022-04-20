@@ -45,7 +45,7 @@
 						<c:forEach var="post" items="${postList }" varStatus="status">
 							<tr>
 								<td>${status.count }</td>
-								<td><a href="#" data-toggle="modal" data-target="#createModal" id="detailBtn" >${post.subject }</a></td>
+								<td><a href="#" data-toggle="modal" data-target="#createModal" class="detailBtn" data-post-id="${post.id }">${post.subject }</a></td>
 								<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 								<td>0</td>
 							</tr>
@@ -103,7 +103,7 @@
 							<hr class="ml-3 mr-3">
 							<div class="ml-3 mr-3">
 								<h6>제목</h6>
-								<input type="text" class="form-control mt-3" placeholder="제목을 입력해주세요" id="titlelnput">
+								<input type="text" class="form-control mt-3" placeholder="제목을 입력해주세요" id="titleInput">
 								<textarea rows="10" cols="1000" class="form-control mt-3" placeholder="내용을 입력해주세요" id="contentInput"></textarea>
 							</div>
 							<div class="ml-3 mr-3">
@@ -129,21 +129,21 @@
 	<script>
 		$(document).ready(function() {
 			
-			$("#detailBtn").on("click", function() {
-				
+			$(".detailBtn").on("click", function() {
 				
 				
 				$.ajax({
 					
 					type:"post",
 					url:"/post/community/detail",
-					data:{"id":id},
+					data:{"id":$(this).data("post-id")},
 					success:function(data) {
 						
-						$("#titlelnput").val(data.subject);
+						$("#titleInput").val(data.subject);
+						$("#contentInput").val(data.content);
 					},
 					error:function() {
-						alert("디테일 에");
+						alert("디테일 에러");
 					}
 				});
 			});
