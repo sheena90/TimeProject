@@ -90,9 +90,9 @@
 					type:"post",
 					url:"/post/community/create",
 					data:formData,  // formData 변수 형태로 전달
-					enctype:"multipart/form-data",    // 파일업로드 필수 옵션
-					processData:false,				  // 파일업로드 필수 옵션 + data:{}의 문자열 기본 속성을 제거 역할
-					contentType:false,				  // 파일업로드 필수 옵션 + data:{}의 문자열 기본 속성을 제거 역할
+					enctype:"multipart/form-data",    // 파일 업로드 필수 옵션
+					processData:false,				  // 파일 업로드 필수 옵션 + data:{}의 문자열 기본 속성을 제거 역할
+					contentType:false,				  // 파일 업로드 필수 옵션 + data:{}의 문자열 기본 속성을 제거 역할
 					success:function(data) {
 						
 						if(data.result == "success") {
