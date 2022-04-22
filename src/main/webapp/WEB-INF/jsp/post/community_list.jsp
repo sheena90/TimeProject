@@ -112,7 +112,7 @@
 									<a href="/post/community/list_view" class="btn btn-dark">목록으로</a>
 									<div>
 										<button type="button" class="btn btn-danger" >삭제</button>
-										<button type="button" class="btn btn-dark" id="saveBtn" data-postUpdate-id="${post.id }">수정</button>
+										<button type="button" class="btn btn-dark" id="editBtn" data-postUpdate-id="${post.id }">수정</button>
 									</div>
 								</div>
 							</div>
@@ -149,14 +149,16 @@
 			
 			
 			// 게시글 수정
-			$("#saveBtn").on("click", function() {
-				let title = $("#titleInput").val(data.subject);
-				let content = $("#contentInput").val(data.content);
+			$("#editBtn").on("click", function() {
+				
+			
+				let title = $("#titleInput").val();
+				let content = $("#contentInput").val();
 				
 				let postId = $(this).data("postUpdate-id");
 				
 				$.ajax({
-					type="post",
+					type:"post",
 					url:"/post/community/update",
 					data:{"postId":postId, "subject":title, "content":content},
 					success:function(data) {
@@ -172,8 +174,8 @@
 						alert("게시글 수정 에러");
 					}
 				});
-			});
-			
+			}); 
+			 
 			
 		});
 	

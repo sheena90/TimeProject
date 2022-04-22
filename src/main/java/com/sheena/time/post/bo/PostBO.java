@@ -1,5 +1,6 @@
 package com.sheena.time.post.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sheena.time.common.FileManagerService;
 import com.sheena.time.post.dao.PostDAO;
+import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
 
 @Service
@@ -41,8 +43,27 @@ public class PostBO {
 	
 	
 	// community_메인 화면 모든 사용자의 게시글 가져오기
-	public List<PostModel> getPostFullList() {
-		return postDAO.selectPostFullList();
+	public List<CommunityModel> getPostFullList() {
+		
+		List<PostModel> communityList = postDAO.selectPostFullList();
+		
+		List<CommunityModel> communityModelList = new ArrayList<>();
+		
+		for(PostModel postModel : communityList) {
+			
+			CommunityModel communityModel = new CommunityModel();
+			
+			communityModel.setId(postModel.getId());
+			communityModel.setSubject(postModel.getSubject());
+			communityModel.setUserNickname(postModel.getUserNickname());
+			communityModel.setTime("time");
+			
+			communityModelList.add(communityModel);
+		}
+		
+			return communityModelList;
+		
+		 
 	}
 	
 	

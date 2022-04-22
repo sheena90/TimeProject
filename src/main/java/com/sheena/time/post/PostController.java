@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sheena.time.post.bo.PostBO;
+import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
 
 @Controller
@@ -46,7 +47,7 @@ public class PostController {
 	public String communityMainView(Model model) {
 		
 		// community_메인 화면 모든 사용자의 게시글 가져오기
-		List<PostModel> postFullList = postBO.getPostFullList();
+		List<CommunityModel> postFullList = postBO.getPostFullList();
 		
 		model.addAttribute("postFullList", postFullList);
 		
