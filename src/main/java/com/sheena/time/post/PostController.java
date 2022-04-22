@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sheena.time.post.bo.PostBO;
 import com.sheena.time.post.model.PostModel;
@@ -42,7 +43,13 @@ public class PostController {
 	
 	// 커뮤니티
 	@GetMapping("/community/main_view")
-	public String communityMainView() {
+	public String communityMainView(Model model) {
+		
+		// community_메인 화면 모든 사용자의 게시글 가져오기
+		List<PostModel> postFullList = postBO.getPostFullList();
+		
+		model.addAttribute("postFullList", postFullList);
+		
 		return "post/community_main";
 	}
 	
@@ -51,10 +58,19 @@ public class PostController {
 		return "post/community_create";
 	}
 	
+	
+	// 커뮤니티 모든 사용자의 해당 게시글 디테일뷰 가져오기
 	@GetMapping("/community/review_view")
-	public String communityReview() {
+	public String communityReview(@RequestParam("id") int id, Model model) {
+		
+		PostModel postFull = postBO.postId(id);
+		
+		model.addAttribute("postFull", postFull);
+		
 		return "post/community_review";
 	}
+	
+	
 	
 	@GetMapping("/community/list_view")
 	public String communityListView(

@@ -47,12 +47,13 @@
 			`post`
 		WHERE
 			`userId` = #{userId}
-		ORDER BY `createdAt` DESC
+		ORDER BY `id` DESC
 	
 	</select>
 	
 	
 	<!-- 커뮤니티_게시글 상세페이지 modal창 띄우기 -->
+	<!-- 커뮤니티 모든 사용자의 해당 게시글 디테일뷰 가져오기(도 같이 사용) -->
 	<select id="selectId" parameterType="int" resultType="com.sheena.time.post.model.PostModel">
 		SELECT
 			`id`
@@ -67,6 +68,23 @@
 			`post`
 		WHERE
 			`id` = #{id}
+	</select>
+	
+	
+	<!-- community_메인 화면 모든 사용자의 게시글 가져오기 -->
+	<select id="selectPostFullList" resultType="com.sheena.time.post.model.PostModel">
+		SELECT
+			`id`
+			, `userId`
+			, `userNickname`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`post`
+		ORDER BY `id` DESC
 	</select>
 
 </mapper>

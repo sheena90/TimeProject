@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,78 +62,22 @@
 				</div>
 				
 				<div class="col-8">
-					<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-						<div class="col-9">
-							<span>오늘도 열심히 운동하고 갑니다.</span>
+					
+					<c:forEach var="postFull" items="${postFullList }">
+					<a href="/post/community/review_view?id=${postFull.id }" class="text-dark">
+						<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
+							
+							<div class="col-8">
+								<span>${postFull.subject }</span>
+							</div>
+							<div class="col-4 d-flex justify-content-between">
+								<b>${postFull.userNickname }</b>
+								<span><fmt:formatDate value="${postFull.createdAt }" pattern="yyyy-MM-dd" />전</span>
+							</div>
+							
 						</div>
-						<div class="col-3 d-flex justify-content-between">
-							<b>sheena</b>
-							<span>1분전</span>
-						</div>
-					</div>
-					<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-						<div class="col-9">
-							<span>오늘도 열심히 운동하고 갑니다.</span>
-						</div>
-						<div class="col-3 d-flex justify-content-between">
-							<b>sheena</b>
-							<span>1분전</span>
-						</div>
-					</div>
-					<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-						<div class="col-9">
-							<span>오늘도 열심히 운동하고 갑니다.</span>
-						</div>
-						<div class="col-3 d-flex justify-content-between">
-							<b>sheena</b>
-							<span>1분전</span>
-						</div>
-					</div>
-					<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-						<div class="col-9">
-							<span>오늘도 열심히 운동하고 갑니다.</span>
-						</div>
-						<div class="col-3 d-flex justify-content-between">
-							<b>sheena</b>
-							<span>1분전</span>
-						</div>
-					</div>
-					<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-						<div class="col-9">
-							<span>오늘도 열심히 운동하고 갑니다.</span>
-						</div>
-						<div class="col-3 d-flex justify-content-between">
-							<b>sheena</b>
-							<span>1분전</span>
-						</div>
-					</div>
-					<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-						<div class="col-9">
-							<span>오늘도 열심히 운동하고 갑니다.</span>
-						</div>
-						<div class="col-3 d-flex justify-content-between">
-							<b>sheena</b>
-							<span>1분전</span>
-						</div>
-					</div>
-					<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-						<div class="col-9">
-							<span>오늘도 열심히 운동하고 갑니다.</span>
-						</div>
-						<div class="col-3 d-flex justify-content-between">
-							<b>sheena</b>
-							<span>1분전</span>
-						</div>
-					</div>
-					<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-						<div class="col-9">
-							<span>오늘도 열심히 운동하고 갑니다.</span>
-						</div>
-						<div class="col-3 d-flex justify-content-between">
-							<b>sheena</b>
-							<span>1분전</span>
-						</div>
-					</div>
+					</a>
+					</c:forEach>
 					
 					
 					

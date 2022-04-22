@@ -24,5 +24,10 @@ public interface PostDAO {
 	
 	
 	// 커뮤니티_게시글 상세페이지 modal창 띄우기
+	// 커뮤니티 모든 사용자의 해당 게시글 디테일뷰 가져오기(도 같이 사용)
 	public PostModel selectId(@Param("id") int id);
+	
+	
+	// community_메인 화면 모든 사용자의 게시글 가져오기
+	public List<PostModel> selectPostFullList();
 }

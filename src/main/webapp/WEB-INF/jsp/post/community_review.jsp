@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,7 @@
 		
 		<div class="communityReview mt-5 mb-5">
 			<div class="d-flex col-8">
-				<h4>글쓴이 title</h4>
+				<h4>${postFull.subject }</h4>
 			</div>
 			
 			<div class="d-flex col-8 mt-3">
@@ -32,17 +33,17 @@
 					<img class="profile" src="https://i.pinimg.com/originals/e3/cb/8e/e3cb8eeb33d7d8f7a5ac65a08bc255ed.jpg">
 				</div>
 				<div class="ml-3">
-					<span>pro</span>
+					<span>${userNickname }</span>
 				</div>
 				<div class="ml-4">
-					<small>2022-04-13</small>
+					<small><fmt:formatDate value="${postFull.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></small>
 				</div>
 			</div>
 			<hr>
 			
 			<!-- 글쓴이 내용 -->
 			<div class="favoritesContent bg-warning">
-			
+				<h5>${postFull.content }</h5>
 			</div>
 			
 			<!-- 글쓴이 내용 좋아요, 댓글수 -->
