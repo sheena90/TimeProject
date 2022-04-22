@@ -86,5 +86,17 @@
 			`post`
 		ORDER BY `id` DESC
 	</select>
+	
+	
+	<!-- 커뮤니티_게시글 수정 -->
+	<update id="communityUpdatePost" parameterType="map">
+		UPDATE `post`
+		SET
+			`subject` = #{subject}
+			, `content` = #{content}
+			, `updatedAt` = now()
+		WHERE
+			`id` = #{postId}
+	</update>
 
 </mapper>

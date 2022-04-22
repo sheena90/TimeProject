@@ -60,4 +60,26 @@ public class PostRestController {
 		return postBO.postId(id);
 	}
 	
+	
+	// 커뮤니티_게시글 수정
+	@PostMapping("/community/update")
+	public Map<String, String> communityUpdate(
+			@RequestParam("postId") int postId,
+			@RequestParam("subject") String subject,
+			@RequestParam("content") String content) {
+		
+		int count = postBO.communityUpdatePost(postId, subject, content);
+		
+		Map<String, String>result = new HashMap<>();
+		
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+		
+		return result;
+		
+	}
+	
 }

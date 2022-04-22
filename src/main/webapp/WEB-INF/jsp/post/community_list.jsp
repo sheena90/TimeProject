@@ -111,8 +111,8 @@
 								<div class="d-flex justify-content-between mt-3">
 									<a href="/post/community/list_view" class="btn btn-dark">목록으로</a>
 									<div>
-										<button type="button" class="btn btn-danger" id="saveBtn">삭제</button>
-										<button type="button" class="btn btn-dark" id="saveBtn">수정</button>
+										<button type="button" class="btn btn-danger" >삭제</button>
+										<button type="button" class="btn btn-dark" id="saveBtn" data-postUpdate-id="${post.id }">수정</button>
 									</div>
 								</div>
 							</div>
@@ -131,7 +131,6 @@
 			
 			$(".detailBtn").on("click", function() {
 				
-				
 				$.ajax({
 					
 					type:"post",
@@ -144,6 +143,33 @@
 					},
 					error:function() {
 						alert("디테일 에러");
+					}
+				});
+			});
+			
+			
+			// 게시글 수정
+			$("#saveBtn").on("click", function() {
+				let title = $("#titleInput").val(data.subject);
+				let content = $("#contentInput").val(data.content);
+				
+				let postId = $(this).data("postUpdate-id");
+				
+				$.ajax({
+					type="post",
+					url:"/post/community/update",
+					data:{"postId":postId, "subject":title, "content":content},
+					success:function(data) {
+						
+						
+						if(data.result == "success") {
+							location.href="/post/community/list_view";
+						} else {
+							alert("게시글 수정 실패");
+						}
+					},
+					error:function() {
+						alert("게시글 수정 에러");
 					}
 				});
 			});

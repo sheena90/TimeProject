@@ -30,4 +30,12 @@ public interface PostDAO {
 	
 	// community_메인 화면 모든 사용자의 게시글 가져오기
 	public List<PostModel> selectPostFullList();
+	
+	
+	// 커뮤니티_게시글 수정
+	public int communityUpdatePost(
+			@Param("postId") int postId,
+			@Param("subject") String subject,
+			@Param("content") String content);
+	
 }

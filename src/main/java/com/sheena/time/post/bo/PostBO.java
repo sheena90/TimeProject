@@ -46,6 +46,11 @@ public class PostBO {
 	}
 	
 	
+	
+	// 커뮤니티_게시글 수정
+	public int communityUpdatePost(int postId, String subject, String content) {
+		return postDAO.communityUpdatePost(postId, subject, content);
+	}
 
 	
 }
