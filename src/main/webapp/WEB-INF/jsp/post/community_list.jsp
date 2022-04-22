@@ -42,9 +42,9 @@
 					</thead>
 					<tbody>
 						
-						<c:forEach var="post" items="${postList }" varStatus="status">
+						<c:forEach var="post" items="${postList }">
 							<tr>
-								<td>${status.count }</td>
+								<td>${post.id }</td>
 								<td><a href="#" data-toggle="modal" data-target="#createModal" class="detailBtn" data-post-id="${post.id }">${post.subject }</a></td>
 								<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 								<td>0</td>
