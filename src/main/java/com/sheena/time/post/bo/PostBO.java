@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sheena.time.common.Dateutil;
 import com.sheena.time.common.FileManagerService;
 import com.sheena.time.post.dao.PostDAO;
 import com.sheena.time.post.model.CommunityModel;
@@ -56,7 +57,7 @@ public class PostBO {
 			communityModel.setId(postModel.getId());
 			communityModel.setSubject(postModel.getSubject());
 			communityModel.setUserNickname(postModel.getUserNickname());
-			communityModel.setTime("time");
+			communityModel.setTime(Dateutil.calculateTime(postModel.getCreatedAt()));
 			
 			communityModelList.add(communityModel);
 		}

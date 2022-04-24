@@ -72,7 +72,7 @@
 							</div>
 							<div class="col-4 d-flex justify-content-between">
 								<b>${postFull.userNickname }</b>
-								<span><fmt:formatDate value="${postFull.createdAt }" pattern="yyyy-MM-dd" />전</span>
+								<span>${postFull.time }</span>
 							</div>
 							
 						</div>
