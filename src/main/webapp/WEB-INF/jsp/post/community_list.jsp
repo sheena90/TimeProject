@@ -26,7 +26,7 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<section class="communityListSection">
-			
+			<div class="communityListImage"></div>
 			<div class="communityList">
 			<div class="communityListTable w-75">
 				<h4 class="text-center pt-4 pb-4">My 게시글</h4>
@@ -107,12 +107,12 @@
 								<textarea rows="10" cols="1000" class="form-control mt-3" placeholder="내용을 입력해주세요" id="contentInput"></textarea>
 							</div>
 							<div class="ml-3 mr-3">
-								<input type="file" class="mt-3" id="fileInput">
+								<!--  <input type="file" class="mt-3" id="fileInput">-->
 								<div class="d-flex justify-content-between mt-3">
 									<a href="/post/community/list_view" class="btn btn-dark">목록으로</a>
 									<div>
 										<button type="button" class="btn btn-danger" >삭제</button>
-										<button type="button" class="btn btn-dark" id="editBtn" data-postUpdate-id="${post.id }">수정</button>
+										<button type="button" class="btn btn-dark" id="editBtn" data-post-id="${post.id }">수정</button>
 									</div>
 								</div>
 							</div>
@@ -153,9 +153,9 @@
 				
 			
 				let title = $("#titleInput").val();
-				let content = $("#contentInput").val();
+				let content = $("#contentI nput").val();
 				
-				let postId = $(this).data("postUpdate-id");
+				let postId = $(this).data("post-id");
 				
 				$.ajax({
 					type:"post",

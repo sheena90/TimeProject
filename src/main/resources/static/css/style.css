@@ -19,6 +19,7 @@ a:hover { text-decoration:none !important; }
 
 .header {
 	background-color: #202023;
+	width:1600px;
 	
 }
 
@@ -28,14 +29,15 @@ a:hover { text-decoration:none !important; }
 
 .promotion {
 	width:1600px;
-	margin:auto;
 	position:relative;
+	
 }
 
 .promotionImg {
 	height:500px;
 	vertical-align:middle;
 	background: url(https://img.zcool.cn/community/01dbd95c3558d3a8012090db52757b.jpg?x-oss-process=image/auto-orient,1/resize,m_lfit,w_1280,limit_1/sharpen,100/format,webp/quality,Q_100) fixed;
+
 }
 
 .promotionText {
@@ -49,6 +51,7 @@ a:hover { text-decoration:none !important; }
 	transform: translate(-50%, -50%);
 	font-family:'ypseo';
 	text-align:center;
+	
 }
 
 footer {
@@ -60,6 +63,7 @@ footer {
 	height:700px;
 	margin:auto;
 	border:1px solid #dddddd;
+
 }
 
 
@@ -297,16 +301,19 @@ hr {
 	border-radius: 5px;
 }
 
-.communityListSection {
-	height: 700px;
+
+
+.communityListImage {
+	height: 500px;
 	background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2Fe%2F59c1fd58a9d75.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652469867&t=ab783389c45e6c9d35c7d193b93a437a) fixed;
 }
 
 .communityList {
 	background-color:#dddddd;
-	position:absolute;
+
 	top:42.8%;
 	width:1600px;
+	
   
 }
 
@@ -540,5 +547,12 @@ hr {
 	-webkit-appearance: none; /* 네이티브 외형 감추기 */ 
 	-moz-appearance: none; 
 	appearance: none;
+}
+
+
+/*관리자 페이지*/
+/*지식정보*/
+.managerHeader {
+	background-color: #202023;
 }
   
