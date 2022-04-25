@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,13 @@
 							</div>
 							<div class="ml-3">
 								<b>${managerPost.subject }</b>
-								<p>미국 일간 워싱턴포스트지가 아처를 비롯해 전문가들의 견해를 토대로 잘못된 헬스 상식 6가지를 소개했다.</p>
+								
+								<p>
+									${fn:substring(managerPost.content, 0, 120) }
+									<c:if test="${fn:length(managerPost.content) > 120 }">
+									...
+									</c:if>
+								</p>
 							</div>
 						</div>
 						</c:forEach>
