@@ -85,7 +85,7 @@
 		
 		<section class="d-flex justify-content-center">
 			<div class="w-75 my-5">
-				<h1 class="text-center">지식정보 리스트</h1>
+				<h1 class="text-center">지식정보 관리 리스트</h1>
 				
 				<table class="table text-center mt-3">
 					<thead>

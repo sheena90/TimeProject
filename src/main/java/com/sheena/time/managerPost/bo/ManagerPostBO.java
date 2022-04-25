@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.sheena.time.common.FileManagerService;
-import com.sheena.time.manager.dao.ManagerDAO;
 import com.sheena.time.managerPost.dao.ManagerPostDAO;
 import com.sheena.time.managerPost.model.ManagerPostModel;
 
