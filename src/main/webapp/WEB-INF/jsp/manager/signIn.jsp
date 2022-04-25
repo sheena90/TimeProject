@@ -87,7 +87,7 @@
 			<div class="signUpHeader d-flex align-items-center justify-content-center">
 				<h3 class="col-2 text-white text-center">관리자</h3>
 				<h3 class="text-center text-white"> | </h3>
-				<h3 class="col-2 text-white text-center">Sign Up</h3>
+				<h3 class="col-2 text-white text-center">Login</h3>
 			</div>
 			
 			<form id="loginForm">
