@@ -76,8 +76,102 @@
 				</div>
 			
 				<div class=" col-9">
-					<!-- 지식정보 -->
-					<div class="communityMainContentBox mt-4 bg-info">
+					<!-- 영상 콘텐츠 -->
+					<div class="communityMainContentBox mt-4 d-flex flex-wrap">
+						<div class="content m-4">
+	                        <div class="thumnail">
+	                            <img width="240" alt="가슴_썸네일" src="/static/image/man_Thumbnail_1.jpg">
+	                        </div>
+	                        <div class="title mt-2">
+	                        	<small>[10mins] 10분 만에 가슴 작살내는 루틴</small>
+	                        </div>
+	                    	<hr>
+	                    	<div class="d-flex justify-content-end align-items-center mr-2">
+	                    		<div class="mr-3">
+	                    			<i class="bi bi-suit-heart"></i>
+	                    			100
+	                    		</div>
+	                    		<div>
+	                    			<i class="bi bi-star"></i>
+	                    		</div>
+	                    	</div>
+	                    </div>
+	                    
+	                    <div class="content m-4">
+	                        <div class="thumnail">
+	                            <img width="240" alt="가슴_썸네일" src="/static/image/man_Thumbnail_1.jpg">
+	                        </div>
+	                        <div class="title mt-2">
+	                        	<small>[10mins] 10분 만에 가슴 작살내는 루틴</small>
+	                        </div>
+	                    	<hr>
+	                    	<div class="d-flex justify-content-end align-items-center mr-2">
+	                    		<div class="mr-3">
+	                    			<i class="bi bi-suit-heart"></i>
+	                    			100
+	                    		</div>
+	                    		<div>
+	                    			<i class="bi bi-star"></i>
+	                    		</div>
+	                    	</div>
+	                    </div>
+	                    
+	                    <div class="content m-4">
+	                        <div class="thumnail">
+	                            <img width="240" alt="가슴_썸네일" src="/static/image/man_Thumbnail_1.jpg">
+	                        </div>
+	                        <div class="title mt-2">
+	                        	<small>[10mins] 10분 만에 가슴 작살내는 루틴</small>
+	                        </div>
+	                    	<hr>
+	                    	<div class="d-flex justify-content-end align-items-center mr-2">
+	                    		<div class="mr-3">
+	                    			<i class="bi bi-suit-heart"></i>
+	                    			100
+	                    		</div>
+	                    		<div>
+	                    			<i class="bi bi-star"></i>
+	                    		</div>
+	                    	</div>
+	                    </div>
+	                    
+	                    <div class="content m-4">
+	                        <div class="thumnail">
+	                            <img width="240" alt="가슴_썸네일" src="/static/image/man_Thumbnail_1.jpg">
+	                        </div>
+	                        <div class="title mt-2">
+	                        	<small>[10mins] 10분 만에 가슴 작살내는 루틴</small>
+	                        </div>
+	                    	<hr>
+	                    	<div class="d-flex justify-content-end align-items-center mr-2">
+	                    		<div class="mr-3">
+	                    			<i class="bi bi-suit-heart"></i>
+	                    			100
+	                    		</div>
+	                    		<div>
+	                    			<i class="bi bi-star"></i>
+	                    		</div>
+	                    	</div>
+	                    </div>
+	                    
+	                    <div class="content m-4">
+	                        <div class="thumnail">
+	                            <img width="240" alt="가슴_썸네일" src="/static/image/man_Thumbnail_1.jpg">
+	                        </div>
+	                        <div class="title mt-2">
+	                        	<small>[10mins] 10분 만에 가슴 작살내는 루틴</small>
+	                        </div>
+	                    	<hr>
+	                    	<div class="d-flex justify-content-end align-items-center mr-2">
+	                    		<div class="mr-3">
+	                    			<i class="bi bi-suit-heart"></i>
+	                    			100
+	                    		</div>
+	                    		<div>
+	                    			<i class="bi bi-star"></i>
+	                    		</div>
+	                    	</div>
+	                    </div>
 						
 						
 					</div>
