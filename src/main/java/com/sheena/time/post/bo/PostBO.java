@@ -9,6 +9,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sheena.time.common.Dateutil;
 import com.sheena.time.common.FileManagerService;
+import com.sheena.time.managerPost.dao.ManagerPostDAO;
+import com.sheena.time.managerPost.model.ManagerPostModel;
 import com.sheena.time.post.dao.PostDAO;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
@@ -18,6 +20,9 @@ public class PostBO {
 
 	@Autowired
 	private PostDAO postDAO;
+	
+	@Autowired
+	private ManagerPostDAO managerPostDAO;
 	
 	// 커뮤니티_글쓰기
 	public int addPost(int userId, String userNickname, String subject, String content, MultipartFile file) {
@@ -72,6 +77,13 @@ public class PostBO {
 	// 커뮤니티_게시글 수정
 	public int communityUpdatePost(int postId, String subject, String content) {
 		return postDAO.communityUpdatePost(postId, subject, content);
+	}
+	
+	
+	
+	// 지식정보 리스트
+	public List<ManagerPostModel> getManagerPostList(int managerId) {
+		return managerPostDAO.selectManagerPostList(managerId);
 	}
 
 	

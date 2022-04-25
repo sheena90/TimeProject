@@ -98,5 +98,24 @@
 		WHERE
 			`id` = #{postId}
 	</update>
+	
+	
+	<!-- 지식정보 리스 -->
+	<select id="selectManagerPostList" parameterType="int" resultType="com.sheena.time.managerPost.model.ManagerPostModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`managerPost`
+		WHERE
+			`managerId` = #{managerId}
+		ORDER BY `id` DESC
+	
+	</select>
 
 </mapper>

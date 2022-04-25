@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.sheena.time.managerPost.model.ManagerPostModel;
 import com.sheena.time.post.model.PostModel;
 
 @Repository
@@ -37,5 +38,10 @@ public interface PostDAO {
 			@Param("postId") int postId,
 			@Param("subject") String subject,
 			@Param("content") String content);
+	
+	
+	// 지식정보 리스트
+	public List<ManagerPostModel> selectManagerPostList(@Param("managerId") int managerId);
+	
 	
 }

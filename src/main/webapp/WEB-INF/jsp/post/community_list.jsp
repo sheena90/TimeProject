@@ -112,7 +112,7 @@
 									<a href="/post/community/list_view" class="btn btn-dark">목록으로</a>
 									<div>
 										<button type="button" class="btn btn-danger" >삭제</button>
-										<button type="button" class="btn btn-dark" id="editBtn" data-post-id="${post.id }">수정</button>
+										<button type="button" class="btn btn-dark" id="editBtn">수정</button>
 									</div>
 								</div>
 							</div>
@@ -131,11 +131,14 @@
 			
 			$(".detailBtn").on("click", function() {
 				
+				let postId = $(this).data("post-id");
+				$("#editBtn").data("post-id", postId);
+				
 				$.ajax({
 					
 					type:"post",
 					url:"/post/community/detail",
-					data:{"id":$(this).data("post-id")},
+					data:{"id":postId},
 					success:function(data) {
 						
 						$("#titleInput").val(data.subject);
@@ -151,11 +154,10 @@
 			// 게시글 수정
 			$("#editBtn").on("click", function() {
 				
-			
-				let title = $("#titleInput").val();
-				let content = $("#contentI nput").val();
-				
 				let postId = $(this).data("post-id");
+				let title = $("#titleInput").val();
+				let content = $("#contentInput").val();
+				
 				
 				$.ajax({
 					type:"post",

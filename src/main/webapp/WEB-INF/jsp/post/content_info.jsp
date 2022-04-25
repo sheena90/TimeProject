@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,51 +30,18 @@
 				
 					<!-- 지식정보 -->
 					<div class="communityMainContentBox mt-4">
+						<c:forEach var="managerPost" items="${managerPostList }">
 						<div class="d-flex contentInfo mt-4">
 							<div>
-								<img width="150" height="100" alt="지식정보" src="/static/image/지식정보_1.jpg">
+								<img width="150" height="100" alt="지식정보" src="${managerPost.imagePath}">
 							</div>
 							<div class="ml-3">
-								<b>잘못 알고 있는 헬스 상식 6가지</b>
+								<b>${managerPost.subject }</b>
 								<p>미국 일간 워싱턴포스트지가 아처를 비롯해 전문가들의 견해를 토대로 잘못된 헬스 상식 6가지를 소개했다.</p>
 							</div>
 						</div>
-						<div class="d-flex contentInfo mt-4">
-							<div>
-								<img width="150" height="100" alt="지식정보" src="/static/image/지식정보_1.jpg">
-							</div>
-							<div class="ml-3">
-								<b>잘못 알고 있는 헬스 상식 6가지</b>
-								<p>미국 일간 워싱턴포스트지가 아처를 비롯해 전문가들의 견해를 토대로 잘못된 헬스 상식 6가지를 소개했다.</p>
-							</div>
-						</div>
-						<div class="d-flex contentInfo mt-4">
-							<div>
-								<img width="150" height="100" alt="지식정보" src="/static/image/지식정보_1.jpg">
-							</div>
-							<div class="ml-3">
-								<b>잘못 알고 있는 헬스 상식 6가지</b>
-								<p>미국 일간 워싱턴포스트지가 아처를 비롯해 전문가들의 견해를 토대로 잘못된 헬스 상식 6가지를 소개했다.</p>
-							</div>
-						</div>
-						<div class="d-flex contentInfo mt-4">
-							<div>
-								<img width="150" height="100" alt="지식정보" src="/static/image/지식정보_1.jpg">
-							</div>
-							<div class="ml-3">
-								<b>잘못 알고 있는 헬스 상식 6가지</b>
-								<p>미국 일간 워싱턴포스트지가 아처를 비롯해 전문가들의 견해를 토대로 잘못된 헬스 상식 6가지를 소개했다.</p>
-							</div>
-						</div>
-						<div class="d-flex contentInfo mt-4">
-							<div>
-								<img width="150" height="100" alt="지식정보" src="/static/image/지식정보_1.jpg">
-							</div>
-							<div class="ml-3">
-								<b>잘못 알고 있는 헬스 상식 6가지</b>
-								<p>미국 일간 워싱턴포스트지가 아처를 비롯해 전문가들의 견해를 토대로 잘못된 헬스 상식 6가지를 소개했다.</p>
-							</div>
-						</div>
+						</c:forEach>
+						
 					</div>
 					
 					<div class="page">

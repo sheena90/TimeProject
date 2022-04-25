@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sheena.time.managerPost.bo.ManagerPostBO;
+import com.sheena.time.managerPost.model.ManagerPostModel;
 import com.sheena.time.post.bo.PostBO;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
@@ -22,6 +24,9 @@ public class PostController {
 	
 	@Autowired
 	private PostBO postBO;
+	
+	@Autowired
+	private ManagerPostBO managerPostBO;
 	
 	@GetMapping("/main_view")
 	public String mainView() {
@@ -37,7 +42,15 @@ public class PostController {
 	
 	
 	@GetMapping("/content/info_view")
-	public String contentInfoView() {
+	public String contentInfoView(HttpServletRequest request, Model model ) {
+		
+		HttpSession session = request.getSession();
+		int managerId = (Integer)session.getAttribute("managerId");
+		
+		List<ManagerPostModel> managerPostList = managerPostBO.getManagerPostList(managerId);
+		
+		model.addAttribute("managerPostList", managerPostList);
+		
 		return "post/content_info";
 	}
 	
