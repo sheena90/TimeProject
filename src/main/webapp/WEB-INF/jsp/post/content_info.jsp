@@ -108,84 +108,24 @@
 							<div class="sidebar">
 								<div class="d-flex col-10 justify-content-between mt-4">
 									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
+										<small>헬스 상식</small>
 									</div>
 									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
+										<small>건강한 운동</small>
 									</div>
 								</div>
 								
 								<div class="d-flex col-10 justify-content-between mt-5">
 									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
+										<small>음식</small>
 									</div>
 									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
+										<small>운동량</small>
 									</div>
 								</div>
 								
-								<div class="d-flex col-10 justify-content-between mt-5">
-									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
-									</div>
-									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
-									</div>
-								</div>
+								 
 								
-								<div class="d-flex col-10 justify-content-between mt-5">
-									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
-									</div>
-									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
-									</div>
-								</div>
-								
-								<div class="d-flex col-10 justify-content-between mt-5">
-									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
-									</div>
-									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
-									</div>
-								</div>
-								
-								<div class="d-flex col-10 justify-content-between mt-5">
-									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
-									</div>
-									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
-									</div>
-								</div>
-								
-								<div class="d-flex col-10 justify-content-between mt-5">
-									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
-									</div>
-									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
-									</div>
-								</div>
-								
-								<div class="d-flex col-10 justify-content-between mt-5">
-									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
-									</div>
-									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
-									</div>
-								</div>
-								
-								<div class="d-flex col-10 justify-content-between mt-5">
-									<div class="reviewLike text-center">
-										<small>대근육이란?</small>
-									</div>
-									<div class="reviewLike text-center">
-										<small>소근육이란?</small>
-									</div>
-								</div>
 							</div>
 						</div>
 					</div>
