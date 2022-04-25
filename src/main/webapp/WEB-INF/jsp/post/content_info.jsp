@@ -33,19 +33,23 @@
 					<div class="communityMainContentBox mt-4">
 						<c:forEach var="managerPost" items="${managerPostList }">
 						<div class="d-flex contentInfo mt-4">
-							<div>
-								<img width="150" height="100" alt="지식정보" src="${managerPost.imagePath}">
-							</div>
-							<div class="ml-3">
-								<b>${managerPost.subject }</b>
-								
-								<p>
-									${fn:substring(managerPost.content, 0, 120) }
-									<c:if test="${fn:length(managerPost.content) > 120 }">
-									...
-									</c:if>
-								</p>
-							</div>
+							
+								<div>
+									<img width="150" height="100" alt="지식정보" src="${managerPost.imagePath}">
+								</div>
+								<div class="ml-3">
+									<a href="/post/content/info/detail_view?id=${managerPost.id }">
+										<b class="text-dark">${managerPost.subject }</b>
+										<br>
+										<small class="text-dark">
+											${fn:substring(managerPost.content, 0, 120) }
+											<c:if test="${fn:length(managerPost.content) > 120 }">
+											...
+											</c:if>
+										</small>
+									</a>
+								</div>
+							
 						</div>
 						</c:forEach>
 						

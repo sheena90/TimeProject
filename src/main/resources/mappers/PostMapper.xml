@@ -100,7 +100,7 @@
 	</update>
 	
 	
-	<!-- 지식정보 리스 -->
+	<!-- 지식정보 리스트 -->
 	<select id="selectManagerPostList" parameterType="int" resultType="com.sheena.time.managerPost.model.ManagerPostModel">
 		SELECT
 			`id`
@@ -115,6 +115,24 @@
 		WHERE
 			`managerId` = #{managerId}
 		ORDER BY `id` DESC
+	
+	</select>
+	
+	
+	<!--지식정보 해당 디테일뷰 가져오기 -->
+	<select id="selectManagerPost" parameterType="int" resultType="com.sheena.time.managerPost.model.ManagerPostModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`managerPost`
+		WHERE
+			`id` = #{id}
 	
 	</select>
 
