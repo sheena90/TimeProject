@@ -112,8 +112,6 @@
 			, `updatedAt`
 		FROM
 			`managerPost`
-		WHERE
-			`managerId` = #{managerId}
 		ORDER BY `id` DESC
 	
 	</select>

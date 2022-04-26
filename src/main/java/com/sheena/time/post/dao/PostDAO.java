@@ -41,7 +41,7 @@ public interface PostDAO {
 	
 	
 	// 지식정보 리스트
-	public List<ManagerPostModel> selectManagerPostList(@Param("managerId") int managerId);
+	public List<ManagerPostModel> selectManagerPostList(@Param("manageId") int managerId);
 	
 	
 	// 지식정보 해당 디테일뷰 가져오기

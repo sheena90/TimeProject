@@ -39,7 +39,7 @@ public class PostController {
 	
 	
 	@GetMapping("/content/info_view")
-	public String contentInfoView(HttpServletRequest request, Model model ) {
+	public String contentInfoView(HttpServletRequest request, Model model) {
 		
 		HttpSession session = request.getSession();
 		int managerId = (Integer)session.getAttribute("managerId");
