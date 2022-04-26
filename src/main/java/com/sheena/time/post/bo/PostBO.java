@@ -77,7 +77,6 @@ public class PostBO {
 	}
 	
 	
-	
 	// 지식정보 리스트
 	public List<ManagerPostModel> getManagerPostList(int managerId) {
 		return postDAO.selectManagerPostList(managerId);
@@ -89,5 +88,6 @@ public class PostBO {
 		return postDAO.selectManagerPost(id);
 	}
 
+	
 	
 }
