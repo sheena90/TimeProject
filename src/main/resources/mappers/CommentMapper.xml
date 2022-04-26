@@ -25,5 +25,24 @@
 			, now()
 		)
 	</insert>
+	
+	
+	<!-- 댓글 보여주기 -->
+	<select id="selectCommentList" parameterType="int" resultType="com.sheena.time.post.comment.model.CommentModel">
+		SELECT
+			`id`
+			, `postId`
+			, `userId`
+			, `userNickname`
+			, `content`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`comment`
+		WHERE
+			`postId` = #{postId}
+	
+	
+	</select>
 
 </mapper>

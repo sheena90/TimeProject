@@ -20,6 +20,9 @@ public class PostBO {
 	@Autowired
 	private PostDAO postDAO;
 	
+	//@Autowired
+	//private CommentBO commentBO;
+	
 
 	// 커뮤니티_글쓰기
 	public int addPost(int userId, String userNickname, String subject, String content, MultipartFile file) {
@@ -41,6 +44,10 @@ public class PostBO {
 	// 커뮤니티_게시글 상세페이지 modal창 띄우기
 	// 커뮤니티 모든 사용자의 해당 게시글 디테일뷰 가져오기(도 같이 사용)
 	public PostModel postId(int id) {
+		
+		// 댓글 보여주기
+		
+		
 		return postDAO.selectId(id);
 	}
 	
