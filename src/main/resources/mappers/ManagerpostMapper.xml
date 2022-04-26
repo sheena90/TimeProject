@@ -61,5 +61,37 @@
 		WHERE
 			`id` = #{id}
 	</select>
+	
+	
+	<!-- 운동영상 업로드 -->
+	<insert id="insertManagerPostVideo" parameterType="map">
+		INSERT INTO `video`
+		(
+			`managerId`
+			, `userGender`
+			, `body`
+			, `type`
+			, `title`
+			, `thumbnail`
+			, `link`
+			, `timeline`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUE
+		(
+			#{managerId}
+			, #{userGender}
+			, #{body}
+			, #{type}
+			, #{title}
+			, #{thumbnail}
+			, #{link}
+			, #{timeline}
+			, now()
+			, now()
+		)
+	
+	</insert>
 
 </mapper>

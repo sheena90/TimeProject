@@ -52,4 +52,18 @@ public class ManagerPostController {
 		
 		return "managerPost/content_info_edit";
 	}
+	
+	
+	// 운동영상 리스트
+	@GetMapping("/content/video_view")
+	public String contentVideoView() {
+		return "managerPost/content_video";
+	}
+	
+	@GetMapping("/content/video/create_view")
+	public String contentVideoCreateView() {
+		return "managerPost/content_video_create";
+	}
+	
+	
 }

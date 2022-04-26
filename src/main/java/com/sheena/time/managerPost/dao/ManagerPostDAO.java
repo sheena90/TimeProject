@@ -1,5 +1,6 @@
 package com.sheena.time.managerPost.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
@@ -22,5 +23,17 @@ public interface ManagerPostDAO {
 
 	// 지식정보 수정페이지
 	public ManagerPostModel selectManagerPost(@Param("id") int id);
+	
+	
+	// 운동영상 업로드
+	public int insertManagerPostVideo(
+			@Param("managerId") int managerId,
+			@Param("userGender") String userGender,
+			@Param("body") String body,
+			@Param("type") String type,
+			@Param("title") String title,
+			@Param("thumbnail")String thumbnail,
+			@Param("link") String link,
+			@Param("timeline") Date timeline);
 
 }

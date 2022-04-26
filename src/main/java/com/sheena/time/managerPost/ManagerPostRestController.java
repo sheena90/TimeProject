@@ -1,5 +1,6 @@
 package com.sheena.time.managerPost;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,6 +43,37 @@ public class ManagerPostRestController {
 		} else {
 			result.put("result", "fail");
 		}
+		return result;
+	}
+	
+	
+	// 운동영상
+	@PostMapping("/content/video/create")
+	public Map<String, String> videoCreate(
+			@RequestParam("body") String body,
+			@RequestParam("type") String type,
+			@RequestParam("title") String title,
+			@RequestParam("link") String link,
+			@RequestParam("thumbnail") MultipartFile file,
+			@RequestParam(value="timeline", required=false) Date timeline,
+			HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		
+		int managerId = (Integer)session.getAttribute("managerId");
+		String userGender = (String)session.getAttribute("userGender");
+		
+		
+		int count = managerPostBO.addManagerPostVideo(managerId, userGender, body, type, title, file, link, timeline);
+		
+		Map<String, String> result = new HashMap<>();
+		
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+		
 		return result;
 	}
 }
