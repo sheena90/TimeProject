@@ -94,7 +94,7 @@
 					<input type="text" class="form-control mt-3" placeholder="동영상 링크를 입력해주세요" id="linkInput"><br>
 				</div>
 				<div class="ml-3 mr-3">
-					<input type="file" class="mt-3" id="fileInput">
+					<input type="file" class="mt-3" id="thumbnailInput">
 					<div class="d-flex justify-content-between mt-3">
 						<a href="/managerPost/content/inpo_view" class="btn btn-secondary">목록으로</a>
 						<button type="button" class="btn btn-danger" id="saveBtn">저장</button>
@@ -114,6 +114,7 @@
 				
 				let title = $("#titleInput").val();
 				let link = $("#linkInput").val().trim(); //trim 메소드: 앞 뒤 공백 제거
+				let thumbnail = $("#thumbnailInput").val();
 				
 				if(title == "") {
 					alert("제목을 입력하세요.");
@@ -125,6 +126,10 @@
 					return;
 				}
 				
+				if(thumbnail == "") {
+					alert("썸네일을 선택해주세요.")
+				}
+				
 				
 				// 파일 호출 추가 옵션
 				var formData = new FormData();
@@ -132,7 +137,7 @@
 				// append 메소드 통해서 값을 추가
 				formData.append("title", title);
 				formData.append("link", link);
-				formData.append("thumbnail", $("#fileInput")[0].files[0]);
+				formData.append("thumbnail", $("#thumbnailInput")[0].files[0]);
 				
 				
 				$.ajax({
@@ -146,7 +151,7 @@
 						
 						if(data.result == "success") {
 							alert("동영상 업로드 성공")
-							// location.href="/managerPost/content/info_view";
+							// location.href="/managerPost/content/video_view";
 						} else {
 							alert("동영상 업로드 실패");
 						}
