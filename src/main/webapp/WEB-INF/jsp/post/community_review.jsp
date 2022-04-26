@@ -81,6 +81,8 @@
 				</div>
 			</div>
 			<hr>
+			
+			
 			<div class="mt-5">
 				<div class="d-flex ml-5">
 					<div class="communityReviewProfile">
@@ -104,11 +106,57 @@
 				</div>
 			</div>
 			
+			<div class="mt-5">
+				<textarea rows="5" cols="133" id="comment"></textarea>
+				<div class="d-flex justify-content-end">
+					<button type="button" class="btn btn-danger" id="commentBtn" value="${postFull.id }">등록</button>
+				</div>
+			</div>
+			
 		</div>
 		
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 		
 	</div>
+	
+	
+	<script>
+		$(document).ready(function() {
+			
+			// 댓글
+			$("#commentBtn").on("click", function() {
+				
+				let postId =  
+				let comment = $("#comment").val();
+				
+				if(comment == "") {
+					alert("댓글을 입력하세요.");
+					return;
+				}
+				
+				$.ajax({
+					
+					type:"post",
+					url:"/post/comment/create",
+					data:{"postId":postId, "content":comment}
+					success:function(data) {
+						
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("댓글 쓰기 실패");
+						}
+					},
+					error:function() {
+						alert("댓글 쓰기 에러");
+					}
+					
+				});
+			});
+			
+		});
+	
+	</script>
 
 </body>
 </html>
