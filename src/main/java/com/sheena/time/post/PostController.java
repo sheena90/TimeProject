@@ -26,7 +26,13 @@ public class PostController {
 	
 	
 	@GetMapping("/main_view")
-	public String mainView() {
+	public String mainView(Model model) {
+		
+		// 메인화면_커뮤니티 리스트 가져오기
+		List<CommunityModel> mainCommunityList = postBO.getPostFullList();
+		
+		model.addAttribute("mainCommunityList", mainCommunityList);
+		
 		return "post/mainPage";
 	}
 	

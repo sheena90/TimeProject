@@ -29,6 +29,7 @@ public interface PostDAO {
 	public PostModel selectId(@Param("id") int id);
 	
 	
+	// 메인화면_커뮤니티 리스트 가져오기
 	// community_메인 화면 모든 사용자의 게시글 가져오기
 	public List<PostModel> selectPostFullList();
 	
@@ -50,5 +51,8 @@ public interface PostDAO {
 	
 	// 지식정보 해당 디테일뷰 가져오기
 	public ManagerPostModel selectManagerPost(@Param("id") int id);
+	
+	
+
 	
 }

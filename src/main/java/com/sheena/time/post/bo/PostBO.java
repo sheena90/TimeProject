@@ -49,6 +49,7 @@ public class PostBO {
 	}
 	
 	
+	// 메인화면_커뮤니티 리스트 가져오기
 	// community_메인 화면 모든 사용자의 게시글 가져오기
 	public List<CommunityModel> getPostFullList() {
 		
@@ -103,6 +104,7 @@ public class PostBO {
 		return postDAO.selectManagerPost(id);
 	}
 
+	
 	
 	
 }

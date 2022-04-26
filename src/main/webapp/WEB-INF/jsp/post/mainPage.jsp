@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -140,50 +142,24 @@
 							</div>
 						</div>
 						<div class="mt-3 mb-3">
+							<c:forEach var="mainCommunity" items="${mainCommunityList }" end="8">
+							<a href="/post/community/review_view?id=${mainCommunity.id }" class="text-dark">
 							<div class="d-flex">
 								<div class="col-4">
-									<b>***sk님</b>
+									<b>${mainCommunity.userNickname }</b>
 								</div>
 								<div class="col-5">
-									<p>운동이 되...</p>
+									${fn:substring(mainCommunity.subject, 0, 6) }
+									<c:if test="${fn:length(mainCommunity.subject) > 6 }">
+									...
+									</c:if>
 								</div>
 								<div class="col-3">
-									<p>1분전</p>
+									<p>${mainCommunity.time }</p>
 								</div>
 							</div>
-							<div class="d-flex">
-								<div class="col-4">
-									<b>***sk님</b>
-								</div>
-								<div class="col-5">
-									<p>운동이 되...</p>
-								</div>
-								<div class="col-3">
-									<p>1분전</p>
-								</div>
-							</div>
-							<div class="d-flex">
-								<div class="col-4">
-									<b>***sk님</b>
-								</div>
-								<div class="col-5">
-									<p>운동이 되...</p>
-								</div>
-								<div class="col-3">
-									<p>1분전</p>
-								</div>
-							</div>
-							<div class="d-flex">
-								<div class="col-4">
-									<b>***sk님</b>
-								</div>
-								<div class="col-5">
-									<p>운동이 되...</p>
-								</div>
-								<div class="col-3">
-									<p>1분전</p>
-								</div>
-							</div>
+							</a>
+							</c:forEach>
 						</div>
 					</div>
 				</div>
