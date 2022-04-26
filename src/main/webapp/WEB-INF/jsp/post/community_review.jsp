@@ -59,12 +59,13 @@
 			
 			<!-- 댓글, 댓글 좋아요 -->
 			<div class="mt-5">
+				
 				<div class="d-flex ml-5">
 					<div class="communityReviewProfile">
 						<img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt3UmlPVgosVl9l1b11U4jEtbv3XqNhR1Gkg&usqp=CAU">
 					</div>
 					<div class="ml-3">
-						<span>sheena</span>
+						<span>${userNickname }</span>
 					</div>
 				</div>
 				<div class="ml-5 mt-3">
@@ -109,7 +110,7 @@
 			<div class="mt-5">
 				<textarea rows="5" cols="133" id="comment"></textarea>
 				<div class="d-flex justify-content-end">
-					<button type="button" class="btn btn-danger" id="commentBtn" value="${postFull.id }">등록</button>
+					<button type="button" class="btn btn-danger" id="commentBtn" data-post-id="${postFull.id }">등록</button>
 				</div>
 			</div>
 			
@@ -126,7 +127,7 @@
 			// 댓글
 			$("#commentBtn").on("click", function() {
 				
-				let postId =  
+				let postId = $(this).data("post-id");
 				let comment = $("#comment").val();
 				
 				if(comment == "") {
@@ -138,7 +139,7 @@
 					
 					type:"post",
 					url:"/post/comment/create",
-					data:{"postId":postId, "content":comment}
+					data:{"postId":postId, "content":comment},
 					success:function(data) {
 						
 						if(data.result == "success") {
