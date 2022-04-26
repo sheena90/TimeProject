@@ -100,6 +100,16 @@
 	</update>
 	
 	
+	<!-- 커뮤니티_게시글 삭제 -->
+	<delete id="communityDeletePost" parameterType="int">
+		DELETE FROM `post`
+		WHERE
+			`id` = #{postId}
+			AND `userId` = #{userId}
+	
+	</delete>
+	
+	
 	<!-- 지식정보 리스트 -->
 	<select id="selectManagerPostList" parameterType="int" resultType="com.sheena.time.managerPost.model.ManagerPostModel">
 		SELECT

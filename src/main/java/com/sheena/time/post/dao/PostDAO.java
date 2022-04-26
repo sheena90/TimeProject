@@ -40,6 +40,10 @@ public interface PostDAO {
 			@Param("content") String content);
 	
 	
+	// 커뮤니티_게시글 삭제
+	public int communityDeletePost(@Param("postId") int postId, @Param("userId") int userId);
+	
+	
 	// 지식정보 리스트
 	public List<ManagerPostModel> selectManagerPostList(@Param("manageId") int managerId);
 	

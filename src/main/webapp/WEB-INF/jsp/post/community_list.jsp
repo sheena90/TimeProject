@@ -111,7 +111,7 @@
 								<div class="d-flex justify-content-between mt-3">
 									<a href="/post/community/list_view" class="btn btn-dark">목록으로</a>
 									<div>
-										<button type="button" class="btn btn-danger" >삭제</button>
+										<button type="button" class="btn btn-danger" id="deleteBtn">삭제</button>
 										<button type="button" class="btn btn-dark" id="editBtn">수정</button>
 									</div>
 								</div>
@@ -133,6 +133,7 @@
 				
 				let postId = $(this).data("post-id");
 				$("#editBtn").data("post-id", postId);
+				$("#deleteBtn").data("post-id", postId);
 				
 				$.ajax({
 					
@@ -177,6 +178,27 @@
 					}
 				});
 			}); 
+			
+			
+			$("#deleteBtn").on("click", function() {
+				let postId = $(this).data("post-id");
+				
+				$.ajax({
+					type:"get",
+					url:"/post/community/delete",
+					data:{"postId":postId},
+					success:function(data) {
+						if(data.result == "success") {
+							location.href="/post/community/list_view";
+						} else {
+							alert("게시글 삭제 실패");
+						}
+					},
+					error:function() {
+						alert("게시글 삭제 에러");
+					}
+				});
+			});
 			 
 			
 		});
