@@ -104,16 +104,16 @@
 						<div class="mt-3 mb-3">
 							<c:forEach var="mainContentInfo" items="${mainContentInfoList }">
 								<a href="/post/community/review_view?id=${mainContentInfo.id }" class="text-dark">
-									<div class="d-flex">
+									<div class="d-flex mt-3">
 										<div>
 											<img width="150" height="100" alt="지식정보" src="${mainContentInfo.imagePath }">
 										</div>
 										<div class="ml-3">
-											<b>${mainContentInfo.subject}</b>
+											<small class="font-weight-bold">${mainContentInfo.subject}</small>
 											<p>
 												<small>
-													${fn:substring(mainContentInfo.content, 0, 100) }
-													<c:if test="${fn:length(mainContentInfo.content) > 100 }">
+													${fn:substring(mainContentInfo.content, 0, 50) }
+													<c:if test="${fn:length(mainContentInfo.content) > 50 }">
 													...
 													</c:if>
 												</small>
