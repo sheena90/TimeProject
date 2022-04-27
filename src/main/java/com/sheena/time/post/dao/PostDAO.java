@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.sheena.time.managerPost.model.ManagerPostModel;
+import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.model.PostModel;
 
 @Repository
@@ -49,6 +50,11 @@ public interface PostDAO {
 	
 	// 커뮤니티_게시글 삭제
 	public int communityDeletePost(@Param("postId") int postId, @Param("userId") int userId);
+	
+	
+	
+	// 운동영상 리스트
+	public List<VideoModel> selectManagerPostVideoList();
 	
 	
 	

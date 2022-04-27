@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.sheena.time.common.Dateutil;
 import com.sheena.time.common.FileManagerService;
 import com.sheena.time.managerPost.model.ManagerPostModel;
+import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.dao.PostDAO;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
@@ -47,6 +48,7 @@ public class PostBO {
 		
 		return postDAO.selectId(id);
 	}
+	
 	
 	
 	
@@ -116,6 +118,12 @@ public class PostBO {
 		FileManagerService.removeFile(postModel.getImagePath());
 		
 		return postDAO.communityDeletePost(postId, userId);
+	}
+	
+	
+	// 운동영상 리스트
+	public List<VideoModel> getManagerPostVideoList() {
+		return postDAO.selectManagerPostVideoList();
 	}
 	
 	

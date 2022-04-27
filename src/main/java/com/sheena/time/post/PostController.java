@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sheena.time.managerPost.model.ManagerPostModel;
+import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.bo.PostBO;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
@@ -46,14 +47,20 @@ public class PostController {
 	
 	
 	// content_영상, 지식정보
+	// 운동영상 리스트
 	@GetMapping("/content/video_view")
-	public String contentVideoView() {
+	public String contentVideoView(Model model) {
+		
+		List<VideoModel> managerPostVideoList = postBO.getManagerPostVideoList();
+		
+		model.addAttribute("managerPostVideoList", managerPostVideoList);
+		
 		return "post/content_video";
 	}
 	
 	
 	
-	
+	// 지식정보 리스트
 	@GetMapping("/content/info_view")
 	public String contentInfoView(Model model) {
 		
