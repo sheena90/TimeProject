@@ -9,7 +9,7 @@
 						<a class="text-white" href="/post/notice_view">공지사항</a>
 					</div>
 					<div class="col-2">
-						<a class="text-white" href="/user/myQuestion_view">Q&A</a>
+						<a class="text-white" href="/post/question_view">Q&A</a>
 					</div>
 				</div>
 				<div class="text-center text-secondary p-4">

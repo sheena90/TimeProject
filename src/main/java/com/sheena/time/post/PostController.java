@@ -146,4 +146,11 @@ public class PostController {
 	}
 	
 	
+	// 메인화면 Q&A
+	@GetMapping("/question_view")
+	public String questionView() {
+		return "post/question";
+	}
+	
+	
 }

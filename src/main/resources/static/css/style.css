@@ -602,6 +602,11 @@ hr {
 }
 
 
+.questionInput{
+	margin:auto;
+}
+
+
 /*관리자 페이지*/
 /*지식정보*/
 .managerHeader {
