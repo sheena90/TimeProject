@@ -111,6 +111,8 @@
 	</delete>
 	
 	
+	
+	<!-- 메인화면_지식정보 리스트 가져오기 -->
 	<!-- 지식정보 리스트 -->
 	<select id="selectManagerPostList" parameterType="int" resultType="com.sheena.time.managerPost.model.ManagerPostModel">
 		SELECT

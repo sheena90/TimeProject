@@ -33,6 +33,12 @@ public class PostController {
 		
 		model.addAttribute("mainCommunityList", mainCommunityList);
 		
+		// 메인화면_지식정보 리스트 가져오기
+		List<ManagerPostModel> mainContentInfoList = postBO.getManagerPostList();
+		
+		model.addAttribute("mainContentInfoList", mainContentInfoList);
+		
+		
 		return "post/mainPage";
 	}
 	

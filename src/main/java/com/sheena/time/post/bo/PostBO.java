@@ -93,6 +93,7 @@ public class PostBO {
 	}
 	
 	
+	// 메인화면_지식정보 리스트 가져오기
 	// 지식정보 리스트
 	public List<ManagerPostModel> getManagerPostList(int managerId) {
 		return postDAO.selectManagerPostList(managerId);

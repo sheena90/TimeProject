@@ -45,6 +45,7 @@ public interface PostDAO {
 	public int communityDeletePost(@Param("postId") int postId, @Param("userId") int userId);
 	
 	
+	// 메인화면_지식정보 리스트 가져오기
 	// 지식정보 리스트
 	public List<ManagerPostModel> selectManagerPostList(@Param("manageId") int managerId);
 	
