@@ -102,33 +102,27 @@
 							</div>
 						</div>
 						<div class="mt-3 mb-3">
-							<div class="d-flex">
-								<div>
-									<img width="150" height="100" alt="지식정보" src="/static/image/지식정보_1.jpg">
-								</div>
-								<div class="ml-3">
-									<b>잘못 알고 있는 헬스 상식 6가지</b>
-									<p>미국 일간 워싱턴포스트지가 아처를 비롯해 전문가들의 견해를 토대로 잘못된 헬스 상식 6가지를 소개했다.</p>
-								</div>
-							</div>
-							<div class="d-flex">
-								<div>
-									<img width="150" height="100" alt="지식정보" src="/static/image/지식정보_2.jpg">
-								</div>
-								<div class="ml-3">
-									<b>우리가 하고 있는 '헬스'는 '건강'한 운동일까?</b>
-									<p>'헬스'라는 표현이 있다. 기본적으로는 '건강'이라는 뜻의 영단어인데, 한국어의 범주에서는 좀 다른 의미도 품고 있다.</p>
-								</div>
-							</div>
-							<div class="d-flex">
-								<div>
-									<img width="150" height="100" alt="지식정보" src="/static/image/지식정보_3.jpg">
-								</div>
-								<div class="ml-3">
-									<b>건강에 좋은 운동... 같이 섭취해야 할 음식은?</b>
-									<p>운동을 하고 나면 스트레스가 날아가고, 신체의 전반적인 건강도 향상된다. 운동을 할 때는 뭘 먹느냐 하는 것도 중요한 요소가 된다. </p>
-								</div>
-							</div>
+							<c:forEach var="mainContentInfo" items="${mainContentInfoList }">
+								<a href="/post/community/review_view?id=${mainContentInfo.id }" class="text-dark">
+									<div class="d-flex">
+										<div>
+											<img width="150" height="100" alt="지식정보" src="${mainContentInfo.imagePath }">
+										</div>
+										<div class="ml-3">
+											<b>${mainContentInfo.subject}</b>
+											<p>
+												<small>
+													${fn:substring(mainContentInfo.content, 0, 100) }
+													<c:if test="${fn:length(mainContentInfo.content) > 100 }">
+													...
+													</c:if>
+												</small>
+											</p>
+										</div>
+									</div>
+								</a>
+							</c:forEach>
+							
 						</div>
 					
 					</div>
@@ -142,23 +136,23 @@
 							</div>
 						</div>
 						<div class="mt-3 mb-3">
-							<c:forEach var="mainCommunity" items="${mainCommunityList }" end="8">
-							<a href="/post/community/review_view?id=${mainCommunity.id }" class="text-dark">
-							<div class="d-flex">
-								<div class="col-4">
-									<b>${mainCommunity.userNickname }</b>
-								</div>
-								<div class="col-5">
-									${fn:substring(mainCommunity.subject, 0, 6) }
-									<c:if test="${fn:length(mainCommunity.subject) > 6 }">
-									...
-									</c:if>
-								</div>
-								<div class="col-3">
-									<p>${mainCommunity.time }</p>
-								</div>
-							</div>
-							</a>
+							<c:forEach var="mainCommunity" items="${mainCommunityList }">
+								<a href="/post/community/review_view?id=${mainCommunity.id }" class="text-dark">
+									<div class="d-flex">
+										<div class="col-4">
+											<b>${mainCommunity.userNickname }</b>
+										</div>
+										<div class="col-5">
+											${fn:substring(mainCommunity.subject, 0, 6) }
+											<c:if test="${fn:length(mainCommunity.subject) > 6 }">
+											...
+											</c:if>
+										</div>
+										<div class="col-3">
+											<p>${mainCommunity.time }</p>
+										</div>
+									</div>
+								</a>
 							</c:forEach>
 						</div>
 					</div>

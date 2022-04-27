@@ -29,12 +29,14 @@ public class PostController {
 	public String mainView(Model model) {
 		
 		// 메인화면_커뮤니티 리스트 가져오기
-		List<CommunityModel> mainCommunityList = postBO.getPostFullList();
+		List<CommunityModel> mainCommunityList = postBO.getPostMainCommunityList();
 		
 		model.addAttribute("mainCommunityList", mainCommunityList);
 		
+		
+		
 		// 메인화면_지식정보 리스트 가져오기
-		List<ManagerPostModel> mainContentInfoList = postBO.getManagerPostList();
+		List<ManagerPostModel> mainContentInfoList = postBO.getManagerPostMainInfoList();
 		
 		model.addAttribute("mainContentInfoList", mainContentInfoList);
 		
@@ -50,18 +52,19 @@ public class PostController {
 	}
 	
 	
+	
+	
 	@GetMapping("/content/info_view")
-	public String contentInfoView(HttpServletRequest request, Model model) {
+	public String contentInfoView(Model model) {
 		
-		HttpSession session = request.getSession();
-		int managerId = (Integer)session.getAttribute("managerId");
-		
-		List<ManagerPostModel> managerPostList = postBO.getManagerPostList(managerId);
+		List<ManagerPostModel> managerPostList = postBO.getManagerPostList();
 		
 		model.addAttribute("managerPostList", managerPostList);
 		
 		return "post/content_info";
 	}
+	
+	
 	
 	
 	// 지식정보 디테일 화면

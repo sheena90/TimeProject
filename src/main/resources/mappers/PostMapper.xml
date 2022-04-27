@@ -71,7 +71,7 @@
 	</select>
 	
 	
-	<!-- 메인화면_커뮤니티 리스트 가져오기 -->
+
 	<!-- community_메인 화면 모든 사용자의 게시글 가져오기 -->
 	<select id="selectPostFullList" resultType="com.sheena.time.post.model.PostModel">
 		SELECT
@@ -87,6 +87,28 @@
 			`post`
 		ORDER BY `id` DESC
 	</select>
+	
+	
+	
+	<!-- 메인화면_커뮤니티 리스트 가져오기 -->
+	<select id="selectPostMainCommunityList" resultType="com.sheena.time.post.model.PostModel">
+		SELECT
+			`id`
+			, `userId`
+			, `userNickname`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`post`
+		ORDER BY `id` DESC
+		LIMIT 8
+		
+	</select>
+	
+	
 	
 	
 	<!-- 커뮤니티_게시글 수정 -->
@@ -112,7 +134,7 @@
 	
 	
 	
-	<!-- 메인화면_지식정보 리스트 가져오기 -->
+
 	<!-- 지식정보 리스트 -->
 	<select id="selectManagerPostList" parameterType="int" resultType="com.sheena.time.managerPost.model.ManagerPostModel">
 		SELECT
@@ -128,6 +150,28 @@
 		ORDER BY `id` DESC
 	
 	</select>
+	
+	
+	
+	<!-- 메인화면_지식정보 리스트 가져오기 -->
+	<select id="selectManagerPostMainInfoList" parameterType="int" resultType="com.sheena.time.managerPost.model.ManagerPostModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`managerPost`
+		ORDER BY `id` DESC
+		LIMIT 3
+	
+	</select>
+	
+	
+	
 	
 	
 	<!--지식정보 해당 디테일뷰 가져오기 -->

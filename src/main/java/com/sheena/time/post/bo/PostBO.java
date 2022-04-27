@@ -49,7 +49,7 @@ public class PostBO {
 	}
 	
 	
-	// 메인화면_커뮤니티 리스트 가져오기
+	
 	// community_메인 화면 모든 사용자의 게시글 가져오기
 	public List<CommunityModel> getPostFullList() {
 		
@@ -76,6 +76,32 @@ public class PostBO {
 	
 	
 	
+	// 메인화면_커뮤니티 리스트 가져오기
+	public List<CommunityModel> getPostMainCommunityList() {
+		
+		List<PostModel> mainCommunityList = postDAO.selectPostMainCommunityList();
+		
+		List<CommunityModel> communityModel = new ArrayList<>();
+		
+		for(PostModel postModel : mainCommunityList) {
+			
+			CommunityModel community = new CommunityModel();
+			
+			community.setId(postModel.getId());
+			community.setSubject(postModel.getSubject());
+			community.setUserNickname(postModel.getUserNickname());
+			community.setTime(Dateutil.calculateTime(postModel.getCreatedAt()));
+			
+			communityModel.add(community);
+		}
+		
+		return communityModel;
+	}
+	
+	
+	
+	
+	
 	// 커뮤니티_게시글 수정
 	public int communityUpdatePost(int postId, String subject, String content) {
 		return postDAO.communityUpdatePost(postId, subject, content);
@@ -93,11 +119,18 @@ public class PostBO {
 	}
 	
 	
-	// 메인화면_지식정보 리스트 가져오기
+	
 	// 지식정보 리스트
-	public List<ManagerPostModel> getManagerPostList(int managerId) {
-		return postDAO.selectManagerPostList(managerId);
+	public List<ManagerPostModel> getManagerPostList() {
+		return postDAO.selectManagerPostList();
 	}
+	
+	
+	// 메인화면_지식정보 리스트 가져오기
+	public List<ManagerPostModel> getManagerPostMainInfoList() {
+		return postDAO.selectManagerPostMainInfoList();
+	}
+	
 	
 	
 	// 지식정보 해당 디테일뷰 가져오기
