@@ -108,7 +108,7 @@
 			</div>
 			
 			<div class="mt-5">
-				<textarea rows="5" cols="133" id="comment"></textarea>
+				<textarea rows="5" id="comment" class="col-12"></textarea>
 				<div class="d-flex justify-content-end">
 					<button type="button" class="btn btn-danger" id="commentBtn" data-post-id="${postFull.id }">등록</button>
 				</div>
