@@ -96,11 +96,11 @@
 						</tr>
 					</thead>
 					<tbody>
-					<c:forEach var="managerPost" items="${managerPostList }">
+					<c:forEach var="managerPostVideo" items="${managerPostVideoList }">
 						<tr>
-							<td>${managerPost.id }</td>
-							<td><a href="/managerPost/content/info/edit_view?id=${managerPost.id }"> ${managerPost.subject }</a></td>
-							<td><fmt:formatDate value="${managerPost.createdAt }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+							<td>${managerPostVideo.id }</td>
+							<td> ${managerPostVideo.title }</td>
+							<td><fmt:formatDate value="${managerPostVideo.createdAt }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 						</tr>
 					</c:forEach>
 					

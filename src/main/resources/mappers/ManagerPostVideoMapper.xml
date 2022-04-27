@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  
+<mapper namespace="com.sheena.time.managerPostVideo.dao.ManagerPostVideoDAO">
+
+	<!-- 운동영상 리스트 -->
+	<select id="selectManagerPostContentVideo" parameterType="int" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `userGender`
+			, `body`
+			, `type`
+			, `title`
+			, `thumbnail`
+			, `link`
+			, `timeline`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`video`
+		WHERE
+			`managerId` = #{managerId}
+		ORDER BY `id` DESC
+	</select>
+
+</mapper>
