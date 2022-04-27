@@ -82,16 +82,46 @@
 			</div>
 			
 			<div>
-				<div class="d-flex align-items-center justify-content-start ml-3 mt-3">
-					<span class="material-icons-outlined" style="color:red; font-size:30px;">campaign</span>
-					<span>Stop! 폭언이나 욕설 금지</span>
-				</div>
-				<hr class="ml-3 mr-3">
+				
+				
 				<div class="ml-3 mr-3">
+					<div class="mb-3" >
+						<h6>성별</h6>
+						<select id="gender">
+							<option selected value="">선택</option>
+							<option>남자</option>
+							<option>여자</option>
+						</select>
+					</div>
+					<div class="mb-3" >
+						<h6>부위</h6>
+						<select id="body">
+							<option selected value="">선택 </option>
+							<option>가슴</option>
+							<option>어깨</option>
+							<option>복근</option>
+							<option>하체</option>
+							<option>힙</option>
+							<option>등</option>
+						</select>
+					</div>
+					<div class="mb-3" >
+						<h6>타입</h6>
+						<select id="type">
+							<option selected value="">선택 </option>
+							<option>라이브</option>
+							<option>동영상</option>
+						</select>
+					</div>
+					
+					
 					<h6>제목</h6>
 					<input type="text" class="form-control mt-3" placeholder="제목을 입력해주세요" id="titleInput"><br>
 					<h6>동영상 링크</h6>
 					<input type="text" class="form-control mt-3" placeholder="동영상 링크를 입력해주세요" id="linkInput"><br>
+					<h6>라이브 시간 </h6>
+					<input type="text" class="form-control mt-3" placeholder="시간을 입력해주세요" id="timeInput"><br>
+					
 				</div>
 				<div class="ml-3 mr-3">
 					<input type="file" class="mt-3" id="thumbnailInput">
@@ -112,9 +142,28 @@
 			
 			$("#saveBtn").on("click", function(){
 				
+				let gender = $("#gender").val();
+				let body = $("#body").val();
+				let type = $("#type").val();
 				let title = $("#titleInput").val();
 				let link = $("#linkInput").val().trim(); //trim 메소드: 앞 뒤 공백 제거
 				let thumbnail = $("#thumbnailInput").val();
+				let timeline = $("#timeInput").val();
+				
+				if(gender == "") {
+					alert("성별을 선택해주세요.");
+					return;
+				}
+				
+				if(body == "") {
+					alert("부위를 선택해주세요.");
+					return;
+				}
+				
+				if(type == "") {
+					alert("타입을 선택해주세요.");
+					return;
+				}
 				
 				if(title == "") {
 					alert("제목을 입력하세요.");
@@ -135,9 +184,15 @@
 				var formData = new FormData();
 				// {"subject":title, "content":content} 문자열 형태를 비어있는 FormData 객체 생성해서 parameter 삽입
 				// append 메소드 통해서 값을 추가
+				formData.append("userGender", gender);
+				formData.append("body", body);
+				formData.append("type", type);
 				formData.append("title", title);
 				formData.append("link", link);
 				formData.append("thumbnail", $("#thumbnailInput")[0].files[0]);
+				if(timeline != "") {
+					formData.append("timeline", timeline);
+				}
 				
 				
 				$.ajax({

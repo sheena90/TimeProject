@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -50,18 +51,19 @@ public class ManagerPostRestController {
 	// 운동영상
 	@PostMapping("/content/video/create")
 	public Map<String, String> videoCreate(
+			@RequestParam("userGender") String userGender,
 			@RequestParam("body") String body,
 			@RequestParam("type") String type,
 			@RequestParam("title") String title,
 			@RequestParam("link") String link,
 			@RequestParam("thumbnail") MultipartFile file,
+			@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm")
 			@RequestParam(value="timeline", required=false) Date timeline,
 			HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		
 		int managerId = (Integer)session.getAttribute("managerId");
-		String userGender = (String)session.getAttribute("userGender");
 		
 		
 		int count = managerPostBO.addManagerPostVideo(managerId, userGender, body, type, title, file, link, timeline);
