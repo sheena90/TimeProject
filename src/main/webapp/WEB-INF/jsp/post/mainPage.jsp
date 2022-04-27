@@ -71,25 +71,43 @@
 							</div>
 						</div>
 						<div class="d-flex flex-wrap mt-3 mb-3">
-							<div class="courseVideo mr-3">
-								<img class="img" width="200" height="140" alt="가슴" src="/static/image/가슴.png">
-								
-							</div>
-							<div class="courseVideo mr-3">
-								<img width="200" height="140" alt="어깨" src="/static/image/어깨.jpg">
-							</div>
-							<div class="courseVideo">
-								<img width="200" height="140" alt="복근" src="/static/image/복근.jpg">
-							</div>
-							<div class="courseVideo mr-3 mt-5">
-								<img width="200" height="140" alt="하체" src="/static/image/하체.png">
-							</div>
-							<div class="courseVideo mr-3 mt-5">
-								<img width="200" height="140" alt="힙" src="/static/image/힙.jpeg">
-							</div>
-							<div class="courseVideo mt-5">
-								<img width="200" height="140" alt="등" src="/static/image/등.jpg">
-							</div>
+							<a href="#" class="courseVideoA">
+								<div class="courseVideoScreen mr-3">
+									<div class="text1">가슴</div>
+									<img width="200" height="142" alt="가슴" src="/static/image/가슴.png">
+									
+								</div>
+							</a>
+							<a href="#" class="courseVideoA">
+								<div class="courseVideoScreen mr-3">
+									<div class="text1">어깨</div>
+									<img width="200" height="142" alt="어깨" src="/static/image/어깨.jpg">
+								</div>
+							</a>
+							<a href="#" class="courseVideoA">
+								<div class="courseVideoScreen">
+									<div class="text1">복근</div>
+									<img width="200" height="142" alt="복근" src="/static/image/복근.jpg">
+								</div>
+							</a>
+							<a href="#" class="courseVideoA">
+								<div class="courseVideoScreen mr-3 mt-5">
+									<div class="text1">하체</div>
+									<img width="200" height="142" alt="하체" src="/static/image/하체.png">
+								</div>
+							</a>
+							<a href="#" class="courseVideoA">
+								<div class="courseVideoScreen mr-3 mt-5">
+									<div class="text2">힙</div>
+									<img width="200" height="142" alt="힙" src="/static/image/힙.jpeg">
+								</div>
+							</a>
+							<a href="#" class="courseVideoA">
+								<div class="courseVideoScreen mt-5">
+									<div class="text2">등</div>
+									<img width="200" height="142" alt="등" src="/static/image/등.jpg">
+								</div>
+							</a>
 						</div>
 					</div>
 					
