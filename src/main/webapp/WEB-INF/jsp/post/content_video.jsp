@@ -80,12 +80,14 @@
 					<div class="communityMainContentBox mt-4 d-flex flex-wrap">
 						<c:forEach var="videoList" items="${managerPostVideoList }">
 						<div class="content m-4">
-	                        <div class="thumnail">
-	                            <img width="240" alt="가슴_썸네일" src="${videoList.thumbnail }">
-	                        </div>
-	                        <div class="title mt-2">
-	                        	<small>${videoList.title }</small>
-	                        </div>
+							<a href="${videoList.link }" class="text-dark">
+		                        <div class="thumnail">
+		                            <img width="240" alt="가슴_썸네일" src="${videoList.thumbnail }">
+		                        </div>
+		                        <div class="title mt-2">
+		                        	<small>${videoList.title }</small>
+		                        </div>
+	                        </a>
 	                    	<hr>
 	                    	<div class="d-flex justify-content-end align-items-center mr-2">
 	                    		<div class="mr-3">
