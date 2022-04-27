@@ -21,6 +21,12 @@ public class ManagerPostVideoController {
 	@Autowired
 	private ManagerPostVideoBO videoBO;
 	
+	// 운동영상 업로드
+		@GetMapping("/video/create_view")
+		public String contentVideoCreateView() {
+			return "managerPost/content_video_create";
+	}
+	
 	
 	// 운동영상 리스트
 	@GetMapping("/video_view")

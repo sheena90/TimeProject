@@ -205,8 +205,7 @@
 					success:function(data) {
 						
 						if(data.result == "success") {
-							alert("동영상 업로드 성공")
-							// location.href="/managerPost/content/video_view";
+							location.href="/managerPost/content/video_view";
 						} else {
 							alert("동영상 업로드 실패");
 						}
