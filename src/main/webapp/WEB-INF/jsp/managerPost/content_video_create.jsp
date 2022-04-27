@@ -37,10 +37,10 @@
 				<div class="d-flex align-items-center justify-content-between text-white">
 
 					<h6 class="mr-5">
-					<a class="text-white" href="/manager/content/video_view">운동영상 관리</a>
+					<a class="text-white" href="/managerPost/content/video_view">운동영상 관리</a>
 					</h6>
 					<h6 class="mr-5">
-						<a class="text-white" href="/manager/content/info_view">지식정보 관리</a>
+						<a class="text-white" href="/managerPost/content/info_view">지식정보 관리</a>
 					</h6>
 					
 					<!-- 로그인 아이콘에 대한 dropdown 적용 : 마이페이지, 로그아웃 -->
