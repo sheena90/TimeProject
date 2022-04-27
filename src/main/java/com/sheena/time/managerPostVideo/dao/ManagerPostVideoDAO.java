@@ -26,7 +26,10 @@ public interface ManagerPostVideoDAO {
 	
 
 	// 운동영상 리스트
-		public List<VideoModel> selectManagerPostContentVideo(@Param("managerId") int managerId);
+	public List<VideoModel> selectManagerPostContentVideo(@Param("managerId") int managerId);
 		
 	
+		
+	// 운동영상 수정
+	public VideoModel selectManagerPostVideo(@Param("id") int id);
 }

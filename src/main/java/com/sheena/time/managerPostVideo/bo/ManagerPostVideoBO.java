@@ -34,6 +34,11 @@ public class ManagerPostVideoBO {
 	}
 	
 	
+	// 운동영상 수정
+	public VideoModel getManagerPostVideo(int id) {
+		return videoDAO.selectManagerPostVideo(id);
+	}
+	
 	
 
 }

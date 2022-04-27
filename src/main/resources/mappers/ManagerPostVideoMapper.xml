@@ -60,5 +60,26 @@
 			`managerId` = #{managerId}
 		ORDER BY `id` DESC
 	</select>
+	
+	<!-- 운동영상 수정 -->
+	<select id="selectManagerPostVideo" parameterType="int" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `userGender`
+			, `body`
+			, `type`
+			, `title`
+			, `thumbnail`
+			, `link`
+			, `timeline`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`video`
+		WHERE
+			`id` = #{id}
+	
+	</select>
 
 </mapper>

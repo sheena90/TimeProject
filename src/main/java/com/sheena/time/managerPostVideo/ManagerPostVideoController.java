@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sheena.time.managerPostVideo.bo.ManagerPostVideoBO;
 import com.sheena.time.managerPostVideo.model.VideoModel;
@@ -41,6 +42,18 @@ public class ManagerPostVideoController {
 		model.addAttribute("managerPostVideoList", managerPostVideoList);
 		
 		return "managerPost/content_video";
+	}
+	
+	
+	// 운동영상 수정
+	@GetMapping("/video/edit_view")
+	public String contentVideoEditView(@RequestParam("id") int id, Model model) {
+		
+		VideoModel video = videoBO.getManagerPostVideo(id);
+		
+		model.addAttribute("video", video);
+		
+		return "managerPost/content_video_edit";
 	}
 
 }

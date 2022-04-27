@@ -85,7 +85,7 @@
 		
 		<section class="d-flex justify-content-center">
 			<div class="w-75 my-5">
-				<h1 class="text-center">운동영 관리 리스트</h1>
+				<h1 class="text-center">운동영상 관리 리스트</h1>
 				
 				<table class="table text-center mt-3">
 					<thead>
@@ -99,7 +99,7 @@
 					<c:forEach var="managerPostVideo" items="${managerPostVideoList }">
 						<tr>
 							<td>${managerPostVideo.id }</td>
-							<td> ${managerPostVideo.title }</td>
+							<td><a href="/managerPost/content/video/edit_view?id=${managerPostVideo.id }"> ${managerPostVideo.title }</a></td>
 							<td><fmt:formatDate value="${managerPostVideo.createdAt }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 						</tr>
 					</c:forEach>

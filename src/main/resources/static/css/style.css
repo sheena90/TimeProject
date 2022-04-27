@@ -555,4 +555,11 @@ hr {
 .managerHeader {
 	background-color: #202023;
 }
+
+.managerPostVideo {
+	width:1000px;
+	margin:auto;
+	border:1px solid #dddddd;
+
+}
   
