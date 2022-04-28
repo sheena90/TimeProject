@@ -71,7 +71,7 @@
 							</div>
 						</div>
 						<div class="d-flex flex-wrap mt-3 mb-3">
-							<a href="#" class="courseVideoA">
+							<a href="/post/content/video_view?userGender=남자&body=가슴" class="courseVideoA">
 								<div class="courseVideoScreen mr-3">
 									<div class="text1">가슴</div>
 									<img width="200" height="142" alt="가슴" src="/static/image/가슴.png">
