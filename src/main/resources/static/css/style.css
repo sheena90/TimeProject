@@ -136,6 +136,12 @@ footer {
 /*까지*/
 
 
+/*메인화면 맞춤화 서비스 select button 컬러*/
+.selectButton{
+	background:#b2acab;
+}
+
+
 .line {
 	display: flex;
     flex-basis: 100%;

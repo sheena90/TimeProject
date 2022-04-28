@@ -8,8 +8,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Time</title>
-	<!-- slick cdn -->
-  	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
   	
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     
@@ -17,9 +15,6 @@
   
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    
-    <!-- slick cdn -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -226,14 +221,14 @@
 						</div>
 						
 						<div class="h-50 d-flex justify-content-around align-items-center">
-							<button class="btn btn-secondary customizeText text-center">
-								<small class="mt-4">홈트레이닝<br>(비기구)</small>
+							<button class="btn selectButton customizeText text-center">
+								<small class="mt-4 text-white">홈트레이닝<br>(비기구)</small>
 							</button>
-							<button class="btn btn-secondary customizeText text-center">
-								<small class="mt-4">홈트레이닝<br>(기구)</small>
+							<button class="btn selectButton customizeText text-center">
+								<small class="mt-4 text-white">홈트레이닝<br>(기구)</small>
 							</button>
-							<button class="btn btn-secondary customizeText text-center">
-								<small class="mt-4">헬스장<br>(기구)</small>
+							<button class="btn selectButton customizeText text-center">
+								<small class="mt-4 text-white">헬스장<br>(기구)</small>
 							</button>
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-start">
@@ -291,35 +286,49 @@
 							</div>
 						</div>
 						
-						<div class="text-center mb-3">
+						<div class="text-center">
 							<b>그림을 참조하여 유사한 체형을 선택하십시오.</b>
 						</div>
 						
 						<!-- modal2 슬라이드 --> 
 						<div>
-							<div class="center bg-secondary">
-								<div>
-									<img width="100" alt="체지방률" src="/static/image/체지방1.png">
+							<div class="selectButton">
+								<div class="d-flex justify-content-between align-items-center mt-5">
+									<div>
+										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방1.png"></button>
+									</div>
+									<div>
+										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방2.png"></button>
+									</div>
+									<div>
+										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방3.png"></button>
+									</div>
+									<div>
+										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방4.png"></button>
+									</div>
+									<div>
+										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방5.png"></button>
+									</div>
+									<div>
+										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방6.png"></button>
+									</div>
+									
 								</div>
-								<div>
-									<img width="100" alt="체지방률" src="/static/image/체지방2.png">
-								</div>
-								<div>
-									<img width="100" alt="체지방률" src="/static/image/체지방3.png">
-								</div>
-								<div class="center">
-									<img width="100" alt="체지방률" src="/static/image/체지방4.png">
-								</div>
-								<div>
-									<img width="100" alt="체지방률" src="/static/image/체지방5.png">
-								</div>
-								<div>
-									<img width="100" alt="체지방률" src="/static/image/체지방6.png">
+								<div class="d-flex justify-content-between align-items-center mr-4 ml-4">
+									<div class="mb-3 ml-2">11-12%</div>
+									<div class="mb-3 ml-2">14-15%</div>
+									<div class="mb-3 ml-2">17-18%</div>
+									<div class="mb-3 ml-2">20-21%</div>
+									<div class="mb-3 ml-2">25-26%</div>
+									<div class="mb-3 ml-2">34-35%</div>
 								</div>
 							</div>
 						</div>
 						
 						<div class="h-25 d-flex justify-content-center align-items-center">
+							<a href="#" data-toggle="modal" data-target="#customizeModal1">
+								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
+							</a>
 							<a href="#" data-toggle="modal" data-target="#customizeModal3">
 								<button type="button" class="btn btn-danger modalOff">다음</button>
 							</a>
@@ -380,26 +389,29 @@
 						
 						<!-- modal3 슬라이드 --> 
 						<div class="customizeBox3 d-flex  flex-wrap">
-							<button class="btn btn-secondary customizeText3 text-center mr-5 ml-2">
-								<small class="mt-4">가슴</small>
+							<button class="btn selectButton customizeText3 text-center mr-5 ml-2">
+								<small class="mt-4 text-white">가슴</small>
 							</button>
-							<button class="btn btn-secondary customizeText3 text-center mr-5">
-								<small class="mt-4">어깨</small>
+							<button class="btn selectButton customizeText3 text-center mr-5">
+								<small class="mt-4 text-white">어깨</small>
 							</button>
-							<button class="btn btn-secondary customizeText3 text-center">
-								<small class="mt-4">복근</small>
+							<button class="btn selectButton customizeText3 text-center">
+								<small class="mt-4 text-white">복근</small>
 							</button>
-							<button class="btn btn-secondary customizeText3 text-center mr-5 ml-2">
-								<small class="mt-4">하체</small>
+							<button class="btn selectButton customizeText3 text-center mr-5 ml-2">
+								<small class="mt-4 text-white">하체</small>
 							</button>
-							<button class="btn btn-secondary customizeText3 text-center mr-5">
-								<small class="mt-4">힙</small>
+							<button class="btn selectButton customizeText3 text-center mr-5">
+								<small class="mt-4 text-white">힙</small>
 							</button>
-							<button class="btn btn-secondary customizeText3 text-center">
-								<small class="mt-4">등</small>
+							<button class="btn selectButton customizeText3 text-center">
+								<small class="mt-4 text-white">등</small>
 							</button>
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-center">
+							<a href="#" data-toggle="modal" data-target="#customizeModal2">
+								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
+							</a>
 							<a href="#" data-toggle="modal" data-target="#customizeModal4">
 								<button type="button" class="btn btn-danger modalOff">다음</button>
 							</a>
@@ -450,21 +462,28 @@
 							</div>
 						</div>
 						
-						<div class="h-50 d-flex bg-danger">
+						<div class="h-50 d-flex">
 							
 							<!-- 동영상 -->
-							<div class="col-6 bg-info">
-							
+							<div class="col-6 mt-5">
+								<img width="100%" alt="썸네일" src="/static/image/man_Thumbnail_1.jpg">
 							</div>
 							
 							<!-- 계획표 생성 -->
-							<div class="col-6 bg-warning ">
-								<div class="mt-5 mb-4"><b>계획표 생성</b></div>
-								<textarea style="width:100%;">결과 내용 추가 예정</textarea>
+							<div class="col-6">
+								<div class="mt-5 mb-4">
+									<b>계획표 생성</b>
+								</div>
+								<div>
+									<p>결과 문구 생성</p>
+								</div>
 							</div>
 							
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-center">
+							<a href="#" data-toggle="modal" data-target="#customizeModal3">
+								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
+							</a>
 							<a href="/user/myPlan_view" data-toggle="modal" data-target="#customizeNextModal">
 								<button type="button" class="btn btn-danger">계획표 추가</button>
 							</a>
@@ -488,6 +507,7 @@
 				$("#customizeModal1").modal("hide");
 				$("#customizeModal2").modal("hide");
 				$("#customizeModal3").modal("hide");
+				$("#customizeModal4").modal("hide");
 				
 			});
 			
