@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.sheena.time.managerPost.model.ManagerPostModel;
 import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.bo.PostBO;
+import com.sheena.time.post.comment.bo.CommentBO;
+import com.sheena.time.post.comment.model.CommentModel;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
 
@@ -25,6 +27,9 @@ public class PostController {
 	@Autowired
 	private PostBO postBO;
 	
+	@Autowired
+	private CommentBO commentBO;
+	
 	
 	@GetMapping("/main_view")
 	public String mainView(Model model) {
@@ -34,8 +39,6 @@ public class PostController {
 		
 		model.addAttribute("mainCommunityList", mainCommunityList);
 		
-		
-		// 댓글 가져오
 		
 		// 메인화면_지식정보 리스트 가져오기
 		List<ManagerPostModel> mainContentInfoList = postBO.getManagerPostMainInfoList();
@@ -121,6 +124,9 @@ public class PostController {
 	@GetMapping("/community/review_view")
 	public String communityReview(@RequestParam("id") int id, Model model) {
 		
+		// 댓글 가져오기
+		List<CommentModel> commentList = commentBO.getCommentList(id);
+		model.addAttribute("commentList", commentList);
 		
 		
 		PostModel postFull = postBO.postId(id);

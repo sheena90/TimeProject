@@ -42,7 +42,7 @@
 			<hr>
 			
 			<!-- 글쓴이 내용 -->
-			<div class="favoritesContent bg-warning">
+			<div class="favoritesContent">
 				<h5>${postFull.content }</h5>
 			</div>
 			
@@ -59,53 +59,30 @@
 			
 			<!-- 댓글, 댓글 좋아요 -->
 			<div class="mt-5">
-				
-				<div class="d-flex ml-5">
-					<div class="communityReviewProfile">
-						<img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt3UmlPVgosVl9l1b11U4jEtbv3XqNhR1Gkg&usqp=CAU">
+				<c:forEach var="commentList" items="${commentList }">
+					<div class="d-flex ml-5">
+						<div class="communityReviewProfile">
+							<img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt3UmlPVgosVl9l1b11U4jEtbv3XqNhR1Gkg&usqp=CAU">
+						</div>
+						<div class="ml-3">
+							<span>${userNickname }</span>
+						</div>
 					</div>
-					<div class="ml-3">
-						<span>${userNickname }</span>
+					<div class="ml-5 mt-3">
+						<div>
+							<span>${commentList.content }</span>
+						</div>
+						<div>
+							<small><fmt:formatDate value="${commentList.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></small>
+						</div>
 					</div>
-				</div>
-				<div class="ml-5 mt-3">
-					<div>
-						<span>포스팅 감사히 보고 가요~~</span>
+					<div class="d-flex col-11 justify-content-end align-items-center ">
+						<i class="bi bi-heart text-dark"></i>
+						<small class="ml-2">0</small>
 					</div>
-					<div>
-						<small>2022-04-13 03:00</small>
-					</div>
-				</div>
-				<div class="d-flex col-11 justify-content-end align-items-center ">
-					<i class="bi bi-heart text-dark"></i>
-					<small class="ml-2">0</small>
-				</div>
+				</c:forEach>
 			</div>
 			<hr>
-			
-			
-			<div class="mt-5">
-				<div class="d-flex ml-5">
-					<div class="communityReviewProfile">
-						<img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6S0Jko6RLTjMX9VOyyzfIPNUyUFLmFIj8Wg&usqp=CAU">
-					</div>
-					<div class="ml-3">
-						<span>DG99</span>
-					</div>
-				</div>
-				<div class="ml-5 mt-3">
-					<div>
-						<span>포스팅 감사히 보고 가요~~</span>
-					</div>
-					<div>
-						<small>2022-04-13 03:00</small>
-					</div>
-				</div>
-				<div class="d-flex col-11 justify-content-end align-items-center ">
-					<i class="bi bi-heart text-dark"></i>
-					<small class="ml-2">0</small>
-				</div>
-			</div>
 			
 			<div class="mt-5">
 				<textarea rows="5" id="comment" class="col-12"></textarea>

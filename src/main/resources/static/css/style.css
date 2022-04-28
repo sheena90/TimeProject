@@ -193,6 +193,7 @@ footer {
 
 .favoritesContent {
 	height:480px;
+	border:1px dotted #dddddd;
 }
 
 /*pagination*/
