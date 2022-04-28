@@ -44,7 +44,7 @@
 								<label for="ex_chk1">MAN</label> 
 							</div>
 							<div class="mt-4 ml-4 d-none color1" id="man">
-								<select class="contentVideoSelect color1 ">
+								<select class="contentVideoSelect color1 " id="manBody">
 									<option selected>선택</option>
 									<option>가슴</option>
 									<option>어깨</option>
@@ -61,7 +61,7 @@
 								<label for="ex_chk2">WOMAN</label> 
 							</div>
 							<div class="mt-4 ml-4 d-none color1" id="woman">
-								<select class="contentVideoSelect color1">
+								<select class="contentVideoSelect color1" id="womanBody">
 									<option selected>선택</option>
 									<option>가슴</option>
 									<option>어깨</option>
@@ -154,6 +154,22 @@
             	}
                 
             });
+			
+			
+			$("#manBody").on("change", function() {
+				
+				let manBody = $("#manBody").val();
+				
+				location.href="/post/content/video_view?userGender=남자&body="+manBody;
+				
+			});
+			
+			$("#womanBody").on("change", function() {
+				
+				let womanBody = $("#womanBody").val();
+				
+				location.href="/post/content/video_view?userGender=여자&body="+womanBody;
+			});
 
 		});
 	

@@ -128,6 +128,13 @@ public class PostBO {
 	
 	
 	
+	// 운동영상select
+	public List<VideoModel> getMangerPostVideo(String userGender, String body) {
+		return postDAO.selectManagerpostVideo(userGender, body);
+	}
+	
+	
+	
 	// 지식정보 리스트
 	public List<ManagerPostModel> getManagerPostList() {
 		return postDAO.selectManagerPostList();

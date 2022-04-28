@@ -57,6 +57,10 @@ public interface PostDAO {
 	public List<VideoModel> selectManagerPostVideoList();
 	
 	
+	// 운동영상select
+	public List<VideoModel> selectManagerpostVideo(@Param("userGender") String userGender, @Param("body") String body);
+	
+	
 	
 	// 지식정보 리스트
 	public List<ManagerPostModel> selectManagerPostList();

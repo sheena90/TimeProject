@@ -155,6 +155,29 @@
 	</select>
 	
 	
+	<!-- 운동영상select -->
+	<select id="selectManagerpostVideo" parameterType="map" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `userGender`
+			, `body`
+			, `type`
+			, `title`
+			, `thumbnail`
+			, `link`
+			, `timeline`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`video`
+		WHERE
+			`userGender` = #{userGender}
+			AND `body` = #{body}
+	
+	</select>
+	
+	
 	
 	
 

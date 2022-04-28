@@ -35,6 +35,7 @@ public class PostController {
 		model.addAttribute("mainCommunityList", mainCommunityList);
 		
 		
+		// 댓글 가져오
 		
 		// 메인화면_지식정보 리스트 가져오기
 		List<ManagerPostModel> mainContentInfoList = postBO.getManagerPostMainInfoList();
@@ -49,11 +50,24 @@ public class PostController {
 	// content_영상, 지식정보
 	// 운동영상 리스트
 	@GetMapping("/content/video_view")
-	public String contentVideoView(Model model) {
+	public String contentVideoView(Model model, 
+			// select box
+			@RequestParam(value="userGender", required=false) String userGender,
+			@RequestParam(value="body", required=false) String body) {
 		
-		List<VideoModel> managerPostVideoList = postBO.getManagerPostVideoList();
-		
-		model.addAttribute("managerPostVideoList", managerPostVideoList);
+		if(userGender != null & body != null) {
+			List<VideoModel> managerPostVideoList = postBO.getMangerPostVideo(userGender, body);
+			
+			model.addAttribute("managerPostVideoList", managerPostVideoList);
+			
+			
+		} else {
+			List<VideoModel> managerPostVideoList = postBO.getManagerPostVideoList();
+			
+			model.addAttribute("managerPostVideoList", managerPostVideoList);
+			
+			
+		}
 		
 		return "post/content_video";
 	}
@@ -106,6 +120,8 @@ public class PostController {
 	// 커뮤니티 모든 사용자의 해당 게시글 디테일뷰 가져오기
 	@GetMapping("/community/review_view")
 	public String communityReview(@RequestParam("id") int id, Model model) {
+		
+		
 		
 		PostModel postFull = postBO.postId(id);
 		
