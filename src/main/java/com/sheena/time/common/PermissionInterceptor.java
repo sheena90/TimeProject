@@ -9,8 +9,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,25 +20,7 @@ public class PermissionInterceptor implements HandlerInterceptor {
 	
 	@Autowired
 	private PostBO postBO;
-	
-	
-//	public String contentLive(
-//			Model model, 
-//			@RequestParam("type") String type,
-//			HttpServletRequest request) {
-//		
-//		// 로그인 여부 확인
-//		HttpSession session = request.getSession();
-//		Integer userId = (Integer)session.getAttribute("userId");
-//		
-//		if(userId != null) {
-//			List<VideoModel> managerPostLive = postBO.getManagerPostLive(type);
-//			model.addAttribute("managerPostLive", managerPostLive);
-//		}
-//		
-//		return????;
-//		
-//	}
+
 	
 	
 
@@ -117,7 +97,6 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			}
 			
 			
-			// 라이브 강의 modal 처리
 			
 			
 		}
@@ -134,6 +113,17 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			HttpServletResponse response, 
 			Object handler,
 			ModelAndView modelAndView) {
+		
+		
+		
+		// 라이브 강의 리스트 처리 
+		if(modelAndView != null) {
+			
+			List<VideoModel> managerPostLive = postBO.getManagerPostLive("라이브");
+			
+			modelAndView.addObject("managerPostLive",managerPostLive);
+		}
+		
 		
 	}
 	
