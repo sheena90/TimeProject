@@ -54,6 +54,7 @@ public class PostController {
 	// 운동영상 리스트
 	@GetMapping("/content/video_view")
 	public String contentVideoView(Model model, 
+			
 			// select box
 			@RequestParam(value="userGender", required=false) String userGender,
 			@RequestParam(value="body", required=false) String body) {
@@ -157,6 +158,8 @@ public class PostController {
 	
 	@GetMapping("/live/play_view")
 	public String livePlayView() {
+		
+		
 		return "post/live_play";
 	}
 	
