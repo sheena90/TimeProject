@@ -80,7 +80,7 @@ public class UserRestController {
 			session.setAttribute("userId", userModel.getId());
 			session.setAttribute("userLoginId", userModel.getLoginId());
 			session.setAttribute("userNickname", userModel.getNickname());
-			session.setAttribute("userGender", userModel.getGander());
+			session.setAttribute("userGender", userModel.getGender());
 			session.setAttribute("userEmail", userModel.getEmail());
 			session.setAttribute("userProfile", userModel.getProfile());
 			

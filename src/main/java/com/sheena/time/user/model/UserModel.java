@@ -7,7 +7,7 @@ public class UserModel {
 	private String loginId;
 	private String password;
 	private String nickname;
-	private String gander;
+	private String gender;
 	private String email;
 	private String profile;
 	private Date createdAt;
@@ -36,11 +36,11 @@ public class UserModel {
 	public void setNickname(String nickname) {
 		this.nickname = nickname;
 	}
-	public String getGander() {
-		return gander;
+	public String getGender() {
+		return gender;
 	}
-	public void setGander(String gander) {
-		this.gander = gander;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 	public String getEmail() {
 		return email;
