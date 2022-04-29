@@ -24,6 +24,12 @@ public class PostBO {
 	//@Autowired
 	//private CommentBO commentBO;
 	
+	
+	// 메인 페이지 맞춤형 서비스 modal창 띄우기 
+	public VideoModel getservice(String body, String userGender) {
+		return postDAO.selectService(body, userGender);
+	}
+	
 
 	// 커뮤니티_글쓰기
 	public int addPost(int userId, String userNickname, String subject, String content, MultipartFile file) {

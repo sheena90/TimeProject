@@ -6,6 +6,30 @@
   
 <mapper namespace="com.sheena.time.post.dao.PostDAO">
 
+	<!-- 메인 페이지 맞춤형 서비스 modal창 띄우기 -->
+	<select id="selectService" parameterType="map" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `userGender`
+			, `body`
+			, `type`
+			, `title`
+			, `thumbnail`
+			, `link`
+			, `timeline`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`video`
+	  	WHERE
+	  		`body` = #{body}
+	  		AND `userGender` = #{userGender}
+		LIMIT 1
+	
+	
+	</select>
+
 	<!-- 커뮤니티_글쓰기 -->
 	<insert id="insertPost" parameterType="map">
 		INSERT INTO `post`

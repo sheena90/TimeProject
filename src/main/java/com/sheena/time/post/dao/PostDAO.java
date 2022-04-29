@@ -11,6 +11,12 @@ import com.sheena.time.post.model.PostModel;
 
 @Repository
 public interface PostDAO {
+	
+	
+	// 메인 페이지 맞춤형 서비스 modal창 띄우기 
+	public VideoModel selectService(@Param("body") String body, @Param("userGender") String userGender);
+	
+	
 
 	// 커뮤니티_글쓰기
 	public int insertPost(

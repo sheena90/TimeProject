@@ -116,7 +116,7 @@
 						</div>
 						<div class="mt-3 mb-3">
 							<c:forEach var="mainContentInfo" items="${mainContentInfoList }">
-								<a href="/post/community/review_view?id=${mainContentInfo.id }" class="text-dark">
+								<a href="/post/content/info/detail_view?id=${mainContentInfo.id }" class="text-dark">
 									<div class="d-flex mt-3">
 										<div>
 											<img width="150" height="100" alt="지식정보" src="${mainContentInfo.imagePath }">
@@ -221,13 +221,13 @@
 						</div>
 						
 						<div class="h-50 d-flex justify-content-around align-items-center">
-							<button class="btn selectButton customizeText text-center">
+							<button class="btn selectButton customizeText text-center where" data-where="홈비기구">
 								<small class="mt-4 text-white">홈트레이닝<br>(비기구)</small>
 							</button>
-							<button class="btn selectButton customizeText text-center">
+							<button class="btn selectButton customizeText text-center where" data-where="홈기구">
 								<small class="mt-4 text-white">홈트레이닝<br>(기구)</small>
 							</button>
-							<button class="btn selectButton customizeText text-center">
+							<button class="btn selectButton customizeText text-center where" data-where="헬스장">
 								<small class="mt-4 text-white">헬스장<br>(기구)</small>
 							</button>
 						</div>
@@ -295,22 +295,22 @@
 							<div class="selectButton">
 								<div class="d-flex justify-content-between align-items-center mt-5">
 									<div>
-										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방1.png"></button>
+										<button class="btn type" data-type="체지방1"><img width="75" alt="체지방률" src="/static/image/체지방1.png"></button>
 									</div>
 									<div>
-										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방2.png"></button>
+										<button class="btn type" data-type="체지방2"><img width="75" alt="체지방률" src="/static/image/체지방2.png"></button>
 									</div>
 									<div>
-										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방3.png"></button>
+										<button class="btn type" data-type="체지방3"><img width="75" alt="체지방률" src="/static/image/체지방3.png"></button>
 									</div>
 									<div>
-										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방4.png"></button>
+										<button class="btn type" data-type="체지방4"><img width="75" alt="체지방률" src="/static/image/체지방4.png"></button>
 									</div>
 									<div>
-										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방5.png"></button>
+										<button class="btn type" data-type="체지방5"><img width="75" alt="체지방률" src="/static/image/체지방5.png"></button>
 									</div>
 									<div>
-										<button class="btn"><img width="75" alt="체지방률" src="/static/image/체지방6.png"></button>
+										<button class="btn type" data-type="체지방6"><img width="75" alt="체지방률" src="/static/image/체지방6.png"></button>
 									</div>
 									
 								</div>
@@ -389,22 +389,22 @@
 						
 						<!-- modal3 슬라이드 --> 
 						<div class="customizeBox3 d-flex  flex-wrap">
-							<button class="btn selectButton customizeText3 text-center mr-5 ml-2">
+							<button class="btn selectButton customizeText3 text-center mr-5 ml-2 body" data-body="가슴">
 								<small class="mt-4 text-white">가슴</small>
 							</button>
-							<button class="btn selectButton customizeText3 text-center mr-5">
+							<button class="btn selectButton customizeText3 text-center mr-5 body" data-body="어깨">
 								<small class="mt-4 text-white">어깨</small>
 							</button>
-							<button class="btn selectButton customizeText3 text-center">
+							<button class="btn selectButton customizeText3 text-center body" data-body="복근">
 								<small class="mt-4 text-white">복근</small>
 							</button>
-							<button class="btn selectButton customizeText3 text-center mr-5 ml-2">
+							<button class="btn selectButton customizeText3 text-center mr-5 ml-2 body" data-body="하체">
 								<small class="mt-4 text-white">하체</small>
 							</button>
-							<button class="btn selectButton customizeText3 text-center mr-5">
+							<button class="btn selectButton customizeText3 text-center mr-5 body" data-body="힙">
 								<small class="mt-4 text-white">힙</small>
 							</button>
-							<button class="btn selectButton customizeText3 text-center">
+							<button class="btn selectButton customizeText3 text-center body" data-body="등">
 								<small class="mt-4 text-white">등</small>
 							</button>
 						</div>
@@ -413,7 +413,7 @@
 								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
 							</a>
 							<a href="#" data-toggle="modal" data-target="#customizeModal4">
-								<button type="button" class="btn btn-danger modalOff">다음</button>
+								<button type="button" class="btn btn-danger modalOff" id="nextBtn">다음</button>
 							</a>
 						</div>
 						
@@ -466,7 +466,7 @@
 							
 							<!-- 동영상 -->
 							<div class="col-6 mt-5">
-								<img width="100%" alt="썸네일" src="/static/image/man_Thumbnail_1.jpg">
+								<img width="100%" alt="썸네일" src="/static/image/man_Thumbnail_1.jpg" id="resultThumbnail">
 							</div>
 							
 							<!-- 계획표 생성 -->
@@ -500,6 +500,52 @@
 	
 	<script>
 		$(document).ready(function() {
+			
+			
+			var where = "";
+			var type = "";
+			var body = "";
+			
+			$(".where").on("click", function() {
+				
+				where = $(this).data("where");
+				
+			});
+			
+			
+			$(".type").on("click", function() {
+				
+				type = $(this).data("type");
+			});
+			
+			
+			$(".body").on("click", function() {
+				
+				body = $(this).data("body");
+			});
+			
+			
+			// 맞춤화 서비스 model3 다음 버튼에 대한 이벤트 처리
+			$("#nextBtn").on("click", function() {
+				
+				
+				
+				$.ajax({
+					
+					type:"post",
+					url:"/post/service",
+					data:{"where":where, "type":type, "body":body},
+					success:function(data) {
+						
+						// 해당 속성의 값을 체인지 
+						$("#resultThumbnail").attr("src", data.thumbnail);
+					},
+					error:function() {
+						alert("맞춤화 서비스 에러");
+					}
+				});
+			});
+			
 			
 			// 맞춤화 서비스 새로운 modal창이 띄워질 때, 기존 modal창 닫기 
 			$(".modalOff").on("click", function() {

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.bo.PostBO;
 import com.sheena.time.post.model.PostModel;
 
@@ -23,6 +24,25 @@ public class PostRestController {
 	
 	@Autowired
 	private PostBO postBO;
+	
+	
+	// 메인 페이지 맞춤형 서비스 modal창 띄우기 
+	@PostMapping("/service")
+	public VideoModel service(
+			@RequestParam("where") String where,
+			@RequestParam("type") String type,
+			@RequestParam("body") String body, 
+			HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String userGender = (String)session.getAttribute("userGender");
+		
+		VideoModel result = postBO.getservice(body, userGender);
+		
+		return result;
+		
+	}
+	
+	
 	
 	
 	// 커뮤니티_글쓰기
