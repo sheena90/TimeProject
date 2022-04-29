@@ -26,8 +26,8 @@
 			<div class="myPage pt-5">
 				
 				<!-- 라이브 콘텐츠 -->
-				<div class="h-75 bg-warning m-5">
-					
+				<div class="h-75 m-5">
+					<img width="100%" alt="썸네일" src="/static/image/live_1.jpg">
 				</div>
 			
 				<div class="m-5 d-flex justify-content-end">
