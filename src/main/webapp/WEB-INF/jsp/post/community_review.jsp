@@ -85,8 +85,8 @@
 			<hr>
 			
 			<div class="mt-5">
-				<textarea rows="5" id="comment" class="col-12"></textarea>
-				<div class="d-flex justify-content-end">
+				<textarea rows="5" id="comment" class="form-control"></textarea>
+				<div class="d-flex justify-content-end mt-3">
 					<button type="button" class="btn btn-danger" id="commentBtn" data-post-id="${postFull.id }">등록</button>
 				</div>
 			</div>
