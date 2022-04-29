@@ -134,6 +134,12 @@ public class PostBO {
 	}
 	
 	
+	// 라이브 강의 리스트
+	public List<VideoModel> getManagerPostLive(String type) {
+		return postDAO.selectManagerPostLive(type);
+	}
+	
+	
 	
 	// 지식정보 리스트
 	public List<ManagerPostModel> getManagerPostList() {
