@@ -85,20 +85,17 @@
 							<tr>
 								<th>No.</th>
 								<th>Title</th>
-								<th>입장시간</th>
+								<th>시작시간</th>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>1</td>
-								<td>A</td>
-								<td>2022-04-30 15:00</td>
-							</tr>
-							<tr>
-								<td>2</td>
-								<td>B</td>
-								<td>2022-04-30 18:00</td>
-							</tr>
+							<c:forEach var="live" items="${managerPostLive }" varStatus="status">
+								<tr>
+									<td>${status.count}</td>
+									<td>${live.title }</td>
+									<td>${live.timeline }</td>
+								</tr>
+							</c:forEach>
 						</tbody>
 					</table>
 	      		</div>
