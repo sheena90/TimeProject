@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 		<header>
 			<div class="header d-flex align-items-center justify-content-between">
@@ -86,6 +87,7 @@
 								<th>No.</th>
 								<th>Title</th>
 								<th>시작시간</th>
+								<th>입장</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -93,16 +95,17 @@
 								<tr>
 									<td>${status.count}</td>
 									<td>${live.title }</td>
-									<td>${live.timeline }</td>
+									<td><fmt:formatDate value="${live.timeline }" pattern="yyyy-MM-dd HH:mm" /></td>
+									<td>
+										<a href="/post/live/play_view?id=${live.id }">
+											<button type="button" class="btn btn-primary btn-sm">입장하기</button>
+										</a>
+									</td>
+									
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
-	      		</div>
-	      		<div class="modal-footer">
-	        		<a href="/post/live/play_view">
-	        			<button type="button" class="btn btn-primary">입장하기</button>
-	        		</a>
 	      		</div>
 	    	</div>
 	  	</div>

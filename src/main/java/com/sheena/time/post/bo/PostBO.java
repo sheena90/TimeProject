@@ -140,9 +140,16 @@ public class PostBO {
 	}
 	
 	
-	// 라이브 강의 리스트
+	// 라이브 강의 리스트(모달창)
 	public List<VideoModel> getManagerPostLive(String type) {
 		return postDAO.selectManagerPostLive(type);
+	}
+	
+	
+	
+	// 라이브 강의(입장 후)
+	public VideoModel getManagerPostLiveDetail(int id) {
+		return postDAO.selectManagerPostLiveDetail(id);
 	}
 	
 	

@@ -68,8 +68,13 @@ public interface PostDAO {
 	
 	
 	
-	// 라이브 강의 리스트
+	// 라이브 강의 리스트(모달창)
 	public List<VideoModel> selectManagerPostLive(@Param("type") String type);
+	
+	
+	
+	// 라이브 강의(입장 후)
+	public VideoModel selectManagerPostLiveDetail(@Param("id") int id);
 	
 	
 	

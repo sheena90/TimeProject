@@ -103,6 +103,8 @@ public class PostController {
 	}
 	
 	
+	
+	
 	// 커뮤니티
 	@GetMapping("/community/main_view")
 	public String communityMainView(Model model) {
@@ -156,12 +158,22 @@ public class PostController {
 	}
 	
 	
+	
+	
+	// 라이브 강의(입장 후)
 	@GetMapping("/live/play_view")
-	public String livePlayView() {
+	public String livePlayView(@RequestParam("id") int id, Model model) {
+		
+		VideoModel liveVideo = postBO.getManagerPostLiveDetail(id);
+		
+		model.addAttribute("liveVideo", liveVideo);
 		
 		
 		return "post/live_play";
 	}
+	
+	
+	
 	
 	
 	// 공지사항

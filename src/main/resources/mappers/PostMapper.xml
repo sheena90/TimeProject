@@ -203,6 +203,7 @@
 	
 	
 	
+	<!-- 라이브 강의 리스트(모달창) -->
 	<select id="selectManagerPostLive" parameterType="map" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
 		SELECT
 			`id`
@@ -223,6 +224,28 @@
 
 	</select>
 	
+	
+	
+	<!-- 라이브 강의(입장 후) -->
+	<select id="selectManagerPostLiveDetail" parameterType="map" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `userGender`
+			, `body`
+			, `type`
+			, `title`
+			, `thumbnail`
+			, `link`
+			, `timeline`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`video`
+		WHERE
+			`id` = #{id}
+	
+	</select>
 	
 	
 
