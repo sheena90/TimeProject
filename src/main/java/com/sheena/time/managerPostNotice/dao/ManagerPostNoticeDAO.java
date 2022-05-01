@@ -11,7 +11,7 @@ import com.sheena.time.managerPostNotice.model.NoticeModel;
 public interface ManagerPostNoticeDAO {
 
 	// 공지사항 리스트
-	public List<NoticeModel> selectManagerPostNotice(@Param("managerId") int managerId);
+	public List<NoticeModel> selectManagerPostNoticeList(@Param("managerId") int managerId);
 
 
 	// 공지사항 작성
@@ -20,4 +20,8 @@ public interface ManagerPostNoticeDAO {
 			@Param("subject") String subject,
 			@Param("content") String content,
 			@Param("imagePath") String imagePath);
+	
+	
+	// 공지사항 수정
+	public NoticeModel selectManagerPostNotice(@Param("id") int id);
 }

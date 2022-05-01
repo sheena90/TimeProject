@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sheena.time.managerPostNotice.bo.ManagerPostNoticeBO;
 import com.sheena.time.managerPostNotice.model.NoticeModel;
@@ -40,6 +41,18 @@ public class ManagerPostNoticeController {
 	@GetMapping("/notice/create_view")
 	public String noticeCreateView() {
 		return "managerPost/notice_create";
+	}
+	
+	
+	// 공지사항 수정
+	@GetMapping("/notice/edit_view")
+	public String noticeEditView(@RequestParam("id") int id, Model model) {
+		
+		NoticeModel notice = noticeBO.getManagerPostNotice(id);
+		
+		model.addAttribute("notice", notice);
+		
+		return "managerPost/notice_edit";
 	}
 	
 }

@@ -18,7 +18,7 @@ public class ManagerPostNoticeBO {
 	
 	// 공지사항 리스트
 	public List<NoticeModel> getManagerPostNoticeList(int managerId) {
-		return noticeDAO.selectManagerPostNotice(managerId);
+		return noticeDAO.selectManagerPostNoticeList(managerId);
 	}
 	
 	// 공지사항 작성
@@ -27,7 +27,12 @@ public class ManagerPostNoticeBO {
 		String imagePath = FileManagerService.saveFile(managerId, file);
 		
 		return noticeDAO.insertManagerPostNotice(managerId, subject, content, imagePath);
-		
-		
+			
+	}
+	
+	
+	// 공지사항 수정
+	public NoticeModel getManagerPostNotice(int id) {
+		return noticeDAO.selectManagerPostNotice(id);
 	}
 }
