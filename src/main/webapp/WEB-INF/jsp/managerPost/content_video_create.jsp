@@ -23,56 +23,9 @@
 </head>
 <body>
 	<div id="wrap">
+	
+		<c:import url="/WEB-INF/jsp/include/managerHeader.jsp" />
 		
-		<header>
-			<div class="header d-flex align-items-center justify-content-between">
-				<!-- logo -->
-				<div>
-					<a href="#">
-						<img width="150" alt="logo" src="/static/image/logo.PNG">
-					</a>
-				</div>
-				
-				<!-- 메뉴 -->
-				<div class="d-flex align-items-center justify-content-between text-white">
-
-					<h6 class="mr-5">
-					<a class="text-white" href="/managerPost/content/video_view">운동영상 관리</a>
-					</h6>
-					<h6 class="mr-5">
-						<a class="text-white" href="/managerPost/content/info_view">지식정보 관리</a>
-					</h6>
-					
-					<!-- 로그인 아이콘에 대한 dropdown 적용 : 마이페이지, 로그아웃 -->
-					<div class="dropdown d-flex align-items-center mr-4">
-						<c:choose>
-							<c:when test="${not empty managerId }">
-								<a class="text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-bs-expanded="false" class="mr-2 text-dark"> 
-									<h1 class="material-icons-outlined">logout</h1>
-								</a>
-								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
-									<li>
-										<a class="dropdown-item text-primary" href="/manager/sign_out">로그아웃</a>
-									</li>
-								</ul>
-							</c:when>
-							<c:otherwise>
-								<a class="text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-bs-expanded="false" class="mr-2 text-dark"> 
-									<h1 class="material-icons-outlined">login</h1>
-								</a>
-								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
-									<li><a class="dropdown-item" href="/manager/signin_view">로그인</a></li>
-									<li><hr class="dropdown-divider"></li>
-									<li>
-										<a class="dropdown-item text-primary" href="/manager/signup_view">회원가입</a>
-									</li>
-								</ul>
-							</c:otherwise>
-						</c:choose>
-					</div>
-				</div>
-			</div>	
-		</header>
 		
 		<div class="signUp mt-5 mb-5">
 			<div class="signUpHeader d-flex align-items-center justify-content-center">
@@ -126,14 +79,14 @@
 				<div class="ml-3 mr-3">
 					<input type="file" class="mt-3" id="thumbnailInput">
 					<div class="d-flex justify-content-between mt-3">
-						<a href="/managerPost/content/inpo_view" class="btn btn-secondary">목록으로</a>
+						<a href="/managerPost/content/video_view" class="btn btn-secondary">목록으로</a>
 						<button type="button" class="btn btn-danger" id="saveBtn">저장</button>
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
+		<c:import url="/WEB-INF/jsp/include/managerFooter.jsp" />
 		
 	</div>
 	

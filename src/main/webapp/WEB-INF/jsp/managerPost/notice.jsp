@@ -34,7 +34,7 @@
 		
 		<section class="d-flex justify-content-center">
 			<div class="w-75 my-5">
-				<h1 class="text-center">지식정보 관리 리스트</h1>
+				<h1 class="text-center mb-5">공지사항 관리 리스트</h1>
 				
 				<table class="table text-center mt-3">
 					<thead>
@@ -48,7 +48,7 @@
 					<c:forEach var="noticeList" items="${managerPostNoticeList }">
 						<tr>
 							<td>${noticeList.id }</td>
-							<td>${noticeList.subject }</td>
+							<td><a href="/managerPost/notice/edit_view?id=${noticeList.id }"> ${noticeList.subject }</a></td>
 							<td><fmt:formatDate value="${noticeList.createdAt }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
 						</tr>
 					</c:forEach>
@@ -65,7 +65,7 @@
 		
 		</section>
 		
-		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
+		<c:import url="/WEB-INF/jsp/include/managerFooter.jsp" />
 	</div>
 
 </body>

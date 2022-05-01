@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		
-		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
+		<c:import url="/WEB-INF/jsp/include/managerFooter.jsp" />
 		
 	</div>
 	
