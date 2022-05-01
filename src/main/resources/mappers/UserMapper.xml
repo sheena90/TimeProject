@@ -79,5 +79,24 @@
 	
 	
 	</select>
+	
+	
+	<!-- Q&A 디테일뷰 -->
+	<select id="selectQuestion" parameterType="int" resultType="com.sheena.time.user.model.QuestionModel">
+		SELECT
+			`id`
+			, `userId`
+			, `name`
+			, `email`
+			, `subject`
+			, `content`
+			, `answer`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`question`
+		WHERE
+			`id` = #{id}
+	</select>
 
 </mapper>

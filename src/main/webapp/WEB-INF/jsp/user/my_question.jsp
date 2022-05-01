@@ -50,7 +50,7 @@
 					<c:forEach var="questionList" items="${questionList }">
 						<tr>
 							<td>${questionList.id }</td>
-							<td>${questionList.subject }</td>
+							<td><a href="/user/myQuestion/detail_view?id=${questionList.id}"> ${questionList.subject }</a></td>
 							<td><fmt:formatDate value="${questionList.createdAt }" pattern="yyyy-MM-dd" /></td>
 						</tr>
 					</c:forEach>

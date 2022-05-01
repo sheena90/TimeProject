@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sheena.time.user.bo.UserBO;
 import com.sheena.time.user.model.QuestionModel;
@@ -87,6 +88,18 @@ public class UserController {
 		model.addAttribute("questionList", questionList);
 		
 		return "user/my_question";
+	}
+	
+	
+	// Q&A 디테일뷰
+	@GetMapping("/myQuestion/detail_view")
+	public String myQuestionDetailView(@RequestParam("id") int id, Model model) {
+		
+		QuestionModel question = userBO.getQuestion(id);
+		
+		model.addAttribute("question", question);
+		
+		return "user/my_question_detail";
 	}
 	
 	

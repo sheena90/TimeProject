@@ -60,6 +60,11 @@ public class UserBO {
 		return userDAO.selectQuestionList(userId);
 	}
 	
+	// Q&A 디테일뷰
+	public QuestionModel getQuestion(int id) {
+		return userDAO.selectQuestion(id);
+	}
+	
 	
 	
 	
