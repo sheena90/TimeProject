@@ -42,12 +42,19 @@ public class PermissionInterceptor implements HandlerInterceptor {
 		// 로그인이 안 된 상태:
 		if(userId == null) {
 			// 커뮤니티 부분 이동 불가, 즉 /post/community
+			// question 이동 불가, 즉 /post/question
 			// My페이지 이동 불가, 즉 /user
 			
 			if(uri.startsWith("/post/community")) {
 				response.sendRedirect("/user/signin_view");
 				return false;
 			}
+			
+			if(uri.startsWith("/post/question")) {
+				response.sendRedirect("/user/signin_view");
+				return false;				
+			}
+			
 			
 			if(uri.equals("/user/myProfile_view")) {
 				response.sendRedirect("/user/signin_view");
@@ -69,15 +76,14 @@ public class PermissionInterceptor implements HandlerInterceptor {
 				return false;				
 			}
 			
-			if(uri.equals("/user/myNotifications_view")) {
-				response.sendRedirect("/user/signin_view");
-				return false;				
-			}
 			
 			if(uri.equals("/user/myWithdraw_view")) {
 				response.sendRedirect("/user/signin_view");
 				return false;				
 			}
+			
+			
+			
 			
 			
 		} else {
