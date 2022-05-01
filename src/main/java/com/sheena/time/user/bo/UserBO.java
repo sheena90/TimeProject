@@ -1,10 +1,13 @@
 package com.sheena.time.user.bo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sheena.time.common.EncryptUtils;
 import com.sheena.time.user.dao.UserDAO;
+import com.sheena.time.user.model.QuestionModel;
 import com.sheena.time.user.model.UserModel;
 
 @Service
@@ -52,7 +55,10 @@ public class UserBO {
 	
 	
 	
-	
+	// Q&A 리스트
+	public List<QuestionModel> getQuestionList(int userId) {
+		return userDAO.selectQuestionList(userId);
+	}
 	
 	
 	

@@ -57,5 +57,27 @@
 			`loginId` = #{loginId}
 			AND `password` = #{password}
 	</select>
+	
+	
+	<!-- Q&A 리스트 -->
+	<select id="selectQuestionList" parameterType="int" resultType="com.sheena.time.user.model.QuestionModel">
+		SELECT
+			`id`
+			, `userId`
+			, `name`
+			, `email`
+			, `subject`
+			, `content`
+			, `answer`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`question`
+		WHERE
+			`userId` = #{userId}
+		ORDER BY `id` DESC
+	
+	
+	</select>
 
 </mapper>

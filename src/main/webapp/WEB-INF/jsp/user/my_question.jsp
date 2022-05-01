@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +29,6 @@
 				<a class="text-dark" href="/user/myFavorites_view"><span>즐겨찾기</span></a>
 				<a class="text-dark" href="/user/myPlan_view"><span>계획표</span></a>
 				<a class="text-dark" href="/user/myQuestion_view"><span class="text-danger">Q&A</span></a>
-				<a class="text-dark" href="/user/myNotifications_view"><span>알림설정</span></a>
 				<a class="text-dark" href="/user/myWithdraw_view"><span>회원탈퇴</span></a>
 			</div>
 			<hr>
@@ -37,8 +37,26 @@
 				<p><small class="text-secondary">Time 1:1문의에 대한 답변으로 향상화 된 서비스를 이용하십시오.</small></p>
 			</div>
 		
-			<div class="favoritesContent bg-warning">
-			
+			<div class="favoritesContent">
+				<table class="table text-center mt-3">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>제목</th>
+							<th>작성일</th>
+						</tr>
+					</thead>
+					<tbody>
+					<c:forEach var="questionList" items="${questionList }">
+						<tr>
+							<td>${questionList.id }</td>
+							<td>${questionList.subject }</td>
+							<td><fmt:formatDate value="${questionList.createdAt }" pattern="yyyy-MM-dd" /></td>
+						</tr>
+					</c:forEach>
+					</tbody>
+					
+				</table>
 			</div>
 		
 		

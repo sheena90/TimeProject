@@ -1,15 +1,26 @@
 package com.sheena.time.user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sheena.time.user.bo.UserBO;
+import com.sheena.time.user.model.QuestionModel;
 
 @Controller
 @RequestMapping("/user")
 public class UserController {
+	
+	@Autowired
+	private UserBO userBO;
+	
 	
 	@GetMapping("/signup_view")
 	public String signUpView() {
@@ -64,17 +75,20 @@ public class UserController {
 		return "user/my_plan";
 	}
 	
-	// Q&A
+	// Q&A 리스트
 	@GetMapping("/myQuestion_view")
-	public String myQuestionView() {
+	public String myQuestionView(HttpServletRequest request, Model model) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		List<QuestionModel> questionList = userBO.getQuestionList(userId);
+		
+		model.addAttribute("questionList", questionList);
+		
 		return "user/my_question";
 	}
 	
-	// 알림설정
-	@GetMapping("/myNotifications_view")
-	public String myNotificationsView() {
-		return "user/my_notifications";
-	}
 	
 	// 회원탈퇴
 	@GetMapping("/myWithdraw_view")
