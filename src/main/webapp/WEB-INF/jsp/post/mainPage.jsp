@@ -46,7 +46,7 @@
 						전문 강사님과 함께 하는 라이브 강의
 					</p>
 					<a href="#" data-toggle="modal" data-target="#customizeModal1">
-						<button type="button" class="btn btn-danger mt-5">시작하기</button>
+						<button type="button" class="btn btn-danger mt-5" id="serviceStart">시작하기</button>
 					</a>
 				</div>
 			</div>
@@ -233,7 +233,7 @@
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-start">
 							<a href="#" data-toggle="modal" data-target="#customizeModal2">
-								<button type="button" class="btn btn-danger modalOff">다음</button>
+								<button type="button" class="btn btn-danger modalOff" id="nextBtn1">다음</button>
 							</a>
 						</div>
 						
@@ -525,11 +525,23 @@
 			});
 			
 			
+			// 다음 버튼에 대한 이벤트 등록
+			$("#nextBtn1").on("click", function() {
+				
+				if(where == "") {
+					alert("해당 항목을 선택해주세요.");
+					return;
+				// 나머지 보여주지 않기!
+				
+				}
+				
+				
+			});
+			
+			
 			// 맞춤화 서비스 model3 다음 버튼에 대한 이벤트 처리
 			$("#nextBtn").on("click", function() {
-				
-				
-				
+
 				$.ajax({
 					
 					type:"post",
@@ -545,6 +557,17 @@
 					}
 				});
 			});
+			
+			
+			// 맞춤형 서비스를 로그인이 안되어있을 때 안보여주는 이벤트 등록
+			$("#serviceStart").on("click", function() {
+				
+				
+				
+			});
+			
+			
+			
 			
 			
 			// 맞춤화 서비스 새로운 modal창이 띄워질 때, 기존 modal창 닫기 
