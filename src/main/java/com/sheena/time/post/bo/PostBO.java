@@ -31,6 +31,14 @@ public class PostBO {
 		return postDAO.selectService(body, userGender);
 	}
 	
+	
+	
+	// Q&A 글쓰기
+	public int addQuestion(int userId, String name, String email, String subject, String content, String answer) {
+		return postDAO.insertQuestion(userId, name, email, subject, content, answer);
+	}
+	
+	
 
 	// 커뮤니티_글쓰기
 	public int addPost(int userId, String userNickname, String subject, String content, MultipartFile file) {

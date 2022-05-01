@@ -18,6 +18,17 @@ public interface PostDAO {
 	public VideoModel selectService(@Param("body") String body, @Param("userGender") String userGender);
 	
 	
+	
+	// Q&A 글쓰기
+	public int insertQuestion(
+			@Param("userId") int userId,
+			@Param("name") String name,
+			@Param("email") String email,
+			@Param("subject") String subject,
+			@Param("content") String content,
+			@Param("answer") String answer);
+	
+	
 
 	// 커뮤니티_글쓰기
 	public int insertPost(

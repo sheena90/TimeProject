@@ -43,6 +43,33 @@ public class PostRestController {
 	}
 	
 	
+	// Q&A 글쓰기
+	@PostMapping("/question/create")
+	public Map<String, String> questionCreate(
+			@RequestParam("name") String name,
+			@RequestParam("email") String email,
+			@RequestParam("subject") String subject,
+			@RequestParam("content") String content,
+			@RequestParam(value = "answer",required = false) String answer,
+			HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		int count = postBO.addQuestion(userId, name, email, subject, content, answer);
+		
+		Map<String, String>result = new HashMap<>();
+		
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+		
+		return result;
+		
+	}
+	
 	
 	
 	// 커뮤니티_글쓰기

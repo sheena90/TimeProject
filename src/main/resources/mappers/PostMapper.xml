@@ -29,6 +29,38 @@
 	
 	
 	</select>
+	
+	
+	
+	<!-- Q&A 글쓰기 -->
+	<insert id="insertQuestion" parameterType="map">
+		INSERT INTO `question`
+		(
+			`userId`
+			, `name`
+			, `email`
+			, `subject`
+			, `content`
+			, `answer`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUE
+		(
+			#{userId}
+			, #{name}
+			, #{email}
+			, #{subject}
+			, #{content}
+			, #{answer}
+			, now()
+			, now()
+		)
+	
+	</insert>
+	
+	
+	
 
 	<!-- 커뮤니티_글쓰기 -->
 	<insert id="insertPost" parameterType="map">

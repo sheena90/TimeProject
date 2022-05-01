@@ -36,22 +36,22 @@
 			<div class="mt-5">
 				<div class="questionInput d-flex align-items-center justify-content-center mt-5">
 					<div class="mr-5 col-1">NAME.</div>
-					<input type="text" class="form-control col-4">
+					<input type="text" class="form-control col-4" id="nameInput">
 				</div>
 				<div class="questionInput d-flex align-items-center justify-content-center mt-4">
 					<div class="mr-5 col-1">EMAIL.</div>
-					<input type="text" class="form-control col-4">
+					<input type="text" class="form-control col-4" id="emailInput">
 				</div>
 				<div class="questionInput d-flex align-items-center justify-content-center mt-4">
 					<div class="mr-5 col-1">SUBJECT.</div>
-					<input type="text" class="form-control col-4">
+					<input type="text" class="form-control col-4" id="subjectInput">
 				</div>
 				<div class="questionInput d-flex align-items-center justify-content-center mt-4">
 					<div class="mr-5 col-1">CONTENTS.</div>
-					<textarea rows="5" class="form-control col-4"></textarea>
+					<textarea rows="5" class="form-control col-4" id="contentInput"></textarea>
 				</div>
 				<div class="questionInput d-flex justify-content-end col-6 mt-4">
-					<button type="button" class="btn btn-danger">SEND</button>
+					<button type="button" class="btn btn-danger" id="sendBtn">SEND</button>
 				</div>
 							
 			</div>
@@ -60,6 +60,63 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 		
 	</div>
+	
+	<script>
+		$(document).ready(function() {
+			
+			$("#sendBtn").on("click", function() {
+				
+				let name = $("#nameInput").val();
+				let email = $("#emailInput").val();
+				let subject = $("#subjectInput").val();
+				let content = $("#contentInput").val();
+				
+				if(name == "") {
+					alert("이름을 입력하세요.");
+					return;
+				}
+				
+				if(email == "") {
+					alert("이메일을 입력하세요.");
+					return;
+				}
+				
+				if(subject == "") {
+					alert("제목을 입력하세요.");
+					return;
+				}
+				
+				if(content == "") {
+					alert("내용을 입력하세요.");
+					return;
+				}
+				
+				
+				$.ajax({
+					type:"post",
+					url:"/post/question/create",
+					data:{"name":name, "email":email, "subject":subject, "content":content},
+					success:function(data) {
+						
+						if(data.result == "success") {
+							location.href="/user/myQuestion_view";
+						} else {
+							alert("Q&A 입력 실패");
+						}
+						
+					},
+					error:function() {
+						alert("Q&A 에러");
+					}
+					
+				});
+				
+			});
+			
+			
+		});
+	
+	</script>
 
 </body>
 </html>
