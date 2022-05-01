@@ -29,7 +29,6 @@
 				<a class="text-dark" href="/user/myFavorites_view"><span>즐겨찾기</span></a>
 				<a class="text-dark" href="/user/myPlan_view"><span>계획표</span></a>
 				<a class="text-dark" href="/user/myQuestion_view"><span>Q&A</span></a>
-				<a class="text-dark" href="/user/myNotifications_view"><span>알림설정</span></a>
 				<a class="text-dark" href="/user/myWithdraw_view"><span>회원탈퇴</span></a>
 			</div>
 			<hr> 
