@@ -181,11 +181,23 @@ public class PostController {
 	@GetMapping("/notice_view")
 	public String noticeView(Model model) {
 		
-		List<NoticeModel> notice = postBO.getManagerPostNoticeList();
+		List<NoticeModel> noticeList = postBO.getManagerPostNoticeList();
 		
-		model.addAttribute("notice", notice);
+		model.addAttribute("noticeList", noticeList);
 		
 		return "post/notice";
+	}
+	
+	
+	// 공지사항 디테일 화면
+	@GetMapping("/notice/detail_view")
+	public String noticeDetailView(@RequestParam("int") int id, Model model) {
+		
+		NoticeModel noticeDetail = postBO.getNotice(id);
+		
+		model.addAttribute("noticeDetail", noticeDetail);
+		
+		return "post/notice_detail";
 	}
 	
 	

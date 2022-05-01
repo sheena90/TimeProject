@@ -322,5 +322,22 @@
 		
 	</select>
 	
+	
+	<!-- 공지사항 디테일 화면 -->
+	<select id="selectManagerPostNotice" parameterType="int" resultType="com.sheena.time.managerPostNotice.model.NoticeModel">
+		SELECT
+			`id`
+			, `managerId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`notice`
+		WHERE
+			`id` = #{id}
+	</select>
+	
 
 </mapper>

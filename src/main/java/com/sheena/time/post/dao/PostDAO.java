@@ -97,5 +97,7 @@ public interface PostDAO {
 	public List<NoticeModel> selectManagerPostNoticeList();
 	
 
+	// 공지사항 디테일 화면
+	public NoticeModel selectManagerPostNotice(@Param("id") int id);
 	
 }

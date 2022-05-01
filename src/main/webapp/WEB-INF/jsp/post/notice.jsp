@@ -49,11 +49,11 @@
 							</tr>
 						</thead>
 						<tbody>
-						<c:forEach var="notice" items="${notice }">
+						<c:forEach var="noticeList" items="${noticeList }">
 							<tr>
-								<td>${notice.id }</td>
-								<td>${notice.subject }</td>
-								<td><fmt:formatDate value="${notice.createdAt }" pattern="yyyy-MM-dd" /></td>
+								<td>${noticeList.id }</td>
+								<td><a href="/post/notice/detail_view?id=${noticeList.id }">${noticeList.subject }</a></td>
+								<td><fmt:formatDate value="${noticeList.createdAt }" pattern="yyyy-MM-dd" /></td>
 							</tr>
 						</c:forEach>
 						</tbody>

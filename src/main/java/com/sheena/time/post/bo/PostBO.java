@@ -178,6 +178,12 @@ public class PostBO {
 	public List<NoticeModel> getManagerPostNoticeList() {
 		return postDAO.selectManagerPostNoticeList();
 	}
+	
+	
+	// 공지사항 디테일 화면
+	public NoticeModel getNotice(int id) {
+		return postDAO.selectManagerPostNotice(id);
+	}
 
 	
 	
