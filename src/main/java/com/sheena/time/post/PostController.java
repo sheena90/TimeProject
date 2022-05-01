@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sheena.time.managerPost.model.ManagerPostModel;
+import com.sheena.time.managerPostNotice.model.NoticeModel;
 import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.bo.PostBO;
 import com.sheena.time.post.comment.bo.CommentBO;
@@ -176,9 +177,14 @@ public class PostController {
 	
 	
 	
-	// 공지사항
+	// 공지사항 리스트
 	@GetMapping("/notice_view")
-	public String noticeView() {
+	public String noticeView(Model model) {
+		
+		List<NoticeModel> notice = postBO.getManagerPostNoticeList();
+		
+		model.addAttribute("notice", notice);
+		
 		return "post/notice";
 	}
 	

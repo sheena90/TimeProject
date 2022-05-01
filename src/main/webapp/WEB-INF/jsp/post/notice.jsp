@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,35 +46,23 @@
 								<th>No.</th>
 								<th>제목</th>
 								<th>작성일</th>
-								<th>조회</th>
 							</tr>
 						</thead>
 						<tbody>
+						<c:forEach var="notice" items="${notice }">
 							<tr>
-								<td>1</td>
-								<td>[개선 안내1]</td>
-								<td>2022-04-19</td>
-								<td>0</td>
+								<td>${notice.id }</td>
+								<td>${notice.subject }</td>
+								<td><fmt:formatDate value="${notice.createdAt }" pattern="yyyy-MM-dd" /></td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td>[개선 안내2]</td>
-								<td>2022-04-19</td>
-								<td>0</td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>[개선 안내3]</td>
-								<td>2022-04-19</td>
-								<td>0</td>
-							</tr>
+						</c:forEach>
 						</tbody>
 					
 					</table>
 				</div>
 			</div>
 			
-			<div class="page">
+			<div class="page mt-3">
 				<ul class="pagination">
 					<li class="paginationLi"><a href="#" class="paginationA first">처음 페이지</a></li>
 					<li class="paginationLi"><a href="#" class="paginationA arrow left"><<</a></li>
@@ -87,14 +76,6 @@
 				</ul>
 			</div>
 			
-			<div class=" d-flex justify-content-center mt-4">
-				<div class="input-group w-25">
-	       			<input type="text" class="form-control">
-	       			<div class="input-group-append">
-	             		<button class="btn btn-secondary">검색</button>
-	       			</div>
-	 			</div>
- 			</div>
 				
 		</div>
 		

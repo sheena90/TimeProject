@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.sheena.time.common.Dateutil;
 import com.sheena.time.common.FileManagerService;
 import com.sheena.time.managerPost.model.ManagerPostModel;
+import com.sheena.time.managerPostNotice.model.NoticeModel;
 import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.dao.PostDAO;
 import com.sheena.time.post.model.CommunityModel;
@@ -170,6 +171,12 @@ public class PostBO {
 	// 지식정보 해당 디테일뷰 가져오기
 	public ManagerPostModel getManagerPost(int id) {
 		return postDAO.selectManagerPost(id);
+	}
+	
+	
+	// 공지사항 리스트
+	public List<NoticeModel> getManagerPostNoticeList() {
+		return postDAO.selectManagerPostNoticeList();
 	}
 
 	

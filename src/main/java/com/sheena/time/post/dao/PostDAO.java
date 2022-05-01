@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.sheena.time.managerPost.model.ManagerPostModel;
+import com.sheena.time.managerPostNotice.model.NoticeModel;
 import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.model.PostModel;
 
@@ -91,6 +92,9 @@ public interface PostDAO {
 	// 지식정보 해당 디테일뷰 가져오기
 	public ManagerPostModel selectManagerPost(@Param("id") int id);
 	
+	
+	// 공지사항 리스트
+	public List<NoticeModel> selectManagerPostNoticeList();
 	
 
 	
