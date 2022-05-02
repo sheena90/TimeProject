@@ -90,12 +90,16 @@
 	                        </a>
 	                    	<hr>
 	                    	<div class="d-flex justify-content-end align-items-center mr-2">
+	                    		
+	                    		<!-- 좋아요 아이콘 -->
 	                    		<div class="mr-3">
 	                    			<i class="bi bi-suit-heart"></i>
 	                    			100
 	                    		</div>
+	                    		
+	                    		<!-- 즐겨찾기 아이콘 -->
 	                    		<div>
-	                    			<i class="bi bi-star"></i>
+	                    			<a href="#" class="favoritesBtn"><i class="bi bi-star" data-video-id="${videoList.id }"></i></a>
 	                    		</div>
 	                    	</div>
 	                    </div>	
@@ -130,6 +134,37 @@
 	
 	<script>
 		$(document).ready(function() {
+			
+			// 즐겨찾기 이벤트
+			$(".favoritesBtn").on("click",function(e) {
+				
+				// 해당 태그의 속성 취소
+				e.preventDefault();
+				
+				//videoId 가져오기
+				let videoId = $(this).data("video-id");
+				
+				alert(videoId);
+				
+				$.ajax({
+					type:"get",
+					url:"/content/video/favorites",
+					data:{"videoId":videoId},
+					success:function(data) {
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("즐겨찾기 실패");
+						}
+					},
+					error:function() {
+						alert("즐겨찾기 에러");
+					}
+				});
+			});
+			
+			
+			
 			
 			// select 버튼 선택에 따른 인풋 변경
             $("input[name=type]").on("change", function() {

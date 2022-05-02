@@ -18,6 +18,7 @@ import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.bo.PostBO;
 import com.sheena.time.post.comment.bo.CommentBO;
 import com.sheena.time.post.comment.model.CommentModel;
+import com.sheena.time.post.favorites.bo.FavoritesBO;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
 
@@ -30,6 +31,9 @@ public class PostController {
 	
 	@Autowired
 	private CommentBO commentBO;
+	
+	@Autowired
+	private FavoritesBO favoritesBO;
 	
 	
 	@GetMapping("/main_view")
@@ -73,6 +77,9 @@ public class PostController {
 			
 			
 		}
+		
+		// 사용자가 좋아요를 눌렀는지
+		// boolean isFavorites = favoritesBO.isFavorites(, )
 		
 		return "post/content_video";
 	}
