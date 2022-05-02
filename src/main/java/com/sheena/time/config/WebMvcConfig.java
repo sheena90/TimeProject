@@ -33,7 +33,7 @@ public class WebMvcConfig implements WebMvcConfigurer{
 	 public void addInterceptors(InterceptorRegistry registry) {
 	 
 		 registry.addInterceptor(interceptor) 
-		 .addPathPatterns("/user/**", "/post/community/**", "/post/question/**") //어떤 경로(path)가 인터셉터를 거쳐서 수행 될지 설정
+		 .addPathPatterns("/**") //어떤 경로(path)가 인터셉터를 거쳐서 수행 될지 설정
 		 .excludePathPatterns("/static/**", "/images/**", "/user/sign_out");  // 처리하지 않을 path
 
 	
