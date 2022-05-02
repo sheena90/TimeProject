@@ -33,6 +33,13 @@ public class PostBO {
 	
 	
 	
+	// 메인 페이지_맞춤형 서비스_계획표 추가
+	public int addServicePlan(int userId, int videoId, String title, String thumbnail, String link) {
+		return postDAO.insertServicePlan(userId, videoId, title, thumbnail, link);
+	}
+	
+	
+	
 	// Q&A 글쓰기
 	public int addQuestion(int userId, String name, String email, String subject, String content, String answer) {
 		return postDAO.insertQuestion(userId, name, email, subject, content, answer);

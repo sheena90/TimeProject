@@ -184,7 +184,7 @@
 	
 	
 	<!-- Modal 1-->
-	<div class="modal fade" id="customizeModal1"  data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal fade" id="customizeModal1"  data-backdrop="static"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 		<div class=" modal-dialog  modal-dialog-centered modal-xl" role="document">
 	    	<div class="modal-content modalContent">
 		      	<div class="modal-body">
@@ -232,9 +232,9 @@
 							</button>
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-start">
-							<a href="#" data-toggle="modal" data-target="#customizeModal2">
-								<button type="button" class="btn btn-danger modalOff" id="nextBtn1">다음</button>
-							</a>
+							
+							<button type="button" class="btn btn-danger modalOff" id="nextBtn1">다음</button>
+							
 						</div>
 						
 					</div>
@@ -468,11 +468,13 @@
 							<div class="col-6 mt-5">
 								<img width="100%" alt="썸네일" src="/static/image/man_Thumbnail_1.jpg" id="resultThumbnail">
 							</div>
+							<input type="hidden" id="link">
+							<input type="hidden" id="videoId">
 							
 							<!-- 계획표 생성 -->
 							<div class="col-6">
-								<div class="mt-5 mb-4">
-									<b>계획표 생성</b>
+								<div class="mt-5 mb-4" >
+									<b id="titleAdd">계획표 생성</b>
 								</div>
 								<div>
 									<p>결과 문구 생성</p>
@@ -485,7 +487,7 @@
 								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
 							</a>
 							<a href="/user/myPlan_view" data-toggle="modal" data-target="#customizeNextModal">
-								<button type="button" class="btn btn-danger">계획표 추가</button>
+								<button type="button" class="btn btn-danger" id="addBtn">계획표 추가</button>
 							</a>
 						</div>
 						
@@ -530,11 +532,13 @@
 				
 				if(where == "") {
 					alert("해당 항목을 선택해주세요.");
+					
 					return;
 				// 나머지 보여주지 않기!
 				
 				}
 				
+				$("#customizeModal2").modal("show");
 				
 			});
 			
@@ -551,6 +555,15 @@
 						
 						// 해당 속성의 값을 체인지 
 						$("#resultThumbnail").attr("src", data.thumbnail);
+						
+						// 이 부분은 맞춤화 서비스 계획표 추가 시 필요한 내용, 해당 속성의 값을 체인지 
+						$("#titleAdd").text(data.title);
+						$("#link").val(data.link);
+						$("#videoId").val(data.id);
+						
+						
+						
+						
 					},
 					error:function() {
 						alert("맞춤화 서비스 에러");
@@ -579,6 +592,38 @@
 				$("#customizeModal4").modal("hide");
 				
 			});
+			
+			
+			
+			// 메인 페이지_맞춤형 서비스_계획표 추가 
+			$("#addBtn").on("click", function() {
+				
+				// 값을 가져올 때 
+				let videoId = $("#videoId").val();
+				let thumbnail = $("#resultThumbnail").attr("src");
+				let title = $("#titleAdd").text();
+				let link = $("#link").val();
+				
+				
+				
+				$.ajax({
+					type:"post",
+					url:"/post/service/plan",
+					data:{"videoId":videoId, "thumbnail":thumbnail, "title":title, "link":link},
+					success:function(data) {
+						
+						if(data.result == "success") {
+							location.href="/user/myPlan_view";
+						} else {
+							alert("계획표 추가 실패");
+						}
+					},
+					error:function() {
+						alert("계획표 추가 에러");
+					}
+				});
+			}); 
+			
 			
 			
 			

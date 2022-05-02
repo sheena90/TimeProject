@@ -19,6 +19,16 @@ public interface PostDAO {
 	
 	
 	
+	// 메인 페이지_맞춤형 서비스_계획표 추가
+	public int insertServicePlan(
+			@Param("userId") int userId,
+			@Param("videoId") int videoId,
+			@Param("title") String title,
+			@Param("thumbnail") String thumbnail,
+			@Param("link") String link);
+	
+	
+	
 	// Q&A 글쓰기
 	public int insertQuestion(
 			@Param("userId") int userId,

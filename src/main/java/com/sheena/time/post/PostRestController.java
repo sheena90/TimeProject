@@ -43,6 +43,38 @@ public class PostRestController {
 	}
 	
 	
+	
+	// 메인 페이지_맞춤형 서비스_계획표 추가
+	@PostMapping("/service/plan")
+	public Map<String, String> servicePlan(
+			@RequestParam("videoId") int videoId,
+			@RequestParam("title") String title,
+			@RequestParam("thumbnail") String thumbnail,
+			@RequestParam("link") String link,
+			HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		int count = postBO.addServicePlan(userId, videoId, title, thumbnail, link);
+		
+		Map<String, String>result = new HashMap<>();
+		
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+		
+		return result;
+		
+		
+	}
+	
+	
+	
+	
+	
 	// Q&A 글쓰기
 	@PostMapping("/question/create")
 	public Map<String, String> questionCreate(

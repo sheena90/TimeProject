@@ -32,6 +32,34 @@
 	
 	
 	
+	<!-- 메인 페이지_맞춤형 서비스_계획표 추가 -->
+	<insert id="insertServicePlan" parameterType="map">
+		INSERT INTO `plan`
+		(
+			`userId`
+			, `videoId`
+			, `title`
+			, `thumbnail`
+			, `link`
+			, `createdAt`
+			, `updatedAt`
+		)
+		VALUE
+		(
+			#{userId}
+			, #{videoId}
+			, #{title}
+			, #{thumbnail}
+			, #{link}
+			, now()
+			, now()
+		)
+	
+	
+	</insert>
+	
+	
+	
 	<!-- Q&A 글쓰기 -->
 	<insert id="insertQuestion" parameterType="map">
 		INSERT INTO `question`
