@@ -330,7 +330,7 @@
 								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
 							</a>
 							<a href="#" data-toggle="modal" data-target="#customizeModal3">
-								<button type="button" class="btn btn-danger modalOff">다음</button>
+								<button type="button" class="btn btn-danger modalOff" id="nextBtn2">다음</button>
 							</a>
 						</div>
 						
@@ -413,7 +413,7 @@
 								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
 							</a>
 							<a href="#" data-toggle="modal" data-target="#customizeModal4">
-								<button type="button" class="btn btn-danger modalOff" id="nextBtn">다음</button>
+								<button type="button" class="btn btn-danger modalOff" id="nextBtn3">다음</button>
 							</a>
 						</div>
 						
@@ -527,25 +527,41 @@
 			});
 			
 			
-			// 다음 버튼에 대한 이벤트 등록
+			// modal 1_다음 버튼에 대한 이벤트 등록(아무것도 선택을 안했을 때)
 			$("#nextBtn1").on("click", function() {
 				
 				if(where == "") {
 					alert("해당 항목을 선택해주세요.");
-					
 					return;
-				// 나머지 보여주지 않기!
-				
 				}
-				
+				// 나머지 보여주지 않기!
 				$("#customizeModal2").modal("show");
+				
+			});
+			
+			// modal 2_다음 버튼에 대한 이벤트 등록(아무것도 선택을 안했을 때)
+			$("#nextBtn2").on("click", function() {
+				
+				if(type == "") {
+					alert("해당 항목을 선택해주세요.");
+					return;
+				}
+				// 나머지 보여주지 않기!
+				$("#customizeModal3").modal("show");
 				
 			});
 			
 			
 			// 맞춤화 서비스 model3 다음 버튼에 대한 이벤트 처리
-			$("#nextBtn").on("click", function() {
-
+			$("#nextBtn3").on("click", function() {
+				
+				if(body == "") {
+					alert("해당 항목을 선택해주세요.");
+					return;
+				}
+				// 나머지 보여주지 않기!
+				$("#customizeModal4").modal("show");
+				
 				$.ajax({
 					
 					type:"post",
