@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.sheena.time.user.model.PlanModel;
 import com.sheena.time.user.model.QuestionModel;
 import com.sheena.time.user.model.UserModel;
 
@@ -27,6 +28,10 @@ public interface UserDAO {
 	public UserModel selectUser(
 			@Param("loginId") String loginId,
 			@Param("password") String password);
+	
+	
+	// 계획표 리스트
+	public List<PlanModel> selectPlanList(@Param("userId") int userId);
 	
 	
 	// Q&A 리스트

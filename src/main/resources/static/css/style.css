@@ -614,6 +614,11 @@ hr {
 }
 
 
+.myPlanBox {
+	height: 450px;
+}
+
+
 /*관리자 페이지*/
 /*지식정보*/
 .managerHeader {

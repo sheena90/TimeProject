@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sheena.time.user.bo.UserBO;
+import com.sheena.time.user.model.PlanModel;
 import com.sheena.time.user.model.QuestionModel;
 
 @Controller
@@ -70,9 +71,17 @@ public class UserController {
 		return "user/my_favorites";
 	}
 	
-	// 계획표
+	// 계획표 리스트
 	@GetMapping("/myPlan_view")
-	public String myPlanView() {
+	public String myPlanView(HttpServletRequest request, Model model) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		List<PlanModel> planList = userBO.getPlanList(userId);
+		
+		model.addAttribute("planList", planList);
+		
 		return "user/my_plan";
 	}
 	

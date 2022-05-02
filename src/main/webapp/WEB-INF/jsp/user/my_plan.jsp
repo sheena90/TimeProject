@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,7 +37,26 @@
 				<p><small class="text-secondary">Time에서 준비한 당신만의 맞춤형 운동을 즐겨보세요.</small></p>
 			</div>
 		
-			<div class="favoritesContent bg-warning">
+			<div class="favoritesContent">
+				<div class="myPlanBox d-flex flex-wrap">
+					<c:forEach var="planList" items="${planList }">	
+					<div class="mt-4 ml-4 mr-3">
+						<a href="${planList.link }" class="text-dark">	
+	                        <div>
+	                            <img width="206" alt="가슴_썸네일" src="${planList.thumbnail }">
+	                        </div>
+	                        <div class="mt-2">
+	                        	<small>${planList.title }</small>
+	                        </div>
+	                        <div>
+	                        	<small><fmt:formatDate value="${planList.createdAt }" pattern="yyyy-MM-dd" /></small>
+	                        </div>
+                        </a>
+                    	<hr>
+	                 </div>	  	
+	                   	
+					</c:forEach>	
+				</div>
 			
 			</div>
 		

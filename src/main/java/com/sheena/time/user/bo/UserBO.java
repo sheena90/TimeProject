@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.sheena.time.common.EncryptUtils;
 import com.sheena.time.user.dao.UserDAO;
+import com.sheena.time.user.model.PlanModel;
 import com.sheena.time.user.model.QuestionModel;
 import com.sheena.time.user.model.UserModel;
 
@@ -53,6 +54,11 @@ public class UserBO {
 		return userDAO.selectUser(loginId, encryptPassword);
 	}
 	
+	
+	// 계획표 리스트
+	public List<PlanModel> getPlanList(int userId) {
+		return userDAO.selectPlanList(userId);
+	}
 	
 	
 	// Q&A 리스트
