@@ -191,7 +191,7 @@ public class PostController {
 	
 	// 공지사항 디테일 화면
 	@GetMapping("/notice/detail_view")
-	public String noticeDetailView(@RequestParam("int") int id, Model model) {
+	public String noticeDetailView(@RequestParam("id") int id, Model model) {
 		
 		NoticeModel noticeDetail = postBO.getNotice(id);
 		
