@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.sheena.time.post.like.dao.LikeDAO">
+	<insert id="insertLike" parameterType="map">
+		INSERT INTO `like`
+		(
+			`videoId`
+			, `userId`
+			, `createdAt``
+			
+		)
+		VALUE
+		(
+			#{videoId}
+			, #{userId}
+			, now()
+		)
+	
+	</insert>
+	
+	
+	<!-- videoId 기반으로 좋아요 개수 가져오기 -->
+	<select id="selectLikeCount" parameterType="int" resultType="int">
+		SELECT
+			count(*)
+		FROM
+			`like`
+		WHERE
+			`videoId` = #{videoId}
+	
+	
+	</select>
+	
+	
+	<!-- 좋아요 보여주기 -->
+	<select id="selectLike" parameterType="map" resultType="int">
+		SELECT
+			count(*)
+		FROM
+			`like`
+		WHERE
+			`videoId` = #{videoId}
+			AND `userId` = #{userId}
+			
+	
+	</select>
+	
+	
+	<!-- 좋아요 취소 -->
+	<delete id="deleteLike" parameterType="map">
+		DELETE FROM
+			`like`
+		WHERE
+			`videoId` = #{videoId}
+			AND `userId` = #{userId}
+	</delete>
+		
+
+</mapper>

@@ -1,7 +1,6 @@
 package com.sheena.time.post.bo;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +9,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sheena.time.common.Dateutil;
 import com.sheena.time.common.FileManagerService;
-
 import com.sheena.time.managerPost.model.ManagerPostModel;
 import com.sheena.time.managerPostNotice.model.NoticeModel;
 import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.dao.PostDAO;
 import com.sheena.time.post.favorites.bo.FavoritesBO;
+import com.sheena.time.post.like.bo.LikeBO;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
 import com.sheena.time.post.model.VideoDetailModel;
@@ -29,6 +28,9 @@ public class PostBO {
 	
 	@Autowired
 	private FavoritesBO favoritesBO;
+	
+	@Autowired
+	private LikeBO likeBO;
 	
 	
 	
@@ -180,6 +182,14 @@ public class PostBO {
 				isFavorites = favoritesBO.isFavorites(videoModel.getId(), userId);
 			}
 			
+			// 좋아요 개수 얻어오기 videoId
+			int likeCount = likeBO.getLikeCount(videoModel.getId());
+			
+			// 좋아요 했는지 여부
+			boolean isLike = false;
+			if(userId != null) {
+				likeBO.isLike(videoModel.getId(), userId);
+			}
 			
 			// 객체 조회 
 			VideoDetailModel videoDetail = new VideoDetailModel();
@@ -189,6 +199,8 @@ public class PostBO {
 			videoDetail.setTitle(videoModel.getTitle());
 			videoDetail.setLink(videoModel.getLink());
 			videoDetail.setFavorites(isFavorites);
+			videoDetail.setLike(isLike);
+			videoDetail.setLikeCount(likeCount);
 			
 			videoDetailList.add(videoDetail);
 		}
@@ -219,6 +231,16 @@ public class PostBO {
 				isFavorites = favoritesBO.isFavorites(videoModel.getId(), userId);
 			}
 			
+			// 좋아요 개수 얻어오기 videoId
+			int likeCount = likeBO.getLikeCount(videoModel.getId());
+			
+			// 좋아요 했는지 여부
+			boolean isLike = false;
+			if(userId != null) {
+				likeBO.isLike(videoModel.getId(), userId);
+			}
+			
+			
 			// 객체 조회 
 			VideoDetailModel detail = new VideoDetailModel();
 			
@@ -227,6 +249,8 @@ public class PostBO {
 			detail.setTitle(videoModel.getTitle());
 			detail.setLink(videoModel.getLink());
 			detail.setFavorites(isFavorites);
+			detail.setLike(isLike);
+			detail.setLikeCount(likeCount);
 			
 			videoDetail.add(detail);
 			

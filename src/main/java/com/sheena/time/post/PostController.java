@@ -83,9 +83,6 @@ public class PostController {
 			
 		}
 		
-		// 사용자가 좋아요를 눌렀는지
-		// boolean isFavorites = favoritesBO.isFavorites(, )
-		
 		return "post/content_video";
 	}
 	
