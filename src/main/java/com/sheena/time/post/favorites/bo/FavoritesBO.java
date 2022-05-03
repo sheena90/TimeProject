@@ -25,5 +25,11 @@ public class FavoritesBO {
 		return (count != 0);
 	}
 	
+	
+	// 즐겨찾기 취소
+	public int unfavorites(int videoId, int userId) {
+		return favoritesDAO.deleteFavorites(videoId, userId);
+	}
+	
 
 }

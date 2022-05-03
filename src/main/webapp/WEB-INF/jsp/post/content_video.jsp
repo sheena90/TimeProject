@@ -99,7 +99,17 @@
 	                    		
 	                    		<!-- 즐겨찾기 아이콘 -->
 	                    		<div>
-	                    			<a href="#" class="favoritesBtn" data-video-id="${videoList.id }"><i class="bi bi-star" ></i></a>
+	                    			<c:choose>
+	                    				<c:when test="${videoList.favorites }">
+	                    					<!-- true일 때니깐, 즐겨찾기 클릭했을때, 옐로우 별 -->
+	                    					<a href="#" class="unfavoritesBtn" data-video-id="${videoList.id }"><i class="bi bi-star-fill text-warning"></i></a>
+	                    				</c:when>
+	                    				<c:otherwise>
+	                    					<!-- 즐겨찾기 아닌 상태 -->
+	                    					<a href="#" class="favoritesBtn" data-video-id="${videoList.id }"><i class="bi bi-star text-dark" ></i></a>
+	                    				</c:otherwise>
+	                    			</c:choose>
+	                    			
 	                    		</div>
 	                    	</div>
 	                    </div>	
@@ -144,8 +154,6 @@
 				//videoId 가져오기
 				let videoId = $(this).data("video-id");
 				
-				alert(videoId);
-				
 				$.ajax({
 					type:"get",
 					url:"/content/video/favorites",
@@ -163,6 +171,32 @@
 				});
 			});
 			
+			
+			// 즐겨찾기 취소 이벤트
+			$(".unfavoritesBtn").on("click", function(e) {
+				// 해당 태그의 속성 취소
+				e.preventDefault();
+				
+				//videoId 가져오기
+				let videoId = $(this).data("video-id");
+				
+				$.ajax({
+					type:"get",
+					url:"/content/video/unfavorites",
+					data:{"videoId":videoId},
+					success:function(data) {
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("즐겨찾기 취소 실패");
+						}
+					},
+					error:function() {
+						alert("즐겨찾기 취소 에러");
+					}
+					
+				});
+			});
 			
 			
 			

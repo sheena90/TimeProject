@@ -37,6 +37,17 @@
 	
 	
 	</select>
+	
+	
+	<!-- 즐겨찾기 취소 -->
+	<delete id="deleteFavorites" parameterType="map">
+		DELETE FROM
+			`favorites`
+		WHERE
+			`videoId` = #{videoId}
+			AND `userId` = #{userId}
+	
+	</delete>
 
 
 </mapper>

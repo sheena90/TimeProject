@@ -15,5 +15,11 @@ public interface FavoritesDAO {
 	public int selectFavorites(
 			@Param("videoId")int videoId,
 			@Param("userId") int userId);
+	
+	
+	// 즐겨찾기 취소
+	public int deleteFavorites(
+			@Param("videoId")int videoId,
+			@Param("userId") int userId);
 
 }
