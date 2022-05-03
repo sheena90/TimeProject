@@ -99,7 +99,7 @@
 	                    		
 	                    		<!-- 즐겨찾기 아이콘 -->
 	                    		<div>
-	                    			<a href="#" class="favoritesBtn"><i class="bi bi-star" data-video-id="${videoList.id }"></i></a>
+	                    			<a href="#" class="favoritesBtn" data-video-id="${videoList.id }"><i class="bi bi-star" ></i></a>
 	                    		</div>
 	                    	</div>
 	                    </div>	

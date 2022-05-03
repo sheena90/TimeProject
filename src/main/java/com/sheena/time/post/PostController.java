@@ -18,9 +18,9 @@ import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.bo.PostBO;
 import com.sheena.time.post.comment.bo.CommentBO;
 import com.sheena.time.post.comment.model.CommentModel;
-import com.sheena.time.post.favorites.bo.FavoritesBO;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
+import com.sheena.time.post.model.VideoDetailModel;
 
 @Controller
 @RequestMapping("/post")
@@ -32,8 +32,6 @@ public class PostController {
 	@Autowired
 	private CommentBO commentBO;
 	
-	@Autowired
-	private FavoritesBO favoritesBO;
 	
 	
 	@GetMapping("/main_view")
@@ -62,16 +60,23 @@ public class PostController {
 			
 			// select box
 			@RequestParam(value="userGender", required=false) String userGender,
-			@RequestParam(value="body", required=false) String body) {
+			@RequestParam(value="body", required=false) String body,
+			HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		
+		Integer userId = (Integer)session.getAttribute("userId");
+		
+		
 		
 		if(userGender != null & body != null) {
-			List<VideoModel> managerPostVideoList = postBO.getMangerPostVideo(userGender, body);
+			List<VideoDetailModel> managerPostVideoList = postBO.getMangerPostVideo(userGender, body, userId);
 			
 			model.addAttribute("managerPostVideoList", managerPostVideoList);
 			
 			
 		} else {
-			List<VideoModel> managerPostVideoList = postBO.getManagerPostVideoList();
+			List<VideoDetailModel> managerPostVideoList = postBO.getManagerPostVideoList(userId);
 			
 			model.addAttribute("managerPostVideoList", managerPostVideoList);
 			

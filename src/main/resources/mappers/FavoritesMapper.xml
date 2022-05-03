@@ -29,7 +29,7 @@
 	<select id="selectFavorites" parameterType="map" resultType="int">
 		SELECT
 			count(*)
-		FORM
+		FROM
 			`favorites`
 		WHERE
 			`videoId` = #{videoId}

@@ -1,6 +1,7 @@
 package com.sheena.time.post.bo;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +14,20 @@ import com.sheena.time.managerPost.model.ManagerPostModel;
 import com.sheena.time.managerPostNotice.model.NoticeModel;
 import com.sheena.time.managerPostVideo.model.VideoModel;
 import com.sheena.time.post.dao.PostDAO;
+import com.sheena.time.post.favorites.bo.FavoritesBO;
 import com.sheena.time.post.model.CommunityModel;
 import com.sheena.time.post.model.PostModel;
+import com.sheena.time.post.model.VideoDetailModel;
 
 @Service
 public class PostBO {
 
 	@Autowired
 	private PostDAO postDAO;
+	
+	
+	@Autowired
+	private FavoritesBO favoritesBO;
 	
 	//@Autowired
 	//private CommentBO commentBO;
@@ -143,16 +150,79 @@ public class PostBO {
 	}
 	
 	
+	
+	
+	
+	
 	// 운동영상 리스트
-	public List<VideoModel> getManagerPostVideoList() {
-		return postDAO.selectManagerPostVideoList();
+	public List<VideoDetailModel> getManagerPostVideoList(Integer userId) {
+		
+		List<VideoModel> videoList = postDAO.selectManagerPostVideoList();
+		
+		List<VideoDetailModel> videoDetailList = new ArrayList<>();
+		
+		// 리스트마다 값 가져오기 
+		for(VideoModel videoModel : videoList) {
+			
+			// 로그인 일때만 사용자가 즐겨찾기 했는지 여부
+			boolean isFavorites = false;
+			if(userId != null) {
+				isFavorites = favoritesBO.isFavorites(videoModel.getId(), userId);
+			}
+			
+			
+			// 객체 조회 
+			VideoDetailModel videoDetail = new VideoDetailModel();
+			
+			videoDetail.setId(videoModel.getId());
+			videoDetail.setThumbnail(videoModel.getThumbnail());
+			videoDetail.setTitle(videoModel.getTitle());
+			videoDetail.setLink(videoModel.getLink());
+			videoDetail.setFavorites(isFavorites);
+			
+			videoDetailList.add(videoDetail);
+		}
+		
+		return videoDetailList;
+		
 	}
 	
 	
 	
-	// 운동영상select
-	public List<VideoModel> getMangerPostVideo(String userGender, String body) {
-		return postDAO.selectManagerpostVideo(userGender, body);
+	
+	
+	
+	// 운동영상select(하나만)
+	public List<VideoDetailModel> getMangerPostVideo(String userGender, String body, Integer userId) {
+		
+		
+		List<VideoModel> video = postDAO.selectManagerpostVideo(userGender, body);
+		
+		List<VideoDetailModel> videoDetail = new ArrayList<>();
+		
+		for(VideoModel videoModel : video) {
+			
+			// 로그인 일때만 사용자가 즐겨찾기 했는지 여부
+			boolean isFavorites = false;
+			
+			if(userId != null) {
+				isFavorites = favoritesBO.isFavorites(videoModel.getId(), userId);
+			}
+			
+			// 객체 조회 
+			VideoDetailModel detail = new VideoDetailModel();
+			
+			detail.setId(videoModel.getId());
+			detail.setThumbnail(videoModel.getThumbnail());
+			detail.setTitle(videoModel.getTitle());
+			detail.setLink(videoModel.getLink());
+			detail.setFavorites(isFavorites);
+			
+			videoDetail.add(detail);
+			
+		}
+		
+		return videoDetail;
 	}
 	
 	
