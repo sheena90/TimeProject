@@ -24,6 +24,9 @@
 					<h6 class="mr-5">
 						<a class="text-white" href="/managerPost/notice_view">공지사항 관리</a>
 					</h6>
+					<h6 class="mr-5">
+						<a class="text-white" href="#">Q&A 관리</a>
+					</h6>
 					
 					<!-- 로그인 아이콘에 대한 dropdown 적용 : 마이페이지, 로그아웃 -->
 					<div class="dropdown d-flex align-items-center mr-4">
