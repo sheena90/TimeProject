@@ -59,6 +59,25 @@
 	</select>
 	
 	
+	<!-- 즐겨찾기 리스트 -->
+	<select id="selectFavoritesList" parameterType="int" resultType="com.sheena.time.post.model.VideoDetailModel">
+		SELECT	
+			`id`
+			, `videoId`
+			, `userId`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`favorites`
+		WHERE
+		 	`userId` = #{userId}
+		ORDER BY `id` DESC
+		LIMIT 8
+	
+	
+	</select>
+	
+	
 	<!-- 계획표 리스트 -->
 	<select id="selectPlanList" parameterType="int" resultType="com.sheena.time.user.model.PlanModel">
 		SELECT

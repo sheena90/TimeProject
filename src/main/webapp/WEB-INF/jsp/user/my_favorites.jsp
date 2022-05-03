@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,8 +37,26 @@
 				<p><small class="text-secondary">회원님이 추가한 즐겨찾기 목록입니다.</small></p>
 			</div>
 		
-			<div class="favoritesContent bg-warning">
-			
+			<div class="favoritesContent">
+				<div class="myPlanBox d-flex flex-wrap">
+					<c:forEach var="favoritesList" items="${favoritesList }">	
+						<div class="mt-4 ml-4 mr-3">
+							
+		                        <div>
+		                            <img width="206" alt="가슴_썸네일" src="/static/image/man_Thumbnail_2.jpg">
+		                        </div>
+		                        <div class="mt-2">
+		                        	<small>${favoritesList.title }</small>
+		                        </div>
+		                        <div>
+		                        	<small>시간</small>
+		                        </div>
+	                        
+	                    	<hr>
+		                 </div>	  	
+	                 </c:forEach>	
+						
+				</div>
 			</div>
 		
 		

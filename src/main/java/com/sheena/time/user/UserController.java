@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sheena.time.post.model.VideoDetailModel;
 import com.sheena.time.user.bo.UserBO;
 import com.sheena.time.user.model.PlanModel;
 import com.sheena.time.user.model.QuestionModel;
@@ -65,11 +66,22 @@ public class UserController {
 		return "user/my_profile";
 	}
 	
-	// 즐겨찾기
+	// 즐겨찾기 리스트
 	@GetMapping("/myFavorites_view")
-	public String myFavoritesView() {
+	public String myFavoritesView(HttpServletRequest request, Model model) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		List<VideoDetailModel> favoritesList = userBO.getFavoritesList(userId);
+		
+		model.addAttribute("favoritesList", favoritesList);
+		
 		return "user/my_favorites";
 	}
+	
+	
+	
 	
 	// 계획표 리스트
 	@GetMapping("/myPlan_view")
@@ -85,6 +97,9 @@ public class UserController {
 		return "user/my_plan";
 	}
 	
+	
+	
+	
 	// Q&A 리스트
 	@GetMapping("/myQuestion_view")
 	public String myQuestionView(HttpServletRequest request, Model model) {
@@ -98,6 +113,9 @@ public class UserController {
 		
 		return "user/my_question";
 	}
+	
+	
+	
 	
 	
 	// Q&A 디테일뷰

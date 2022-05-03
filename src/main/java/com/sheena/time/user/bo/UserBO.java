@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.sheena.time.common.EncryptUtils;
+import com.sheena.time.post.model.VideoDetailModel;
 import com.sheena.time.user.dao.UserDAO;
 import com.sheena.time.user.model.PlanModel;
 import com.sheena.time.user.model.QuestionModel;
@@ -52,6 +53,11 @@ public class UserBO {
 		String encryptPassword = EncryptUtils.md5(password);
 		
 		return userDAO.selectUser(loginId, encryptPassword);
+	}
+	
+	// 즐겨찾기 리스트
+	public List<VideoDetailModel> getFavoritesList(int userId) {
+		return userDAO.selectFavoritesList(userId);
 	}
 	
 	
