@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.sheena.time.common.Dateutil;
 import com.sheena.time.common.FileManagerService;
+
 import com.sheena.time.managerPost.model.ManagerPostModel;
 import com.sheena.time.managerPostNotice.model.NoticeModel;
 import com.sheena.time.managerPostVideo.model.VideoModel;
@@ -29,8 +30,6 @@ public class PostBO {
 	@Autowired
 	private FavoritesBO favoritesBO;
 	
-	//@Autowired
-	//private CommentBO commentBO;
 	
 	
 	// 메인 페이지 맞춤형 서비스 modal창 띄우기 
@@ -77,6 +76,17 @@ public class PostBO {
 		
 		return postDAO.selectId(id);
 	}
+	
+	
+	
+//	// 페이징
+//	public int countBoard() {
+//		return postDAO.countBoard();
+//	}
+//
+//	public List<PostModel> selectBoard(PagingVO vo) {
+//		return postDAO.selectBoard(vo);
+//	}
 	
 	
 	

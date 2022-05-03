@@ -12,6 +12,15 @@ import com.sheena.time.post.model.PostModel;
 
 @Repository
 public interface PostDAO {
+
+	
+//	//페이징
+//	// 게시물 총 갯수
+//	public int countBoard();
+//
+//	// 페이징 처리 게시글 조회
+//	public List<PostModel> selectBoard(PagingVO vo);
+	
 	
 	
 	// 메인 페이지 맞춤형 서비스 modal창 띄우기 

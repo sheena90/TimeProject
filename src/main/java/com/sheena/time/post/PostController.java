@@ -121,6 +121,28 @@ public class PostController {
 	// 커뮤니티
 	@GetMapping("/community/main_view")
 	public String communityMainView(Model model) {
+			//PagingVO vo, 
+//		@RequestParam(value="nowPage", required=false)String nowPage,
+//		@RequestParam(value="cntPerPage", required=false)String cntPerPage
+		
+		
+		
+		
+//		// 페이징
+//		int total = postBO.countBoard();
+//		if (nowPage == null && cntPerPage == null) {
+//			nowPage = "1";
+//			cntPerPage = "5";
+//		} else if (nowPage == null) {
+//			nowPage = "1";
+//		} else if (cntPerPage == null) { 
+//			cntPerPage = "5";
+//		}
+//		vo = new PagingVO(total, Integer.parseInt(nowPage), Integer.parseInt(cntPerPage));
+//		model.addAttribute("paging", vo);
+//		model.addAttribute("viewAll", postBO.selectBoard(vo));
+		
+		
 		
 		// community_메인 화면 모든 사용자의 게시글 가져오기
 		List<CommunityModel> postFullList = postBO.getPostFullList();
@@ -130,10 +152,18 @@ public class PostController {
 		return "post/community_main";
 	}
 	
+	
+	
+	
+	
 	@GetMapping("/community/create_view")
 	public String communityCreateView() {
 		return "post/community_create";
 	}
+	
+	
+	
+	
 	
 	
 	// 커뮤니티 모든 사용자의 해당 게시글 디테일뷰 가져오기
