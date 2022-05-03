@@ -42,7 +42,7 @@
 				<div class="promotionText">
 					<h3 class="text-white font-weight-bold mt-5">Time 맞춤화 서비스</h3>
 					<p class="text-white mt-5">
-						전문적인 피트니스 라이브러리 : 1000+개<br><br>
+						전문 피트니스 라이브러리 : 1000+개<br><br>
 						전문 강사님과 함께 하는 라이브 강의
 					</p>
 					
@@ -597,6 +597,7 @@
 					success:function(data) {
 						
 						if(data.result == "close") {
+							alert("맞춤화 서비스는 로그인을 진행해주세요.");
 							location.href="/user/signin_view";
 						} else {
 							$("#customizeModal1").modal("show");
