@@ -45,9 +45,9 @@
 						전문적인 피트니스 라이브러리 : 1000+개<br><br>
 						전문 강사님과 함께 하는 라이브 강의
 					</p>
-					<a href="#" data-toggle="modal" data-target="#customizeModal1">
-						<button type="button" class="btn btn-danger mt-5" id="serviceStart">시작하기</button>
-					</a>
+					
+					<button type="button" class="btn btn-danger mt-5" id="serviceStart">시작하기</button>
+					
 				</div>
 			</div>
 			
@@ -329,9 +329,9 @@
 							<a href="#" data-toggle="modal" data-target="#customizeModal1">
 								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
 							</a>
-							<a href="#" data-toggle="modal" data-target="#customizeModal3">
+							
 								<button type="button" class="btn btn-danger modalOff" id="nextBtn2">다음</button>
-							</a>
+							
 						</div>
 						
 					</div>
@@ -412,9 +412,9 @@
 							<a href="#" data-toggle="modal" data-target="#customizeModal2">
 								<button type="button" class="btn btn-secondary modalOff mr-5">이전</button>
 							</a>
-							<a href="#" data-toggle="modal" data-target="#customizeModal4">
+							
 								<button type="button" class="btn btn-danger modalOff" id="nextBtn3">다음</button>
-							</a>
+							
 						</div>
 						
 					</div>
@@ -591,7 +591,22 @@
 			// 맞춤형 서비스를 로그인이 안되어있을 때 안보여주는 이벤트 등록
 			$("#serviceStart").on("click", function() {
 				
-				
+				$.ajax({
+					type:"post",
+					url:"/post/serviceCheck",
+					success:function(data) {
+						
+						if(data.result == "close") {
+							location.href="/user/signin_view";
+						} else {
+							$("#customizeModal1").modal("show");
+						}
+					},
+					error:function() {
+						alert("이벤트 등록 에러");
+					}
+					
+				});
 				
 			});
 			

@@ -44,6 +44,25 @@ public class PostRestController {
 	
 	
 	
+	// 맞춤형 서비스 로그인일 때만 가능
+	@PostMapping("/serviceCheck")
+	public Map<String, String> serviceCheck(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		Integer userId = (Integer)session.getAttribute("userId");
+		
+		Map<String, String> result = new HashMap<>();
+		
+		if(userId == null) {
+			result.put("result", "close");
+		} else {
+			result.put("result", "open");
+		}
+		
+		return result;
+		
+	}
+	
+	
 	// 메인 페이지_맞춤형 서비스_계획표 추가
 	@PostMapping("/service/plan")
 	public Map<String, String> servicePlan(
