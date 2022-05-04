@@ -47,8 +47,9 @@
 							</div>
 							
 							<div class="d-flex justify-content-between mt-4">
-								<button type="button" class="btn">사진변경</button>
-								<button type="button" class="btn">삭제</button>
+								<input type="file" class="mt-3 d-none" id="profileInput">
+								<button type="button" class="btn" id="profileBtn">사진변경</button>
+								<button type="button" class="btn" id="deleteBtn">삭제</button>
 							</div>
 						</div>
 					</div>
@@ -60,14 +61,14 @@
 						<div class="profileNicknameBox text-center">닉네임</div>
 						<div class="profileBox ml-5 text-center mb-4">
 							<div class="d-flex mt-5">
-								<input type="text" class="form-control">
+								<input type="text" class="form-control" placeholder="${userNickname }" id="nicknameInput">
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="page mt-5">
-				<button type="button" class="btn btn-primary mr-3">적용</button>
+				<button type="button" class="btn btn-primary mr-3" id="applyBtn">적용</button>
 				<button type="button" class="btn btn-secondary">취소</button>
 			</div>
 		</div>
@@ -75,6 +76,114 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 		
 	</div>
+	
+	
+	
+	<script>
+		$(document).ready(function() {
+			
+			// 프로필 업로드
+			$("#profileBtn").on("click", function() {
+				var formData = new FormData();
+				formData.append("file", $("#profileInput")[0].files[0]);
+				
+				$.ajax({
+					type:"post",
+					url:"/user/profile/upload",
+					data:formData,
+					enctype:"multipart/form-data",    
+					processData:false,				 
+					contentType:false,
+					success:function(data) {
+						
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("프로필 업로드 실패");
+						}
+						
+					},
+					error:function() {
+						alert("프로필 업로드 에러");
+					}
+				});
+				
+			});
+			
+			
+			// 프로필 수정
+			$("#applyBtn").on("clic", function() {
+				let nickname = $("#nicknameInput").val();
+				
+				var formData = new FormData();
+				formData.append("nickname", nickname);
+				formData.append("file", $("#profileInput")[0].files[0]);
+				
+				$.ajax({
+					type:"post",
+					url:"/user/profile/update",
+					data:formData,
+					enctype:"multipart/form-data",    
+					processData:false,				 
+					contentType:false,
+					success:function(data) {
+						
+						if(data.result == "success") {
+							alert("회원정보가 수정되었습니다.");
+							location.reload();
+						} else {
+							alert("프로필 수정 실패");
+						}
+						
+					},
+					error:function() {
+						alert("프로필 수정 에러");
+					}
+					
+				});
+				
+				
+			});
+			
+			
+			// 프로필 버튼
+			$("#profileBtn").on("click", function() {
+				// profileInput 클릭 효과와 일치
+				$("#profileInput").click();
+			});
+			
+			
+			
+			// 프로필 삭제
+			$("#deleteBtn").on("click", function() {
+				
+				$.ajax({
+					type:"get",
+					url:"/user/profile/delete";
+					success:function(data) {
+					if(data.result == "success") {
+						alert("회원님의 프로필이 삭제되었습니다.");
+						location.reload();
+					} else {
+						alert("프로필 삭제 실패");
+					}
+				},
+				error:function() {
+					alert("프로필 삭제 에러");
+				}
+				});
+			});
+			
+			
+			
+			
+			
+			
+			
+		});
+	
+	
+	</script>
 	
 
 </body>

@@ -31,6 +31,28 @@ public interface UserDAO {
 			@Param("password") String password);
 	
 	
+	
+	// 프로필 업로드
+	public int insertProfile(
+			@Param("userId") int userId,
+			@Param("profile") String profile);
+	
+	
+	// 프로필 수정
+	public int updateProfile(
+			@Param("userId") int userId,
+			@Param("profile") String profile,
+			@Param("nickname") String nickname);
+	
+	
+	
+	// 프로필 삭제
+	public int deleteProfile(
+			@Param("userId") int userId,
+			@Param("profile") String profile);
+	
+	
+	
 	// 즐겨찾기 리스트
 	public List<VideoDetailModel> selectFavoritesList(@Param("userId") int userId);
 	

@@ -59,6 +59,43 @@
 	</select>
 	
 	
+	<!-- 프로필 업로드 -->
+	<insert id="insertProfile" parameterType="map">
+		
+	
+	</insert>
+	
+	
+	
+	
+	<!-- 프로필 수정 -->
+	<update id="updateProfile" parameterType="map">
+		UPDATE `user`
+		SET
+			`profile` = #{profile}
+			, `nickname` = #{nickname}
+			, `updatedAt` = now()
+		WHERE
+			`id` = #{userId}
+			
+	
+	</update>
+	
+	
+	<!-- 프로필 삭제 -->
+	<delete id="deleteProfile" parameterType="int">
+		DELETE FROM `user`
+		WHERE
+			`id` = #{userId}
+			AND `profile` = #{profile}
+	
+	
+	
+	</delete>
+	
+	
+	
+	
 	<!-- 즐겨찾기 리스트 -->
 	<select id="selectFavoritesList" parameterType="int" resultType="com.sheena.time.post.model.VideoDetailModel">
 		SELECT	

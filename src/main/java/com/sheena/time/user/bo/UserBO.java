@@ -4,8 +4,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sheena.time.common.EncryptUtils;
+import com.sheena.time.common.FileManagerService;
 import com.sheena.time.post.model.VideoDetailModel;
 import com.sheena.time.user.dao.UserDAO;
 import com.sheena.time.user.model.PlanModel;
@@ -54,6 +56,40 @@ public class UserBO {
 		
 		return userDAO.selectUser(loginId, encryptPassword);
 	}
+	
+	
+	
+	// 프로필 업로드
+	public int addProfile(int userId, MultipartFile file) {
+		
+		String profile = FileManagerService.saveFile(userId, file);
+		
+		return userDAO.insertProfile(userId, profile);
+		
+	}
+	
+	
+	
+	// 프로필 수정
+	public int updateProfile(int userId, MultipartFile file, String nickname) {
+		
+		String profile = FileManagerService.saveFile(userId, file);
+		
+		return userDAO.updateProfile(userId, profile, nickname);
+	}
+	
+	
+	// 프로필 삭제
+	public int deleteProfile(int userId, MultipartFile file) {
+		
+		// user의 profile 가져오기
+		// 파일 삭제
+		// String profile = FileManagerService.removeFile();
+		
+		return userDAO.deleteProfile(userId, profile);
+	}
+	
+	
 	
 	// 즐겨찾기 리스트
 	public List<VideoDetailModel> getFavoritesList(int userId) {

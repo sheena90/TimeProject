@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.sheena.time.user.bo.UserBO;
 import com.sheena.time.user.model.UserModel;
@@ -90,6 +91,75 @@ public class UserRestController {
 		}
 		
 		return result;
+	}
+	
+	
+	// 프로필 업로드
+	@PostMapping("/profile/upload")
+	public Map<String, String> profileUpload(
+			@RequestParam(value="file", required=false) MultipartFile file,
+			HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		int count = userBO.addProfile(userId, file);
+		
+		Map<String, String> result = new HashMap<>();
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+		return result;
+		
+	}
+	
+	
+	
+	// 프로필 수정
+	@PostMapping("/profile/update")
+	public Map<String, String> profileUpdate(
+			@RequestParam(value="file", required=false) MultipartFile file,
+			@RequestParam(value="nickname", required=false) String nickname,
+			HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		int count = userBO.updateProfile(userId, file, nickname);
+		
+		Map<String, String> result = new HashMap<>();
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+		return result;
+	}
+	
+	
+	
+	// 프로필 삭제
+	@GetMapping("/profile/delete")
+	public Map<String, String> delete(
+			@RequestParam(value="file", required=false) MultipartFile file,
+			HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		int count = userBO.deleteProfile(userId, file);
+		
+		Map<String, String> result = new HashMap<>();
+		if(count == 1) {
+			result.put("result", "success");
+		} else {
+			result.put("result", "fail");
+		}
+		return result;
+		
+		
 	}
 	
 	
