@@ -81,16 +81,6 @@ public class PostBO {
 	
 	
 	
-//	// 페이징
-//	public int countBoard() {
-//		return postDAO.countBoard();
-//	}
-//
-//	public List<PostModel> selectBoard(PagingVO vo) {
-//		return postDAO.selectBoard(vo);
-//	}
-	
-	
 	
 	
 	// community_메인 화면 모든 사용자의 게시글 가져오기
@@ -188,7 +178,7 @@ public class PostBO {
 			// 좋아요 했는지 여부
 			boolean isLike = false;
 			if(userId != null) {
-				likeBO.isLike(videoModel.getId(), userId);
+				isLike = likeBO.isLike(videoModel.getId(), userId);
 			}
 			
 			// 객체 조회 
