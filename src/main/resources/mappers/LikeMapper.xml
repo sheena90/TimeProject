@@ -10,7 +10,7 @@
 		(
 			`videoId`
 			, `userId`
-			, `createdAt``
+			, `createdAt`
 			
 		)
 		VALUE
