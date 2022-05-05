@@ -43,7 +43,7 @@
 						<div class="profileTextBox text-center">프로필 사진</div>
 						<div class="myProfileBox ml-5 mb-4 mt-3">
 							<div class="myProfile ml-4">
-								<img class="profile" src="https://i.pinimg.com/originals/e3/cb/8e/e3cb8eeb33d7d8f7a5ac65a08bc255ed.jpg">
+								<img class="profile" src="${userProfile } ">
 							</div>
 							
 							<div class="d-flex justify-content-between mt-4">
@@ -61,7 +61,7 @@
 						<div class="profileNicknameBox text-center">닉네임</div>
 						<div class="profileBox ml-5 text-center mb-4">
 							<div class="d-flex mt-5">
-								<input type="text" class="form-control" placeholder="${userNickname }" id="nicknameInput">
+								<input type="text" class="form-control" value="${userNickname }" id="nicknameInput">
 							</div>
 						</div>
 					</div>
@@ -83,36 +83,9 @@
 		$(document).ready(function() {
 			
 			// 프로필 업로드
-			$("#profileBtn").on("click", function() {
-				var formData = new FormData();
-				formData.append("file", $("#profileInput")[0].files[0]);
-				
-				$.ajax({
-					type:"post",
-					url:"/user/profile/upload",
-					data:formData,
-					enctype:"multipart/form-data",    
-					processData:false,				 
-					contentType:false,
-					success:function(data) {
-						
-						if(data.result == "success") {
-							location.reload();
-						} else {
-							alert("프로필 업로드 실패");
-						}
-						
-					},
-					error:function() {
-						alert("프로필 업로드 에러");
-					}
-				});
-				
-			});
-			
-			
 			// 프로필 수정
-			$("#applyBtn").on("clic", function() {
+			$("#applyBtn").on("click", function() {
+				
 				let nickname = $("#nicknameInput").val();
 				
 				var formData = new FormData();
@@ -128,12 +101,10 @@
 					contentType:false,
 					success:function(data) {
 						
-						if(data.result == "success") {
+						
 							alert("회원정보가 수정되었습니다.");
 							location.reload();
-						} else {
-							alert("프로필 수정 실패");
-						}
+						
 						
 					},
 					error:function() {
@@ -159,7 +130,7 @@
 				
 				$.ajax({
 					type:"get",
-					url:"/user/profile/delete";
+					url:"/user/profile/delete",
 					success:function(data) {
 					if(data.result == "success") {
 						alert("회원님의 프로필이 삭제되었습니다.");

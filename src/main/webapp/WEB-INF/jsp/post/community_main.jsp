@@ -27,7 +27,7 @@
 			<div class="communityMainContent d-flex">
 				<div class="communityMainContentMy col-4">
 					<div class="mainContentProfileBox">
-						<img class="profile" src="https://i.pinimg.com/originals/e3/cb/8e/e3cb8eeb33d7d8f7a5ac65a08bc255ed.jpg">
+						<img class="profile" src="${userProfile } ">
 					</div>
 					<div class="text-center">
 						<h5 class="mt-4 text-white mb-4"><b>Hi, ${userNickname }님</b></h5>

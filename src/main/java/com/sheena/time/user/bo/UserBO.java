@@ -60,33 +60,21 @@ public class UserBO {
 	
 	
 	// 프로필 업로드
-	public int addProfile(int userId, MultipartFile file) {
-		
-		String profile = FileManagerService.saveFile(userId, file);
-		
-		return userDAO.insertProfile(userId, profile);
-		
-	}
-	
-	
-	
 	// 프로필 수정
-	public int updateProfile(int userId, MultipartFile file, String nickname) {
+	public String updateProfile(int userId, MultipartFile file, String nickname) {
 		
 		String profile = FileManagerService.saveFile(userId, file);
 		
-		return userDAO.updateProfile(userId, profile, nickname);
+		userDAO.updateProfile(userId, profile, nickname);
+		
+		return profile;
 	}
 	
 	
 	// 프로필 삭제
-	public int deleteProfile(int userId, MultipartFile file) {
+	public int deleteProfile(int userId) {
 		
-		// user의 profile 가져오기
-		// 파일 삭제
-		// String profile = FileManagerService.removeFile();
-		
-		return userDAO.deleteProfile(userId, profile);
+		return userDAO.deleteProfile(userId);
 	}
 	
 	

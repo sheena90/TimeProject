@@ -95,28 +95,6 @@ public class UserRestController {
 	
 	
 	// 프로필 업로드
-	@PostMapping("/profile/upload")
-	public Map<String, String> profileUpload(
-			@RequestParam(value="file", required=false) MultipartFile file,
-			HttpServletRequest request) {
-		
-		HttpSession session = request.getSession();
-		int userId = (Integer)session.getAttribute("userId");
-		
-		int count = userBO.addProfile(userId, file);
-		
-		Map<String, String> result = new HashMap<>();
-		if(count == 1) {
-			result.put("result", "success");
-		} else {
-			result.put("result", "fail");
-		}
-		return result;
-		
-	}
-	
-	
-	
 	// 프로필 수정
 	@PostMapping("/profile/update")
 	public Map<String, String> profileUpdate(
@@ -127,14 +105,19 @@ public class UserRestController {
 		HttpSession session = request.getSession();
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = userBO.updateProfile(userId, file, nickname);
+		String profile = userBO.updateProfile(userId, file, nickname);
+		
 		
 		Map<String, String> result = new HashMap<>();
-		if(count == 1) {
-			result.put("result", "success");
-		} else {
-			result.put("result", "fail");
+		
+		result.put("result", "success");
+		
+		if(profile != null) {
+			session.setAttribute("userProfile",profile);
 		}
+		
+		session.setAttribute("nickname", nickname);
+		
 		return result;
 	}
 	
@@ -143,20 +126,19 @@ public class UserRestController {
 	// 프로필 삭제
 	@GetMapping("/profile/delete")
 	public Map<String, String> delete(
-			@RequestParam(value="file", required=false) MultipartFile file,
 			HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
 		int userId = (Integer)session.getAttribute("userId");
 		
-		int count = userBO.deleteProfile(userId, file);
+		userBO.deleteProfile(userId);
 		
 		Map<String, String> result = new HashMap<>();
-		if(count == 1) {
-			result.put("result", "success");
-		} else {
-			result.put("result", "fail");
-		}
+		
+		session.setAttribute("userProfile",null);
+		
+		result.put("result", "success");
+		
 		return result;
 		
 		

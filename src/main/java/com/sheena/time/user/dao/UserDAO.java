@@ -32,12 +32,7 @@ public interface UserDAO {
 	
 	
 	
-	// 프로필 업로드
-	public int insertProfile(
-			@Param("userId") int userId,
-			@Param("profile") String profile);
-	
-	
+	// 프로필 업로드	
 	// 프로필 수정
 	public int updateProfile(
 			@Param("userId") int userId,
@@ -48,8 +43,7 @@ public interface UserDAO {
 	
 	// 프로필 삭제
 	public int deleteProfile(
-			@Param("userId") int userId,
-			@Param("profile") String profile);
+			@Param("userId") int userId);
 	
 	
 	

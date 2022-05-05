@@ -59,21 +59,19 @@
 	</select>
 	
 	
+	
+	
+	
+	
 	<!-- 프로필 업로드 -->
-	<insert id="insertProfile" parameterType="map">
-		
-	
-	</insert>
-	
-	
-	
-	
 	<!-- 프로필 수정 -->
 	<update id="updateProfile" parameterType="map">
 		UPDATE `user`
 		SET
-			`profile` = #{profile}
-			, `nickname` = #{nickname}
+			 <if test="profile != null">
+			`profile` = #{profile},
+			</if> <!-- 쿼리에 조건문으로null 이 아닐 때 update 하지 않 -->
+			`nickname` = #{nickname}
 			, `updatedAt` = now()
 		WHERE
 			`id` = #{userId}
@@ -83,15 +81,16 @@
 	
 	
 	<!-- 프로필 삭제 -->
-	<delete id="deleteProfile" parameterType="int">
-		DELETE FROM `user`
+	<update id="deleteProfile" parameterType="map">
+		UPDATE `user`
+		SET
+			`profile` = null
+			, `updatedAt` = now()
 		WHERE
 			`id` = #{userId}
-			AND `profile` = #{profile}
+			
 	
-	
-	
-	</delete>
+	</update>
 	
 	
 	
