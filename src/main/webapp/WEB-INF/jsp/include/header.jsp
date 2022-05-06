@@ -38,7 +38,11 @@
 									<h1 class="material-icons-outlined">logout</h1>
 								</a>
 								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
-									<li><a class="dropdown-item" href="/user/myProfile_view">My페이지</a></li>
+									<li>
+										<a class="dropdown-item" href="/user/myProfile_view">
+											<b>${userNickname }님</b>
+										</a>
+									</li>
 									<li><hr class="dropdown-divider"></li>
 									<li>
 										<a class="dropdown-item text-primary" href="/user/sign_out">로그아웃</a>
