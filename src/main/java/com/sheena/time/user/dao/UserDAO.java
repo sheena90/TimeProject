@@ -58,8 +58,14 @@ public interface UserDAO {
 	// Q&A 리스트
 	public List<QuestionModel> selectQuestionList(@Param("userId") int userId);
 	
+	
 	// Q&A 디테일뷰
 	public QuestionModel selectQuestion(@Param("id") int id);
+	
+	
+	
+	// 회원탈퇴
+	public int delete(@Param("userId") int userId);
 	
 	
 }

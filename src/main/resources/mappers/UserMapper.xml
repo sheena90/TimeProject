@@ -174,5 +174,15 @@
 		WHERE
 			`id` = #{id}
 	</select>
+	
+	
+	<!-- 회원탈퇴 -->
+	<delete id="delete" parameterType="int">
+		DELETE FROM `user`
+		WHERE
+			`id` = #{userId}
+	
+	
+	</delete>
 
 </mapper>

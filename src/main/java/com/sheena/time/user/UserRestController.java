@@ -125,7 +125,7 @@ public class UserRestController {
 	
 	// 프로필 삭제
 	@GetMapping("/profile/delete")
-	public Map<String, String> delete(
+	public Map<String, String> profileDelete(
 			HttpServletRequest request) {
 		
 		HttpSession session = request.getSession();
@@ -145,18 +145,21 @@ public class UserRestController {
 	}
 	
 	
+	// 회원탈퇴
+	@GetMapping("/delete")
+	public Map<String, String> delete(HttpServletRequest request) {
+		
+		HttpSession session = request.getSession();
+		int userId = (Integer)session.getAttribute("userId");
+		
+		userBO.delete(userId);
+		
+		Map<String, String> result = new HashMap<>();
+		
+		result.put("result", "success");
+		
+		return result;
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

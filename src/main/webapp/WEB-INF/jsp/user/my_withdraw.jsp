@@ -39,7 +39,7 @@
 			<div class="favoritesContent">
 				<div class="mb-4 ml-3">
 					<span class="text-success font-weight-bold"><i class="bi bi-check"></i></span>
-					<b>사용하고 계신 아이디(<span class="text-success">pro50</span>)는 탈퇴할 경우 재사용 및 복구가 불가능합니다.</b>
+					<b>사용하고 계신 아이디(<span class="text-success">${userNickname }</span>)는 탈퇴할 경우 재사용 및 복구가 불가능합니다.</b>
 					<p class="ml-3 mt-2 text-secondary"><span class="text-danger">탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가 불가</span>하오니 신중하게 선택하시기 바랍니다.</p>
 				</div>
 				<div class="mb-4 ml-3">
@@ -55,7 +55,7 @@
 					삭제를 원하는 게시글이 있다면 <span class="text-danger">반드시 탈퇴 전 삭제하시기 바랍니다.</span></p>
 				</div>
 				<div class="mb-5 ml-3">
-					<p class="ml-3 text-danger">탈퇴 후에는 아이디 <b class="text-success">pro50</b>로 다시 가입할 수 없으며 아디와 데이터는 복구할 수 없습니다.<br>
+					<p class="ml-3 text-danger">탈퇴 후에는 아이디 (<b class="text-success">${userNickname }</b>)로 다시 가입할 수 없으며 아디와 데이터는 복구할 수 없습니다.<br>
 					게시판형 서비스에 남아 있는 게시글은 탈퇴 후 삭제할 수 없습니다.</p>
 				</div>
 				<div class="checkbox">
@@ -65,8 +65,8 @@
 			</div>
 		
 
-			<div class="page">
-				<button type="button" class="btn btn-primary mr-3">확인</button>
+			<div class="page mt-3">
+				<button type="button" class="btn btn-primary mr-3" id="deleteBtn">확인</button>
 			</div>
 		
 		</div>
@@ -74,6 +74,39 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 		
 	</div>
+	
+	<script>
+		$(document).ready(function() {
+			
+			$("#deleteBtn").on("click", function() {
+				
+				if(!$("input:checked[id='check1']").is(":checked") ) {
+					alert("회원탈퇴 안내 사항을  확인 후 동의해주세요.");
+					return;
+				}
+				
+				$.ajax({
+					
+					type:"get",
+					url:"/user/delete",
+					success:function(data) {
+						if(data.result == "success") {
+							alert("회원탈퇴가 정상 처리되었습니다.");
+							location.href="/post/main_view";
+						} 
+					},
+					error:function() {
+						alert("회원탈퇴 에러");
+					}
+					
+				});
+				
+				
+			});
+		});
+	
+	</script>
+	
 
 </body>
 </html>

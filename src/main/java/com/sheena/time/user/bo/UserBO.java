@@ -102,7 +102,11 @@ public class UserBO {
 	}
 	
 	
-	
+	// 회원탈퇴
+	public int delete(int userId) {
+
+		return userDAO.delete(userId);
+	}
 	
 	
 }
