@@ -96,17 +96,23 @@
 	
 	
 	<!-- 즐겨찾기 리스트 -->
-	<select id="selectFavoritesList" parameterType="int" resultType="com.sheena.time.post.model.VideoDetailModel">
+	<select id="selectFavoritesList" parameterType="int" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
 		SELECT	
 			`id`
-			, `videoId`
-			, `userId`
+			, `managerId`
+			, `userGender`
+			, `body`
+			, `type`
+			, `title`
+			, `thumbnail`
+			, `link`
+			, `timeline`
 			, `createdAt`
 			, `updatedAt`
 		FROM
-			`favorites`
+			`video`
 		WHERE
-		 	`userId` = #{userId}
+		 	`id` = #{userId}
 		ORDER BY `id` DESC
 		LIMIT 8
 	
