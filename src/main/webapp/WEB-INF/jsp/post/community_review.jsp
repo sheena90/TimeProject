@@ -29,9 +29,20 @@
 			</div>
 			
 			<div class="d-flex col-8 mt-3">
-				<div class="communityReviewProfile">
-					<img class="profile" src="https://i.pinimg.com/originals/e3/cb/8e/e3cb8eeb33d7d8f7a5ac65a08bc255ed.jpg">
-				</div>
+			
+				<c:choose>
+					<c:when test="${not empty userProfile }">
+						<div class="communityReviewProfile">
+							<img class="profile" src="${userProfile } ">
+						</div>
+					</c:when>
+						<c:otherwise>
+							<div class="communityReviewProfile">
+								<img class="profile" src="/static/image/profile4.png ">
+							</div>
+						</c:otherwise>
+				</c:choose>
+			
 				<div class="ml-3">
 					<span>${userNickname }</span>
 				</div>
@@ -61,9 +72,20 @@
 			<div class="mt-5">
 				<c:forEach var="commentList" items="${commentList }">
 					<div class="d-flex ml-5">
-						<div class="communityReviewProfile">
-							<img class="profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQt3UmlPVgosVl9l1b11U4jEtbv3XqNhR1Gkg&usqp=CAU">
-						</div>
+					
+						<c:choose>
+							<c:when test="${not empty userProfile }">
+								<div class="communityReviewProfile">
+									<img class="profile" src="${userProfile } ">
+								</div>
+							</c:when>
+							<c:otherwise>
+								<div class="communityReviewProfile">
+									<img class="profile" src="/static/image/profile4.png ">
+								</div>
+							</c:otherwise>
+						</c:choose>
+					
 						<div class="ml-3">
 							<span>${userNickname }</span>
 						</div>

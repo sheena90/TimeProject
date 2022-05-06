@@ -299,6 +299,11 @@ footer {
 	margin:auto;
 }
 
+.communityMainContentText {
+	height: 600px;
+	margin:auto;
+}
+
 .communityMainContentBox {
 	height: 600px;
 }

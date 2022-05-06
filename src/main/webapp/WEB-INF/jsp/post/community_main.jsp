@@ -26,9 +26,19 @@
 		<section>
 			<div class="communityMainContent d-flex">
 				<div class="communityMainContentMy col-4">
-					<div class="mainContentProfileBox">
-						<img class="profile" src="${userProfile } ">
-					</div>
+					<c:choose>
+						<c:when test="${not empty userProfile }">
+							<div class="mainContentProfileBox">
+								<img class="profile" src="${userProfile } ">
+							</div>
+						</c:when>
+						<c:otherwise>
+							<div class="mainContentProfileBox">
+								<img class="profile" src="/static/image/profile4.png ">
+							</div>
+						</c:otherwise>
+					</c:choose>
+				
 					<div class="text-center">
 						<h5 class="mt-4 text-white mb-4"><b>Hi, ${userNickname }님</b></h5>
 						<span class="text-warning"><i class="bi bi-brightness-high-fill"></i></span>
@@ -62,26 +72,26 @@
 				</div>
 				
 				<div class="col-8">
-					
-					<c:forEach var="postFull" items="${postFullList }">
-					<a href="/post/community/review_view?id=${postFull.id }" class="text-dark">
-						<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
-							
-							<div class="col-8">
-								<span>${postFull.subject }</span>
+					<div class="communityMainContentText">
+						<c:forEach var="postFull" items="${postFullList }">
+						<a href="/post/community/review_view?id=${postFull.id }" class="text-dark">
+							<div class="communityMainContents d-flex mt-4 justify-content-center align-items-center">
+								
+								<div class="col-8">
+									<span>${postFull.subject }</span>
+								</div>
+								<div class="col-4 d-flex justify-content-between">
+									<b>${postFull.userNickname }</b>
+									<span>${postFull.time }</span>
+								</div>
+								
 							</div>
-							<div class="col-4 d-flex justify-content-between">
-								<b>${postFull.userNickname }</b>
-								<span>${postFull.time }</span>
-							</div>
-							
-						</div>
-					</a>
-					</c:forEach>
+						</a>
+						</c:forEach>
+					</div>
 					
 					
-					
-					<div class="page mt-5">
+					<div class="page mt-2">
 						<ul class="pagination">
 							<li class="paginationLi"><a href="#" class="paginationA first">처음 페이지</a></li>
 							<li class="paginationLi"><a href="#" class="paginationA arrow left"><<</a></li>
