@@ -50,9 +50,6 @@
 				
 				<div class="input-group">
 					<input type="text" id="emailInput" class="form-control mt-3" placeholder="이메일 주소(필수)">
-					<div class="input-group-append">
-						<button type="button" id="certificationBtn" class="btn btn-secondary mt-3">인증하기</button>
-					</div>
 				</div>
 					
 				<div class="d-flex align-items-center justify-content-center">
@@ -154,7 +151,7 @@
 					success:function(data) {
 						if(data.result == "success") {
 							// 회원가입 성공
-							alert("회원가입 성공");
+							location.href="/user/signin_view";
 						} else {
 							alert("회원가입 실패");
 						}
