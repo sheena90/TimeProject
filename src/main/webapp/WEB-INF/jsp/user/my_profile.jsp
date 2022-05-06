@@ -42,9 +42,20 @@
 					<div class="d-flex ml-3">
 						<div class="profileTextBox text-center">프로필 사진</div>
 						<div class="myProfileBox ml-5 mb-4 mt-3">
-							<div class="myProfile ml-4">
-								<img class="profile" src="${userProfile } ">
-							</div>
+							<c:choose>
+								<c:when test="${not empty userProfile }">
+									<div class="myProfile ml-4">
+										<img class="profile" src="${userProfile } ">
+									</div>
+								</c:when>
+								<c:otherwise>
+									<div class="myProfile ml-4">
+										<img class="profile" src="/static/image/profile2.png ">
+									</div>
+								</c:otherwise>
+							</c:choose>
+						
+							
 							
 							<div class="d-flex justify-content-between mt-4">
 								<input type="file" class="mt-3 d-none" id="profileInput">
@@ -132,16 +143,16 @@
 					type:"get",
 					url:"/user/profile/delete",
 					success:function(data) {
-					if(data.result == "success") {
-						alert("회원님의 프로필이 삭제되었습니다.");
-						location.reload();
-					} else {
-						alert("프로필 삭제 실패");
+						if(data.result == "success") {
+							alert("회원님의 프로필이 삭제되었습니다.");
+							location.reload();
+						} else {
+							alert("프로필 삭제 실패");
+						}
+					},
+					error:function() {
+						alert("프로필 삭제 에러");
 					}
-				},
-				error:function() {
-					alert("프로필 삭제 에러");
-				}
 				});
 			});
 			
