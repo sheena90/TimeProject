@@ -1,6 +1,5 @@
 package com.sheena.time.user.bo;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.sheena.time.common.EncryptUtils;
 import com.sheena.time.common.FileManagerService;
 import com.sheena.time.managerPostVideo.model.VideoModel;
-import com.sheena.time.post.model.VideoDetailModel;
+import com.sheena.time.post.favorites.model.FavoritesModel;
 import com.sheena.time.user.dao.UserDAO;
 import com.sheena.time.user.model.PlanModel;
 import com.sheena.time.user.model.QuestionModel;
@@ -82,24 +81,11 @@ public class UserBO {
 	
 	
 	// 즐겨찾기 리스트
-	public List<VideoDetailModel> getFavoritesList(int userId) {
+	public List<VideoModel> getFavoritesList(int userId) {
 		
-		List<VideoModel> favoritesList =  userDAO.selectFavoritesList(userId);
+		List<FavoritesModel> favoritesList =  userDAO.selectFavoritesList(userId);
 		
-		List<VideoDetailModel> favoritesDetailList = new ArrayList<>();
-		
-		for(VideoModel videoModel : favoritesList) {
-			
-			VideoDetailModel favoritesDetail = new VideoDetailModel();
-			
-			favoritesDetail.setTitle(videoModel.getTitle());
-			favoritesDetail.setThumbnail(videoModel.getThumbnail());
-			favoritesDetail.setLink(videoModel.getLink());
-			
-			favoritesDetailList.add(favoritesDetail);
-		}
-		
-		return favoritesDetailList;
+		return userDAO.selectVideoList(favoritesList);
 	}
 	
 	

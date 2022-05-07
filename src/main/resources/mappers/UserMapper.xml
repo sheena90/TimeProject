@@ -96,8 +96,26 @@
 	
 	
 	<!-- 즐겨찾기 리스트 -->
-	<select id="selectFavoritesList" parameterType="int" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
+	<select id="selectFavoritesList" parameterType="int" resultType="com.sheena.time.post.favorites.model.FavoritesModel">
 		SELECT	
+			`id`
+			, `videoId`
+			, `userId`
+			, `createdAt`
+			, `updatedAt`
+		FROM
+			`favorites`
+		WHERE
+		 	`userId` = #{userId}
+	
+	
+	</select>
+	
+	
+	
+	<!-- 즐겨찾기 리스트에서 동영상 리스트 불러오기  -->
+	<select id="selectVideoList" parameterType="com.sheena.time.post.favorites.model.FavoritesModel" resultType="com.sheena.time.managerPostVideo.model.VideoModel">
+		SELECT
 			`id`
 			, `managerId`
 			, `userGender`
@@ -112,12 +130,19 @@
 		FROM
 			`video`
 		WHERE
-		 	`id` = #{userId}
-		ORDER BY `id` DESC
-		LIMIT 8
+			`id` IN
+			<foreach item="item" collection="favoritesList" open="(" separator="," close=")">
+				#{item.videoId}
+			</foreach>
+			
+	
 	
 	
 	</select>
+	
+	
+	
+	
 	
 	
 	<!-- 계획표 리스트 -->

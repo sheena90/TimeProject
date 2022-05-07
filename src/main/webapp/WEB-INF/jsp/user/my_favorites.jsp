@@ -43,13 +43,10 @@
 						<div class="mt-4 ml-4 mr-3">
 							
 		                        <div>
-		                            <img width="206" alt="가슴_썸네일" src="/static/image/man_Thumbnail_2.jpg">
+		                            <img width="206" alt="가슴_썸네일" src="${favoritesList.thumbnail }">
 		                        </div>
 		                        <div class="mt-2">
 		                        	<small>${favoritesList.title }</small>
-		                        </div>
-		                        <div>
-		                        	<small>시간</small>
 		                        </div>
 	                        
 	                    	<hr>

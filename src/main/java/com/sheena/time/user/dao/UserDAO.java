@@ -6,6 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.sheena.time.managerPostVideo.model.VideoModel;
+import com.sheena.time.post.favorites.model.FavoritesModel;
 import com.sheena.time.user.model.PlanModel;
 import com.sheena.time.user.model.QuestionModel;
 import com.sheena.time.user.model.UserModel;
@@ -48,7 +49,12 @@ public interface UserDAO {
 	
 	
 	// 즐겨찾기 리스트
-	public List<VideoModel> selectFavoritesList(@Param("userId") int userId);
+	public List<FavoritesModel> selectFavoritesList(@Param("userId") int userId);
+	
+	
+	//겨찾기 리스트에서 동영상 리스트 불러오기
+	public List<VideoModel> selectVideoList(@Param("favoritesList") List<FavoritesModel> favoritesList);
+	
 	
 	
 	// 계획표 리스트
