@@ -86,6 +86,7 @@
 						
 						if(data.result == "success") {
 							location.href="/post/main_view";
+							//location.href="uri";
 						} else {
 							alert("아이디/비밀번호를 확인해 주세요.");
 						}

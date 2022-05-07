@@ -45,6 +45,8 @@ public class PermissionInterceptor implements HandlerInterceptor {
 			// question 이동 불가, 즉 /post/question
 			// My페이지 이동 불가, 즉 /user
 			
+			// session.setAttribute("uri", uri);
+			
 			if(uri.startsWith("/post/community")) {
 				response.sendRedirect("/user/signin_view");
 				return false;
