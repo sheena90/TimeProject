@@ -47,12 +47,19 @@
 					<option>남자</option>
 					<option>여자</option>
 				</select>
-				
-				<div class="input-group">
-					<input type="text" id="emailInput" class="form-control mt-3" placeholder="이메일 주소(필수)">
-				</div>
+				<div class="d-flex align-items-center mt-3">
+	                <input type="text" id="emailInput" class="input-text form-control col-6" placeholder="이메일 주소(필수)">
+	                <div class="col-1">@</div>
+	                <input type="text" id="emailCustom" class="d-none input-text form-control col-5">
+	                <select class="form-control col-5" id="emailSelctor">
+	                    <option>naver.com</option>
+	                    <option>daum.com</option>
+	                    <option>gmail.com</option>
+	                    <option value="custom">직접입력</option>
+	                </select>
+	            </div>
 					
-				<div class="d-flex align-items-center justify-content-center">
+				<div class="d-flex align-items-center justify-content-center ">
 					<button type="button" id="signUpBtn" class="button btn btn-danger mt-5 mb-4">회원가입</button>
 				</div>
 				
@@ -144,6 +151,9 @@
 					return;
 				}
 				
+				alert(nickname + "님 회원가입을 환영합니다." + "\n"
+						+ "로그인을 진행해주세요.");
+				
 				$.ajax({
 					type:"post",
 					url:"/user/sign_up",
@@ -199,6 +209,16 @@
 				});
 				
 			});	
+			
+			
+			// 이메일 select박스
+			 $("#emailSelctor").on("change", function() {
+                let domain = $(this).val();
+                if(domain == "custom") {
+                    $(this).addClass("d-none");
+                    $("#emailCustom").removeClass("d-none");
+                } 
+            });
 			
 		});
 	</script>
