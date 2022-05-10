@@ -35,12 +35,23 @@
 						<c:choose>
 							<c:when test="${not empty userId }">
 								<a class="text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-bs-expanded="false" class="mr-2 text-dark"> 
-									<h1 class="material-icons-outlined">logout</h1>
+									<c:choose>
+										<c:when test="${not empty userProfile }">
+											<div class="communityReviewProfile">
+												<img class="profile" src="${userProfile } ">
+											</div>
+										</c:when>
+										<c:otherwise>
+											<div class="communityReviewProfile">
+												<img class="profile" src="/static/image/profile4.png ">
+											</div>
+										</c:otherwise>
+									</c:choose>
 								</a>
 								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
 									<li>
 										<a class="dropdown-item" href="/user/myProfile_view">
-											<b>${userNickname }님</b>
+											<b>My페이지</b>
 										</a>
 									</li>
 									<li><hr class="dropdown-divider"></li>
@@ -51,7 +62,7 @@
 							</c:when>
 							<c:otherwise>
 								<a class="text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-bs-expanded="false" class="mr-2 text-dark"> 
-									<h1 class="material-icons-outlined">login</h1>
+									<button class="btn btn-secondary">Go</button>
 								</a>
 								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
 									<li><a class="dropdown-item" href="/user/signin_view">로그인</a></li>
