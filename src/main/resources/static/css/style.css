@@ -85,7 +85,7 @@ footer {
 }
 
 
-/*메인화면 부위별 운동 마우시 클릭효과*/
+/*메인화면 부위별 운동 마우스 클릭효과*/
 
 .courseVideoScreen {
 	position:relative; 
@@ -389,62 +389,6 @@ hr {
 	height: 700px;
 	background: url(https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsmall.justeasy.cn%2Fuploads%2Fappcase%2F20170824%2F1503541801456997.jpg&refer=http%3A%2F%2Fsmall.justeasy.cn&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1652509292&t=7245d5d41fb8e10bcdb4ac62d4348574) fixed;
 }
-
-
-/*livePlay 하트*/
-.back {
-    position: fixed;
-    background: white;
-    animation-name: backdiv;
-    animation-duration: 1s; 
-    animation-iteration-count: infinite;
-  }
-
-.heart {
-    position: absolute;
-    background-color: #e70f3c;
-    height: 50px;
-    width: 50px;
-    transform: rotate(-45deg);
-    animation-name: beat;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-  }
-  .heart:after {
-    background-color: #e70f3c;
-    content: "";
-    border-radius: 50%;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: 0px;
-    left: 25px;
-  }
-  .heart:before {
-    background-color: #e70f3c;
-    content: "";
-    border-radius: 50%;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    top: -25px;
-    left: 0px;
-  }
-
-  @keyframes backdiv {
-    50% {
-      background: #ffe6f2;
-    }
-  }
-
-  @keyframes beat {
-    0% {
-      transform: scale(1) rotate(-45deg);
-    }
-    50% {
-      transform: scale(0.6) rotate(-45deg);
-    }
-  }
   
   
   /* 드롭다운 메뉴 */
@@ -499,7 +443,7 @@ hr {
  
 /*맞춤형modal 진행률 표시*/
 /*modal1*/
-.progress {width:600px; height: 100px; margin:auto; padding-top: 50px; background:#ffffff;}
+/* .progress {width:600px; height: 100px; margin:auto; padding-top: 50px; background:#ffffff;}
 .progressUl{text-align:center;}
 .progressUl .progressLi {display:inline-block; width:120px; position:relative;}
 .fa {font-size:20px;} 
@@ -509,14 +453,14 @@ hr {
 .progressUl .progressLi:nth-child(1) .fa{background: #148e14;}
 .progressUl .progressLi:nth-child(1) .fa::after {background: #148e14;}
 
-/*modal2*/
+modal2
 .progressUl2 .progressLi2:nth-child(1) .fa{background: #60aa97;}
 .progressUl2 .progressLi2:nth-child(1) .fa::after {background: #60aa97;}
 
 .progressUl2 .progressLi2:nth-child(2) .fa{background: #148e14;}
 .progressUl2 .progressLi2:nth-child(2) .fa::after {background: #148e14;}
 
-/*modal3*/
+modal3
 .progressUl3 .progressLi3:nth-child(1) .fa {background: #60aa97;}
 .progressUl3 .progressLi3:nth-child(1) .fa::after {background: #60aa97;}
 
@@ -526,7 +470,7 @@ hr {
 .progressUl3 .progressLi3:nth-child(3) .fa {background: #148e14;}
 .progressUl3 .progressLi3:nth-child(3) .fa::after {background: #148e14;}
 
-/*modal3*/
+modal3
 .progressUl4 .progressLi4:nth-child(1) .fa {background: #60aa97;}
 .progressUl4 .progressLi4:nth-child(1) .fa::after {background: #60aa97;}
 
@@ -540,7 +484,17 @@ hr {
 .progressUl4 .progressLi4:nth-child(4) .fa::after {background: #148e14;}
 
 .progressUl .progressLi:first-child .fa::after {width:80px; left:70px;}
-.progressUl .progressLi:last-child .fa::after {width:50px;}
+.progressUl .progressLi:last-child .fa::after {width:50px;} */
+
+.gauge {
+    display: inline-block;
+    width:10%;
+    height: 21px;
+    background-color: #3abff7;
+    border-radius: 10px;
+    transition: 1s linear;
+}
+
 
 
 .contentVideo {

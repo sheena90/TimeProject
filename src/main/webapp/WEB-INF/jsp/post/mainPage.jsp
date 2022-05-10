@@ -16,7 +16,6 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
-    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   	
   	
@@ -198,26 +197,12 @@
 						
 						<!-- 진행률 표시 -->
 						<div class="h-25">
-							<div class="progress">
-								<ul class="progressUl progressUl2 progressUl3 progressUl4">
-									<li class="progressLi progressLi2 progressLi3 progressLi4">
-										<i class="fa fa-refresh" aria-hidden="true"></i>
-										<p>Step1</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-times"></i>
-										<p>Step2</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-times"></i>
-										<p>Step3</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-times"></i>
-										<p>Step4</p>
-									</li>
-								</ul>
-							</div>
+							<span class="gauge"  per="25"></span>
+							<span>25%</span>
+						</div>
+						
+						<div class="text-center">
+							<b>회원님의 <span class="text-danger">운동 환경</span>을 선택하십시오.</b>
 						</div>
 						
 						<div class="h-50 d-flex justify-content-around align-items-center">
@@ -260,34 +245,14 @@
 	        		<!-- 삽입 내용 -->
 	        		<div class="customizeBox mt-5 mb-5 bg-white">
 	        		
-	        			
-						
-						<!-- 진행률 표시 -->
+	        			<!-- 진행률 표시 -->
 						<div class="h-25">
-							<div class="progress">
-								<ul class="progressUl progressUl2 progressUl3 progressUl4">
-									<li class="progressLi progressLi2 progressLi3 progressLi4">
-										<i class="fa fa-check" aria-hidden="true"></i>
-										<p>Step1</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-refresh" aria-hidden="true"></i>
-										<p>Step2</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-times"></i>
-										<p>Step3</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-times"></i>
-										<p>Step4</p>
-									</li>
-								</ul>
-							</div>
+							<span class="gauge"  per="50"></span>
+							<span>50%</span>
 						</div>
 						
 						<div class="text-center">
-							<b>그림을 참조하여 유사한 체형을 선택하십시오.</b>
+							<b>그림을 참조하여 유사한 <span class="text-danger">체지방 비율</span>을 선택하십시오.</b>
 						</div>
 						
 						<!-- modal2 슬라이드 --> 
@@ -357,34 +322,14 @@
 	        		<!-- 삽입 내용 -->
 	        		<div class="customizeBox mt-5 mb-5 bg-white">
 	        		
-	        			
-						
-						<!-- 진행률 표시 -->
+	        			<!-- 진행률 표시 -->
 						<div class="h-25">
-							<div class="progress">
-								<ul class="progressUl progressUl2 progressUl3 progressUl4">
-									<li class="progressLi progressLi2 progressLi3 progressLi4">
-										<i class="fa fa-check" aria-hidden="true"></i>
-										<p>Step1</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-check" aria-hidden="true"></i>
-										<p>Step2</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-refresh" aria-hidden="true"></i>
-										<p>Step3</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-times"></i>
-										<p>Step4</p>
-									</li>
-								</ul>
-							</div>
+							<span class="gauge"  per="75"></span>
+							<span>75%</span>
 						</div>
 						
 						<div class="text-center mb-3">
-							<b>운동 목표를 선택하십시오.</b>
+							<b>회원님의 <span class="text-danger">운동 목표</span>를 선택하십시오.</b>
 						</div>
 						
 						<!-- modal3 슬라이드 --> 
@@ -438,49 +383,42 @@
 	        		<!-- 삽입 내용 -->
 	        		<div class="customizeBox mt-5 mb-5 bg-white">
 						
-						<!-- 진행률 표시 -->
-						<div class="h-25">
-							<div class="progress">
-								<ul class="progressUl progressUl2 progressUl3 progressUl4">
-									<li class="progressLi progressLi2 progressLi3 progressLi4">
-										<i class="fa fa-check" aria-hidden="true"></i>
-										<p>Step1</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-check" aria-hidden="true"></i>
-										<p>Step2</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-check" aria-hidden="true"></i>
-										<p>Step3</p>
-									</li>
-									<li class="progressLi">
-										<i class="fa fa-refresh" aria-hidden="true"></i>
-										<p>Step4</p>
-									</li>
-								</ul>
+						<div class="h-75">
+							<!-- 진행률 표시 -->
+							<div class="d-flex">
+								<span class="gauge"  per="100" class="col-11"></span>
+								<span class="col-1">100%</span>
 							</div>
-						</div>
-						
-						<div class="h-50 d-flex">
 							
-							<!-- 동영상 -->
-							<div class="col-6 mt-5">
-								<img width="100%" alt="썸네일" src="/static/image/man_Thumbnail_1.jpg" id="resultThumbnail">
+							<div class="text-center mb-3 mt-5">
+								<h5>Time 맞춤 서비스</h5>
 							</div>
-							<input type="hidden" id="link">
-							<input type="hidden" id="videoId">
 							
-							<!-- 계획표 생성 -->
-							<div class="col-6">
-								<div class="mt-5 mb-4" >
-									<b id="titleAdd">계획표 생성</b>
+							<div class="d-flex">
+								
+								<!-- 동영상 -->
+								<div class="col-6 mt-5">
+									<img width="100%" alt="썸네일" src="/static/image/man_Thumbnail_1.jpg" id="resultThumbnail">
 								</div>
-								<div>
-									<p>결과 문구 생성</p>
+								<input type="hidden" id="link">
+								<input type="hidden" id="videoId">
+								
+								<!-- 계획표 생성 -->
+								<div class="col-6">
+									<div class="mt-5 mb-4" >
+										<b id="titleAdd" class="text-danger"></b>
+									</div>
+									<div>
+										<p>
+											<b>${userNickname }</b>님 안녕하세요.<br>
+											Time 맞춤 서비스는 회원님에게 꼭 필요한 운동만 추천해 드립니다. 지금 바로 회원님의 맞춤 영상을
+											계획표에 추가하여 Time과 함께 건강한 운동을 즐겨보세요!
+										
+										</p>
+									</div>
 								</div>
+								
 							</div>
-							
 						</div>
 						<div class="h-25 d-flex justify-content-center align-items-center">
 							<a href="#" data-toggle="modal" data-target="#customizeModal3">
@@ -670,6 +608,19 @@
 					currentImageIndex = 0;
 				}
 			}, 2000);
+			
+			
+			
+			// 진행률바
+		   $('.gauge').each(function () {
+		        var $this = $(this);
+		        var per = $this.attr('per');
+		        $this.animate({
+		            width: per + "%"
+		        });
+		    });
+		   
+		   
 			
 			
 			// modal2 슬라이드
