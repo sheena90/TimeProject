@@ -92,7 +92,7 @@
 					success:function(data) {
 						if(data.result == "success") {
 							alert("회원탈퇴가 정상 처리되었습니다.");
-							location.href="/post/main_view";
+							location.href="/user/sign_out";
 						} 
 					},
 					error:function() {
