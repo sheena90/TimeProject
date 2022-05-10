@@ -29,22 +29,8 @@
 			</div>
 			
 			<div class="d-flex col-8 mt-3">
-			
-				<c:choose>
-					<c:when test="${not empty userProfile }">
-						<div class="communityReviewProfile">
-							<img class="profile" src="${userProfile } ">
-						</div>
-					</c:when>
-						<c:otherwise>
-							<div class="communityReviewProfile">
-								<img class="profile" src="/static/image/profile4.png ">
-							</div>
-						</c:otherwise>
-				</c:choose>
-			
-				<div class="ml-3">
-					<span>${userNickname }</span>
+				<div>
+					<span>${postFull.userNickname }</span>
 				</div>
 				<div class="ml-4">
 					<small><fmt:formatDate value="${postFull.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></small>
@@ -57,19 +43,10 @@
 				<h5>${postFull.content }</h5>
 			</div>
 			
-			<!-- 글쓴이 내용 좋아요, 댓글수 -->
-			<div class="d-flex mt-3 ml-3">
-				<div class="reviewLike text-center">
-					<i class="bi bi-heart text-dark"></i>
-					<small>좋아요 10</small>
-				</div>
-				<div class="reviewLike text-center ml-3">
-					<small>댓글 10</small>
-				</div>
-			</div>
-			
-			<!-- 댓글, 댓글 좋아요 -->
+			<!-- 댓글 -->
 			<div class="mt-5">
+				<b>댓글</b>
+				<hr>
 				<c:forEach var="commentList" items="${commentList }">
 					<div class="d-flex ml-5">
 					
@@ -98,13 +75,9 @@
 							<small><fmt:formatDate value="${commentList.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></small>
 						</div>
 					</div>
-					<div class="d-flex col-11 justify-content-end align-items-center ">
-						<i class="bi bi-heart text-dark"></i>
-						<small class="ml-2">0</small>
-					</div>
+					<hr>
 				</c:forEach>
 			</div>
-			<hr>
 			
 			<div class="mt-5">
 				<textarea rows="5" id="comment" class="form-control"></textarea>

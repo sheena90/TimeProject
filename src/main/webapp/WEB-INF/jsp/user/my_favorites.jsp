@@ -39,19 +39,19 @@
 		
 			<div class="favoritesContent">
 				<div class="myPlanBox d-flex flex-wrap">
-					<c:forEach var="favoritesList" items="${favoritesList }">	
-						<div class="mt-4 ml-4 mr-3">
+					<c:forEach var="favoritesList" items="${favoritesList }">
 							
-		                        <div>
-		                            <img width="206" alt="가슴_썸네일" src="${favoritesList.thumbnail }">
-		                        </div>
-		                        <div class="mt-2">
-		                        	<small>${favoritesList.title }</small>
-		                        </div>
+						<div class="mt-4 ml-4 mr-3">
+	                        <div>
+	                            <img width="206" alt="가슴_썸네일" src="${favoritesList.thumbnail }">
+	                        </div>
+	                        <div class="mt-2">
+	                        	<small>${favoritesList.title }</small>
+	                        </div>
 	                        
 	                    	<hr>
-		                 </div>	  	
-	                 </c:forEach>	
+	                 	</div>
+               		</c:forEach>	
 						
 				</div>
 			</div>

@@ -42,7 +42,6 @@
 					<div class="text-center">
 						<h5 class="mt-4 text-white mb-4"><b>Hi, ${userNickname }님</b></h5>
 						<span class="text-warning"><i class="bi bi-brightness-high-fill"></i></span>
-						<span class="text-warning">200일</span>
 					</div>
 					<div>
 						<div class="mt-5 d-flex justify-content-between ml-5 mr-5">

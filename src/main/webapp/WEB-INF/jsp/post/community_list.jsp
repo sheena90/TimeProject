@@ -37,7 +37,6 @@
 							<th>No.</th>
 							<th>제목</th>
 							<th>작성시간</th>
-							<th>조회수</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -47,7 +46,6 @@
 								<td>${post.id }</td>
 								<td><a href="#" data-toggle="modal" data-target="#createModal" class="detailBtn" data-post-id="${post.id }">${post.subject }</a></td>
 								<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-								<td>0</td>
 							</tr>
 						</c:forEach>
 					</tbody>

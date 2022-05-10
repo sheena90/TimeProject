@@ -33,7 +33,7 @@
 			<hr>
 			
 			<!-- 글쓴이 내용 -->
-			<div>
+			<div class="favoritesContent">
 				<small>${noticeDetail.content }</small>
 			</div>
 			<c:if test="${not empty noticeDetail.imagePath }" >

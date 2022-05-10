@@ -91,9 +91,6 @@ public class PostRestController {
 	}
 	
 	
-	
-	
-	
 	// Q&A 글쓰기
 	@PostMapping("/question/create")
 	public Map<String, String> questionCreate(

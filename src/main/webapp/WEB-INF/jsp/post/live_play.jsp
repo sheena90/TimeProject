@@ -31,12 +31,7 @@
 					<img width="100%" alt="썸네일" src="${liveVideo.thumbnail }">
 					</a>
 				</div>
-			
-				<div class="m-5 d-flex justify-content-end">
-					<div class="back mr-5"></div>
-					<div class="heart mr-5"></div>
-					<!--  <h3 class="mr-5 text-danger"><i class="bi bi-heart-fill"></i></h3>-->
-				</div>
+				
 			</div>
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
