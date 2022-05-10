@@ -45,12 +45,12 @@
 							<c:choose>
 								<c:when test="${not empty userProfile }">
 									<div class="myProfile ml-4">
-										<img class="profile" src="${userProfile } ">
+										<img class="profile" src="${userProfile } " id="image_section">
 									</div>
 								</c:when>
 								<c:otherwise>
 									<div class="myProfile ml-4">
-										<img class="profile" src="/static/image/profile2.png ">
+										<img class="profile" src="/static/image/profile2.png " id="image_section">
 									</div>
 								</c:otherwise>
 							</c:choose>
@@ -110,13 +110,9 @@
 					enctype:"multipart/form-data",    
 					processData:false,				 
 					contentType:false,
-					success:function(data) {
-						
-						
+					success:function(data) {	
 							alert("회원정보가 수정되었습니다.");
 							location.reload();
-						
-						
 					},
 					error:function() {
 						alert("프로필 수정 에러");
@@ -157,9 +153,23 @@
 			});
 			
 			
-			
-			
-			
+			// 프로필 수정 후 미리보기
+			function readURL(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+				  
+					reader.onload = function (e) {
+						$('#image_section').attr('src', e.target.result);  
+				  	}
+				  
+				  	reader.readAsDataURL(input.files[0]);
+				}
+			}
+				 
+			// 이벤트를 바인딩해서 input에 파일이 올라올때 (input에 change를 트리거할때) 위의 함수를 this context로 실행합니다.
+			$("#profileInput").change(function(){
+				readURL(this);
+			});
 			
 			
 		});
