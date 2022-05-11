@@ -27,7 +27,6 @@
 					<h6 class="mr-5">
 						<a class="text-white" href="/post/community/main_view">Community</a>
 					</h6>
-					<!--  <h1 class="material-icons-outlined mr-2">login</h1>-->
 					
 					
 					<!-- 로그인 아이콘에 대한 dropdown 적용 : 마이페이지, 로그아웃 -->
