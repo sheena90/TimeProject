@@ -1,5 +1,6 @@
 package com.sheena.time.user.bo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -84,6 +85,12 @@ public class UserBO {
 	public List<VideoModel> getFavoritesList(int userId) {
 		
 		List<FavoritesModel> favoritesList =  userDAO.selectFavoritesList(userId);
+		
+		// 리스트가 비어있는 경우 
+		if(favoritesList.isEmpty()) {
+			List<VideoModel> videoList = new ArrayList<>();
+			return videoList;
+		}
 		
 		return userDAO.selectVideoList(favoritesList);
 	}
