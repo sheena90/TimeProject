@@ -35,7 +35,7 @@
 					
 						<div class="d-flex align-items-end ">
 							<span class="material-icons-outlined">keyboard_double_arrow_down</span>
-							<b class="ml-2">부위별 맞춤 서비스를 이용해보세요.</b>
+							<b class="ml-2">정확한 부위를 선택하여 이용해보세요.</b>
 						</div>
 					
 						<div class="mt-5">

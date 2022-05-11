@@ -492,7 +492,6 @@
 			
 			// 맞춤화 서비스 model3 다음 버튼에 대한 이벤트 처리
 			$("#nextBtn3").on("click", function() {
-				
 				if(body == "") {
 					alert("해당 항목을 선택해주세요.");
 					return;
@@ -514,10 +513,6 @@
 						$("#titleAdd").text(data.title);
 						$("#link").val(data.link);
 						$("#videoId").val(data.id);
-						
-						
-						
-						
 					},
 					error:function() {
 						alert("맞춤화 서비스 에러");

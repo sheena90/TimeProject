@@ -73,7 +73,7 @@ public class UserController {
 		
 		HttpSession session = request.getSession();
 		int userId = (Integer)session.getAttribute("userId");
-		
+			
 		List<VideoModel> favoritesList = userBO.getFavoritesList(userId);
 		
 		model.addAttribute("favoritesList", favoritesList);

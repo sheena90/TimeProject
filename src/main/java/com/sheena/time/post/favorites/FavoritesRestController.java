@@ -21,6 +21,7 @@ public class FavoritesRestController {
 	@Autowired
 	private FavoritesBO favoritesBO;
 	
+	// 즐겨찾기
 	@GetMapping("/favorites")
 	public Map<String, String> favorites(
 			@RequestParam("videoId") int videoId,
@@ -40,7 +41,6 @@ public class FavoritesRestController {
 		}
 		
 		return result;
-		
 	}
 	
 	
