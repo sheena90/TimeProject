@@ -64,7 +64,7 @@
 						</c:choose>
 					
 						<div class="ml-3">
-							<span>${userNickname }</span>
+							<span>${commentList.userNickname }</span>
 						</div>
 					</div>
 					<div class="ml-5 mt-3">
