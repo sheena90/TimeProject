@@ -61,7 +61,7 @@
 							</c:when>
 							<c:otherwise>
 								<a class="text-white" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-bs-expanded="false" class="mr-2 text-dark"> 
-									<button class="btn btn-secondary">Go</button>
+									<button class="btn btn-secondary">Login</button>
 								</a>
 								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
 									<li><a class="dropdown-item" href="/user/signin_view">로그인</a></li>
