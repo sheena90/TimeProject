@@ -134,24 +134,7 @@
 						</c:forEach>
 					</div>
 					
-					<div class="page">
-						<ul class="pagination">
-							<li class="paginationLi"><a href="#" class="paginationA first">처음 페이지</a></li>
-							<li class="paginationLi"><a href="#" class="paginationA arrow left"><<</a></li>
-							<li class="paginationLi"><a href="#" class="paginationA active num">1</a></li>
-							<li class="paginationLi"><a href="#" class="paginationA num">2</a></li>
-							<li class="paginationLi"><a href="#" class="paginationA num">3</a></li>
-							<li class="paginationLi"><a href="#" class="paginationA num">4</a></li>
-							<li class="paginationLi"><a href="#" class="paginationA num">5</a></li>
-							<li class="paginationLi"><a href="#" class="paginationA arrow right">>></a></li>
-							<li class="paginationLi"><a href="#" class="paginationA last">끝 페이지</a></li>
-						</ul>
-					</div>
-					
 				</div>
-				
-				
-				
 				
 			</div>
 		</section>
