@@ -49,6 +49,7 @@
 			, `nickname`
 			, `gender`
 			, `email`
+			, `profile`
 			, `createdAt`
 			, `updatedAt`
 		FROM

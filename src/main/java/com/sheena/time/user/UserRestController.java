@@ -116,7 +116,7 @@ public class UserRestController {
 			session.setAttribute("userProfile",profile);
 		}
 		
-		session.setAttribute("nickname", nickname);
+		session.setAttribute("userNickname", nickname);
 		
 		return result;
 	}
