@@ -36,30 +36,32 @@
 		
 		<c:import url="/WEB-INF/jsp/include/managerHeader.jsp" />
 		
-		<section class="d-flex justify-content-center">
+		<section class="managerPostSection d-flex justify-content-center">
 			<div class="w-75 my-5">
-				<h1 class="text-center mb-5">지식정보 관리 리스트</h1>
-				
-				<table class="table text-center mts-3">
-					<thead>
-						<tr>
-							<th>No.</th>
-							<th>제목</th>
-							<th>작성시간</th>
-						</tr>
-					</thead>
-					<tbody>
-					<c:forEach var="managerPost" items="${managerPostList }">
-						<tr>
-							<td>${managerPost.id }</td>
-							<td><a href="/managerPost/content/info/edit_view?id=${managerPost.id }"> ${managerPost.subject }</a></td>
-							<td><fmt:formatDate value="${managerPost.createdAt }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
-						</tr>
-					</c:forEach>
+				<div class="h-75">
+					<h1 class="text-center mb-5">지식정보 관리 리스트</h1>
 					
-					</tbody>
-					
-				</table>
+					<table class="table text-center mts-3">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>제목</th>
+								<th>작성시간</th>
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach var="managerPost" items="${managerPostList }">
+							<tr>
+								<td>${managerPost.id }</td>
+								<td><a href="/managerPost/content/info/edit_view?id=${managerPost.id }"> ${managerPost.subject }</a></td>
+								<td><fmt:formatDate value="${managerPost.createdAt }" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+							</tr>
+						</c:forEach>
+						
+						</tbody>
+						
+					</table>
+				</div>
 				
 				<div class="d-flex justify-content-end">
 					<a href="/managerPost/content/info/create_view" class="btn btn-info">글 쓰기</a>

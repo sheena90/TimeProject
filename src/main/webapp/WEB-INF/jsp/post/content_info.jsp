@@ -55,6 +55,8 @@
 						
 					</div>
 					
+					<!-- 페이지 부분 -->
+					<!--  
 					<div class="page">
 						<ul class="pagination">
 							<li class="paginationLi"><a href="#" class="paginationA first">처음 페이지</a></li>
@@ -68,7 +70,7 @@
 							<li class="paginationLi"><a href="#" class="paginationA last">끝 페이지</a></li>
 						</ul>
 					</div>
-					
+					-->
 				</div>
 				
 				

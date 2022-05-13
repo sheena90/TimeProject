@@ -33,7 +33,7 @@
 		<c:import url="/WEB-INF/jsp/include/managerHeader.jsp" />
 		
 		
-		<section class="d-flex justify-content-center">
+		<section class="managerPostSection d-flex justify-content-center">
 			<div class="w-75 my-5">
 				<h1 class="text-center mb-5">Q&A 관리 리스트</h1>
 				

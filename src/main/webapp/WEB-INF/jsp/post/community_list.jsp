@@ -26,33 +26,37 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<section class="communityListSection">
+			<!-- 배경 이미지 -->
 			<div class="communityListImage"></div>
+			<!-- 리스트 -->
 			<div class="communityList">
-			<div class="communityListTable w-75">
-				<h4 class="text-center pt-4 pb-4">My 게시글</h4>
-				
-				<table class="table text-center mt-3">
-					<thead>
-						<tr>
-							<th>No.</th>
-							<th>제목</th>
-							<th>작성시간</th>
-						</tr>
-					</thead>
-					<tbody>
-						
-						<c:forEach var="post" items="${postList }">
-							<tr>
-								<td>${post.id }</td>
-								<td><a href="#" data-toggle="modal" data-target="#createModal" class="detailBtn" data-post-id="${post.id }">${post.subject }</a></td>
-								<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
-							</tr>
-						</c:forEach>
-					</tbody>
+				<div class="communityListTable">
+					<h4 class="text-center pt-4 pb-4">My 게시글</h4>
 					
-				</table>
-				
-				<div class="page mt-4">
+					<table class="table text-center mt-3">
+						<thead>
+							<tr>
+								<th>No.</th>
+								<th>제목</th>
+								<th>작성시간</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+							<c:forEach var="post" items="${postList }">
+								<tr>
+									<td>${post.id }</td>
+									<td><a href="#" data-toggle="modal" data-target="#createModal" class="detailBtn" data-post-id="${post.id }">${post.subject }</a></td>
+									<td><fmt:formatDate value="${post.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+								</tr>
+							</c:forEach>
+						</tbody>
+						
+					</table>
+					
+					<!-- 페이지 부분 -->
+					<!--  
+					<div class="page mt-4">
 						<ul class="pagination">
 							<li class="paginationLi"><a href="#" class="paginationA first">처음 페이지</a></li>
 							<li class="paginationLi"><a href="#" class="paginationA arrow left"><<</a></li>
@@ -64,8 +68,9 @@
 							<li class="paginationLi"><a href="#" class="paginationA arrow right">>></a></li>
 							<li class="paginationLi"><a href="#" class="paginationA last">끝 페이지</a></li>
 						</ul>
+					</div>
+					-->
 				</div>
-			</div>
 			</div>
 		
 		</section>
