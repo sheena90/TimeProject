@@ -36,7 +36,7 @@
 			<div class="promotion">
 				<div class="promotionImg">
 					<!-- css 사진 삽입 -->
-					
+					<img width="1600" height="500" alt="메인배경" src="/static/image/메인 이미지.jpeg">
 				</div>
 				<div class="promotionText">
 					<h3 class="text-white font-weight-bold mt-5">Time 맞춤화 서비스</h3>

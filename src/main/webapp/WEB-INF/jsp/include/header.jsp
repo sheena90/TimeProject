@@ -3,7 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-		<header>
+		<header class="headerSticky">
 			<div class="header d-flex align-items-center justify-content-between">
 				<!-- logo -->
 				<div>

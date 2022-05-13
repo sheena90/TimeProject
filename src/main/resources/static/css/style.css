@@ -17,6 +17,12 @@ a:hover { text-decoration:none !important; }
 	background-color: rgba( 255, 255, 255, 0 );
 }
 
+.headerSticky {
+	position: sticky;
+	top:0px;
+	z-index:1;
+}
+
 .header {
 	background-color: #202023;
 	width:1600px;
@@ -36,8 +42,6 @@ a:hover { text-decoration:none !important; }
 .promotionImg {
 	height:500px;
 	vertical-align:middle;
-	background: url(https://img.zcool.cn/community/01dbd95c3558d3a8012090db52757b.jpg?x-oss-process=image/auto-orient,1/resize,m_lfit,w_1280,limit_1/sharpen,100/format,webp/quality,Q_100) fixed;
-
 }
 
 .promotionText {
@@ -441,50 +445,6 @@ hr {
     border: 1px solid #dddddd;
 }
  
-/*맞춤형modal 진행률 표시*/
-/*modal1*/
-/* .progress {width:600px; height: 100px; margin:auto; padding-top: 50px; background:#ffffff;}
-.progressUl{text-align:center;}
-.progressUl .progressLi {display:inline-block; width:120px; position:relative;}
-.fa {font-size:20px;} 
-.progressUl .progressLi .fa{background:#ccc; width:30px; height:30px; color:#fff; border-radius:50%; padding:5px;}
-.progressUl .progressLi .fa::after{content:''; background:#ccc; height:5px; width:150px; display:block; position:absolute; left:0; top:14px;}
-
-.progressUl .progressLi:nth-child(1) .fa{background: #148e14;}
-.progressUl .progressLi:nth-child(1) .fa::after {background: #148e14;}
-
-modal2
-.progressUl2 .progressLi2:nth-child(1) .fa{background: #60aa97;}
-.progressUl2 .progressLi2:nth-child(1) .fa::after {background: #60aa97;}
-
-.progressUl2 .progressLi2:nth-child(2) .fa{background: #148e14;}
-.progressUl2 .progressLi2:nth-child(2) .fa::after {background: #148e14;}
-
-modal3
-.progressUl3 .progressLi3:nth-child(1) .fa {background: #60aa97;}
-.progressUl3 .progressLi3:nth-child(1) .fa::after {background: #60aa97;}
-
-.progressUl3 .progressLi3:nth-child(2) .fa {background: #60aa97;}
-.progressUl3 .progressLi3:nth-child(2) .fa::after {background: #60aa97;}
-
-.progressUl3 .progressLi3:nth-child(3) .fa {background: #148e14;}
-.progressUl3 .progressLi3:nth-child(3) .fa::after {background: #148e14;}
-
-modal3
-.progressUl4 .progressLi4:nth-child(1) .fa {background: #60aa97;}
-.progressUl4 .progressLi4:nth-child(1) .fa::after {background: #60aa97;}
-
-.progressUl4 .progressLi4:nth-child(2) .fa {background: #60aa97;}
-.progressUl4 .progressLi4:nth-child(2) .fa::after {background: #60aa97;}
-
-.progressUl4 .progressLi4:nth-child(3) .fa {background: #60aa97;}
-.progressUl4 .progressLi4:nth-child(3) .fa::after {background: #60aa97;}
-
-.progressUl4 .progressLi4:nth-child(4) .fa {background: #148e14;}
-.progressUl4 .progressLi4:nth-child(4) .fa::after {background: #148e14;}
-
-.progressUl .progressLi:first-child .fa::after {width:80px; left:70px;}
-.progressUl .progressLi:last-child .fa::after {width:50px;} */
 
 .gauge {
     display: inline-block;
@@ -589,5 +549,9 @@ modal3
 	margin:auto;
 	border:1px solid #dddddd;
 
+}
+
+.managerPostSection {
+	height:700px;
 }
   
