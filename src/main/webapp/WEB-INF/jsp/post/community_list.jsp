@@ -93,7 +93,7 @@
 	        		<!-- 삽입 내용 -->
 	        		<div class="signUp mt-5 mb-5 bg-secondary">
 						<div class="signUpHeader d-flex align-items-center justify-content-center">
-							<img class="col-2" width="120" alt="logo" src="/static/image/logo.PNG" >
+							<img class="col-2" width="120" alt="logo" src="/static/image/logo.png" >
 							<h3 class="text-center text-white"> | </h3>
 							<h3 class="col-2 text-white">Edit</h3>
 						</div>

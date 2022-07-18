@@ -8,7 +8,7 @@
 				<!-- logo -->
 				<div>
 					<a href="/post/main_view">
-						<img width="150" alt="logo" src="/static/image/logo.PNG">
+						<img width="150" alt="logo" src="/static/image/logo.png">
 					</a>
 				</div>
 				
