@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/manager")
+@RequestMapping("/timeManager")
 public class ManagerController {
 	
 	@GetMapping("/signup_view")
@@ -29,7 +29,7 @@ public class ManagerController {
 		session.removeAttribute("managerId");
 		session.removeAttribute("managerLoginId");
 		
-		return "redirect:/manager/signin_view";
+		return "redirect:/timeManager/signin_view";
 	}
 
 }

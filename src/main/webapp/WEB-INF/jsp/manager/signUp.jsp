@@ -46,7 +46,7 @@
 			
 			<div class="login mt-2 mb-5 d-flex align-items-center justify-content-center">
 				계정이 있으신가요?
-				<a href="/manager/signin_view" class="font-weight-bold"> 로그인</a>
+				<a href="/timeManager/signin_view" class="font-weight-bold"> 로그인</a>
 			</div>
 		</div>
 		
@@ -79,11 +79,11 @@
 				
 				$.ajax({
 					type:"post",
-					url:"/manager/sign_up",
+					url:"/timeManager/sign_up",
 					data:{"loginId":loginId,"password":password},
 					success:function(data) {
 						if(data.result == "success") {
-							location.href="/manager/signin_view";
+							location.href="/timeManager/signin_view";
 						} else {
 							alert("회원가입 실패");
 						}

@@ -60,7 +60,7 @@
 					
 					<div class="login mt-2 mb-5 d-flex align-items-center justify-content-center">
 						계정이 없으신가요?
-						<a href="/manager/signup_view" class="font-weight-bold">회원가입</a>
+						<a href="/timeManager/signup_view" class="font-weight-bold">회원가입</a>
 					</div>
 				</div>
 			</form>
@@ -90,7 +90,7 @@
 				
 				$.ajax({
 					type:"post",
-					url:"/manager/sign_in",
+					url:"/timeManager/sign_in",
 					data:{"loginId":loginId, "password":password},
 					success:function(data) {
 						

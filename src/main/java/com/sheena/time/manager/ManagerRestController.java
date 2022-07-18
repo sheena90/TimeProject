@@ -16,7 +16,7 @@ import com.sheena.time.manager.bo.ManagerBO;
 import com.sheena.time.manager.model.ManagerModel;
 
 @RestController
-@RequestMapping("/manager")
+@RequestMapping("/timeManager")
 public class ManagerRestController {
 
 	@Autowired

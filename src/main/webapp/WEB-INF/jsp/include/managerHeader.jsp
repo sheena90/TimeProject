@@ -8,7 +8,7 @@
 				<!-- logo -->
 				<div>
 					
-					<img width="150" alt="logo" src="/static/image/logo.PNG">
+					<img width="150" alt="logo" src="/static/image/logo.png">
 					
 				</div>
 				
@@ -37,7 +37,7 @@
 								</a>
 								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
 									<li>
-										<a class="dropdown-item text-primary" href="/manager/sign_out">로그아웃</a>
+										<a class="dropdown-item text-primary" href="/timeManager/sign_out">로그아웃</a>
 									</li>
 								</ul>
 							</c:when>
@@ -46,10 +46,10 @@
 									<h1 class="material-icons-outlined">login</h1>
 								</a>
 								<ul class="dropdown-menu dropdown-menu-right mt-2" aria-labelledby="dropdownMenuLink">
-									<li><a class="dropdown-item" href="/manager/signin_view">로그인</a></li>
+									<li><a class="dropdown-item" href="/timeManager/signin_view">로그인</a></li>
 									<li><hr class="dropdown-divider"></li>
 									<li>
-										<a class="dropdown-item text-primary" href="/manager/signup_view">회원가입</a>
+										<a class="dropdown-item text-primary" href="/timeManager/signup_view">회원가입</a>
 									</li>
 								</ul>
 							</c:otherwise>
